@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6832ABA31F3A664E00D8D49A /* QRCodeGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABA21F3A664E00D8D49A /* QRCodeGeneratorViewController.swift */; };
+		6832ABA51F3A703300D8D49A /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABA41F3A703300D8D49A /* QRCodeReaderViewController.swift */; };
+		6832ABA71F3A7FE200D8D49A /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 6832ABA61F3A7FE200D8D49A /* square.png */; };
+		6832ABA91F3BCABA00D8D49A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABA81F3BCABA00D8D49A /* SettingsViewController.swift */; };
+		6832ABAB1F3BCCA500D8D49A /* BikeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABAA1F3BCCA500D8D49A /* BikeListController.swift */; };
+		6832ABAD1F3BCFA400D8D49A /* BikeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABAC1F3BCFA400D8D49A /* BikeListCell.swift */; };
+		6832ABAF1F3BDAA000D8D49A /* AddBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABAE1F3BDAA000D8D49A /* AddBikeViewController.swift */; };
+		6832ABB11F3BEA5F00D8D49A /* DisplayBikeDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABB01F3BEA5F00D8D49A /* DisplayBikeDataViewController.swift */; };
+		6832ABB31F3F781200D8D49A /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABB21F3F781200D8D49A /* MessageComposer.swift */; };
+		6832ABB51F4116C100D8D49A /* OpenOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABB41F4116C100D8D49A /* OpenOrdersViewController.swift */; };
+		6832ABB71F4119CE00D8D49A /* FoundBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABB61F4119CE00D8D49A /* FoundBikeViewController.swift */; };
+		6832ABB91F45159A00D8D49A /* ViewOrderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABB81F45159A00D8D49A /* ViewOrderInfoViewController.swift */; };
+		6832ABBB1F451D9F00D8D49A /* CreateWorkOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABBA1F451D9F00D8D49A /* CreateWorkOrderViewController.swift */; };
+		6832ABBD1F45259F00D8D49A /* AddBikeScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABBC1F45259F00D8D49A /* AddBikeScannerVC.swift */; };
+		6832ABBF1F4526D300D8D49A /* ConfirmBikeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */; };
+		689EF6521F85AD73008066C6 /* AddMessageFromStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EF6511F85AD73008066C6 /* AddMessageFromStoreVC.swift */; };
+		68D23FA81F11873100A0D44E /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68D23FA71F11873100A0D44E /* background.jpg */; };
+		68E5D32A1F4B557500EFC857 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D3291F4B557500EFC857 /* SignUpController.swift */; };
+		68E5D32C1F4B6BA300EFC857 /* WorkListValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D32B1F4B6BA300EFC857 /* WorkListValues.swift */; };
+		68E5D3301F4B6C1E00EFC857 /* WorkListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D32F1F4B6C1E00EFC857 /* WorkListObject.swift */; };
+		68E5D3321F4B721C00EFC857 /* AvailableServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D3311F4B721C00EFC857 /* AvailableServiceCell.swift */; };
+		68E5D3341F54F0F900EFC857 /* Icons8-Ios7-Transport-Bicycle.ico in Resources */ = {isa = PBXBuildFile; fileRef = 68E5D3331F54F0F900EFC857 /* Icons8-Ios7-Transport-Bicycle.ico */; };
+		68E5D3381F55129000EFC857 /* Urabo logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E5D3371F55129000EFC857 /* Urabo logo.png */; };
+		68E5D33A1F57B76400EFC857 /* bikeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 68E5D3391F57B76400EFC857 /* bikeBackground.png */; };
+		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
+		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
+		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
+		81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814C1A49DA1800E65899 /* ViewController.swift */; };
+		81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816B1A49DB6800E65899 /* Bolts.framework */; };
+		81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816C1A49DB6800E65899 /* Parse.framework */; };
+		81BA81771A49E0D500E65899 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81761A49E0D500E65899 /* libsqlite3.dylib */; };
+		81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81781A49E0DB00E65899 /* AudioToolbox.framework */; };
+		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
+		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6832ABA21F3A664E00D8D49A /* QRCodeGeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeGeneratorViewController.swift; sourceTree = "<group>"; };
+		6832ABA41F3A703300D8D49A /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
+		6832ABA61F3A7FE200D8D49A /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square.png; path = ../../../Desktop/square.png; sourceTree = "<group>"; };
+		6832ABA81F3BCABA00D8D49A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6832ABAA1F3BCCA500D8D49A /* BikeListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeListController.swift; sourceTree = "<group>"; };
+		6832ABAC1F3BCFA400D8D49A /* BikeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeListCell.swift; sourceTree = "<group>"; };
+		6832ABAE1F3BDAA000D8D49A /* AddBikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBikeViewController.swift; sourceTree = "<group>"; };
+		6832ABB01F3BEA5F00D8D49A /* DisplayBikeDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayBikeDataViewController.swift; sourceTree = "<group>"; };
+		6832ABB21F3F781200D8D49A /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
+		6832ABB41F4116C100D8D49A /* OpenOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenOrdersViewController.swift; sourceTree = "<group>"; };
+		6832ABB61F4119CE00D8D49A /* FoundBikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundBikeViewController.swift; sourceTree = "<group>"; };
+		6832ABB81F45159A00D8D49A /* ViewOrderInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOrderInfoViewController.swift; sourceTree = "<group>"; };
+		6832ABBA1F451D9F00D8D49A /* CreateWorkOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWorkOrderViewController.swift; sourceTree = "<group>"; };
+		6832ABBC1F45259F00D8D49A /* AddBikeScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBikeScannerVC.swift; sourceTree = "<group>"; };
+		6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmBikeVC.swift; sourceTree = "<group>"; };
+		689EF6511F85AD73008066C6 /* AddMessageFromStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageFromStoreVC.swift; sourceTree = "<group>"; };
+		68D23FA71F11873100A0D44E /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../Desktop/background.jpg; sourceTree = "<group>"; };
+		68E5D3291F4B557500EFC857 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		68E5D32B1F4B6BA300EFC857 /* WorkListValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkListValues.swift; sourceTree = "<group>"; };
+		68E5D32F1F4B6C1E00EFC857 /* WorkListObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkListObject.swift; sourceTree = "<group>"; };
+		68E5D3311F4B721C00EFC857 /* AvailableServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableServiceCell.swift; sourceTree = "<group>"; };
+		68E5D3331F54F0F900EFC857 /* Icons8-Ios7-Transport-Bicycle.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = "Icons8-Ios7-Transport-Bicycle.ico"; path = "../../Icons8-Ios7-Transport-Bicycle.ico"; sourceTree = "<group>"; };
+		68E5D3371F55129000EFC857 /* Urabo logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Urabo logo.png"; path = "../../Urabo logo.png"; sourceTree = "<group>"; };
+		68E5D3391F57B76400EFC857 /* bikeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bikeBackground.png; path = "../../../Pictures/Photo Editor Lite Movavi/bikeBackground.png"; sourceTree = "<group>"; };
+		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81BA81451A49DA1800E65899 /* ParseStarterProject-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ParseStarterProject-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81BA814A1A49DA1800E65899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		81BA814C1A49DA1800E65899 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		81BA816B1A49DB6800E65899 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		81BA816C1A49DB6800E65899 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		81BA816E1A49DB6800E65899 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		81BA81761A49E0D500E65899 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		81BA81781A49E0DB00E65899 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81BA81421A49DA1800E65899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */,
+				81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */,
+				81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */,
+				81BA81771A49E0D500E65899 /* libsqlite3.dylib in Frameworks */,
+				81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */,
+				81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		814C3AC51B69877600E307BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				814C3AC81B69877600E307BB /* Images.xcassets */,
+				68E5D3331F54F0F900EFC857 /* Icons8-Ios7-Transport-Bicycle.ico */,
+				68E5D3391F57B76400EFC857 /* bikeBackground.png */,
+				68E5D3371F55129000EFC857 /* Urabo logo.png */,
+				68D23FA71F11873100A0D44E /* background.jpg */,
+				6832ABA61F3A7FE200D8D49A /* square.png */,
+				814C3AC91B69877600E307BB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		81BA813C1A49DA1800E65899 = {
+			isa = PBXGroup;
+			children = (
+				81BA81471A49DA1800E65899 /* ParseStarterProject */,
+				814C3AC51B69877600E307BB /* Resources */,
+				81BA816A1A49DB5600E65899 /* Frameworks */,
+				81BA81461A49DA1800E65899 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81BA81461A49DA1800E65899 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81BA81451A49DA1800E65899 /* ParseStarterProject-Swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81BA81471A49DA1800E65899 /* ParseStarterProject */ = {
+			isa = PBXGroup;
+			children = (
+				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
+				81BA814C1A49DA1800E65899 /* ViewController.swift */,
+				814C3AC61B69877600E307BB /* Main.storyboard */,
+				6832ABA21F3A664E00D8D49A /* QRCodeGeneratorViewController.swift */,
+				6832ABA41F3A703300D8D49A /* QRCodeReaderViewController.swift */,
+				6832ABA81F3BCABA00D8D49A /* SettingsViewController.swift */,
+				6832ABAA1F3BCCA500D8D49A /* BikeListController.swift */,
+				6832ABAC1F3BCFA400D8D49A /* BikeListCell.swift */,
+				6832ABAE1F3BDAA000D8D49A /* AddBikeViewController.swift */,
+				6832ABB01F3BEA5F00D8D49A /* DisplayBikeDataViewController.swift */,
+				6832ABB21F3F781200D8D49A /* MessageComposer.swift */,
+				689EF6511F85AD73008066C6 /* AddMessageFromStoreVC.swift */,
+				6832ABB41F4116C100D8D49A /* OpenOrdersViewController.swift */,
+				6832ABB61F4119CE00D8D49A /* FoundBikeViewController.swift */,
+				6832ABB81F45159A00D8D49A /* ViewOrderInfoViewController.swift */,
+				6832ABBA1F451D9F00D8D49A /* CreateWorkOrderViewController.swift */,
+				6832ABBC1F45259F00D8D49A /* AddBikeScannerVC.swift */,
+				6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */,
+				68E5D3291F4B557500EFC857 /* SignUpController.swift */,
+				68E5D32B1F4B6BA300EFC857 /* WorkListValues.swift */,
+				68E5D32F1F4B6C1E00EFC857 /* WorkListObject.swift */,
+				68E5D3311F4B721C00EFC857 /* AvailableServiceCell.swift */,
+			);
+			path = ParseStarterProject;
+			sourceTree = "<group>";
+		};
+		81BA816A1A49DB5600E65899 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81BA816B1A49DB6800E65899 /* Bolts.framework */,
+				81BA816C1A49DB6800E65899 /* Parse.framework */,
+				81BA816E1A49DB6800E65899 /* ParseFacebookUtils.framework */,
+				81BA81801A49E10C00E65899 /* ParseUI.framework */,
+				81BA81751A49E0C500E65899 /* System Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81BA81751A49E0C500E65899 /* System Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */,
+				81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */,
+				81BA81781A49E0DB00E65899 /* AudioToolbox.framework */,
+				81BA81761A49E0D500E65899 /* libsqlite3.dylib */,
+			);
+			name = "System Frameworks";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81BA81441A49DA1800E65899 /* ParseStarterProject-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81BA81641A49DA1800E65899 /* Build configuration list for PBXNativeTarget "ParseStarterProject-Swift" */;
+			buildPhases = (
+				81BA81411A49DA1800E65899 /* Sources */,
+				81BA81421A49DA1800E65899 /* Frameworks */,
+				81BA81431A49DA1800E65899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ParseStarterProject-Swift";
+			productName = ParseStarterProject;
+			productReference = 81BA81451A49DA1800E65899 /* ParseStarterProject-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81BA813D1A49DA1800E65899 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Parse;
+				TargetAttributes = {
+					81BA81441A49DA1800E65899 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = R6NAWUBW8J;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = 81BA81401A49DA1800E65899 /* Build configuration list for PBXProject "ParseStarterProject-Swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81BA813C1A49DA1800E65899;
+			productRefGroup = 81BA81461A49DA1800E65899 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81BA81441A49DA1800E65899 /* ParseStarterProject-Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81BA81431A49DA1800E65899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D23FA81F11873100A0D44E /* background.jpg in Resources */,
+				68E5D3381F55129000EFC857 /* Urabo logo.png in Resources */,
+				68E5D33A1F57B76400EFC857 /* bikeBackground.png in Resources */,
+				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
+				6832ABA71F3A7FE200D8D49A /* square.png in Resources */,
+				68E5D3341F54F0F900EFC857 /* Icons8-Ios7-Transport-Bicycle.ico in Resources */,
+				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81BA81411A49DA1800E65899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6832ABBF1F4526D300D8D49A /* ConfirmBikeVC.swift in Sources */,
+				6832ABAD1F3BCFA400D8D49A /* BikeListCell.swift in Sources */,
+				6832ABB91F45159A00D8D49A /* ViewOrderInfoViewController.swift in Sources */,
+				6832ABBB1F451D9F00D8D49A /* CreateWorkOrderViewController.swift in Sources */,
+				6832ABBD1F45259F00D8D49A /* AddBikeScannerVC.swift in Sources */,
+				689EF6521F85AD73008066C6 /* AddMessageFromStoreVC.swift in Sources */,
+				6832ABAF1F3BDAA000D8D49A /* AddBikeViewController.swift in Sources */,
+				68E5D3301F4B6C1E00EFC857 /* WorkListObject.swift in Sources */,
+				6832ABB71F4119CE00D8D49A /* FoundBikeViewController.swift in Sources */,
+				6832ABAB1F3BCCA500D8D49A /* BikeListController.swift in Sources */,
+				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
+				68E5D32A1F4B557500EFC857 /* SignUpController.swift in Sources */,
+				6832ABB11F3BEA5F00D8D49A /* DisplayBikeDataViewController.swift in Sources */,
+				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				6832ABA51F3A703300D8D49A /* QRCodeReaderViewController.swift in Sources */,
+				6832ABB51F4116C100D8D49A /* OpenOrdersViewController.swift in Sources */,
+				68E5D32C1F4B6BA300EFC857 /* WorkListValues.swift in Sources */,
+				6832ABA91F3BCABA00D8D49A /* SettingsViewController.swift in Sources */,
+				6832ABA31F3A664E00D8D49A /* QRCodeGeneratorViewController.swift in Sources */,
+				6832ABB31F3F781200D8D49A /* MessageComposer.swift in Sources */,
+				68E5D3321F4B721C00EFC857 /* AvailableServiceCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		814C3AC61B69877600E307BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				814C3AC71B69877600E307BB /* Base */,
+			);
+			name = Main.storyboard;
+			path = ../Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81BA81621A49DA1800E65899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81BA81631A49DA1800E65899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81BA81651A49DA1800E65899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = R6NAWUBW8J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garrett.qrscan;
+				PRODUCT_NAME = "ParseStarterProject-Swift";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		81BA81661A49DA1800E65899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = R6NAWUBW8J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garrett.qrscan;
+				PRODUCT_NAME = "ParseStarterProject-Swift";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81BA81401A49DA1800E65899 /* Build configuration list for PBXProject "ParseStarterProject-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81BA81621A49DA1800E65899 /* Debug */,
+				81BA81631A49DA1800E65899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81BA81641A49DA1800E65899 /* Build configuration list for PBXNativeTarget "ParseStarterProject-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81BA81651A49DA1800E65899 /* Debug */,
+				81BA81661A49DA1800E65899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81BA813D1A49DA1800E65899 /* Project object */;
+}
