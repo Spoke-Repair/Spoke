@@ -44,13 +44,13 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         messages.removeAll()
         
         let query = PFQuery(className: "OrderMessages")
         
-        query.whereKey("StoreUserID", equalTo: storeOwnerID ).whereKey("userID", equalTo: bikeOwnersList[myIndex])
+        //query.whereKey("StoreUserID", equalTo: storeOwnerID ).whereKey("userID", equalTo: bikeOwnersList[myIndex])
         query.whereKey("bikeID", equalTo: bikeIDList[myIndex])
         query.findObjectsInBackground(block: { (messageObjects: [PFObject]?, error: Error?) in
             if error == nil {

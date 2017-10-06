@@ -9,9 +9,13 @@
 import UIKit
 import Parse
 
+
+var bikeList = [String]()
+var customerBikeIDList = [String]()
+var customerIndex: Int = 0;
+
 class BikeListController: UITableViewController {
 
-    var bikeList = [String]()
     
     @IBAction func addBike(_ sender: Any) {
        // let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -22,7 +26,6 @@ class BikeListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,7 +34,7 @@ class BikeListController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    
+    //was func viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         
         let query = PFQuery(className: "Bike")
@@ -45,8 +48,9 @@ class BikeListController: UITableViewController {
                             print("printing items from parse query")
                             print(object["userID"])
                             print(object["model"])
-                            if(!(self.bikeList.contains(object["model"] as! String))){
-                                self.bikeList.append(object["model"] as! String)
+                            if(!(bikeList.contains(object["model"] as! String))){
+                                bikeList.append(object["model"] as! String)
+                                customerBikeIDList.append(object.objectId!)
                             }
                         }
                         self.tableView.reloadData()
@@ -59,12 +63,9 @@ class BikeListController: UITableViewController {
             })
             
         }
-
-        
-        
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -90,6 +91,11 @@ class BikeListController: UITableViewController {
         // Configure the cell...
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        customerIndex = indexPath.row
+        self.performSegue(withIdentifier: "customerViewBike", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
