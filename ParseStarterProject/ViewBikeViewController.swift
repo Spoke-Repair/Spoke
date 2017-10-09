@@ -14,6 +14,7 @@ class ViewBikeViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var testLabel: UILabel!
     var messages = [String]()
     var messagesType = [String]() //ether employee or customer and corresponds to the message with the same index
+    var messageDates = [String]()
     
     @IBOutlet var messagesTableView: UITableView!
     
@@ -47,6 +48,11 @@ class ViewBikeViewController: UIViewController, UITableViewDelegate, UITableView
                         self.messages.append(txt)
                         self.messagesType.append(messageObect["UserType"] as! String)
                         //print("Found message: "+(messageObect["message"] as! String))
+                        let date = messageObect.createdAt
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "MM/dd/yyyy h:mm a"
+                        let formattedDate = dateFormatter.string(from: date!)
+                        self.messageDates.append(formattedDate)
                         
                     }
                     self.messagesTableView.reloadData()
@@ -65,19 +71,26 @@ class ViewBikeViewController: UIViewController, UITableViewDelegate, UITableView
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "bikeMessagesCustomer")
-        let cell2 = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "bikeMessagesCustomer")
-        //test
-        if self.messagesType[indexPath.row] == "employee"{
-            cell2.textLabel?.text = "Employee test: " + self.messages[indexPath.row]
-            return cell2
+        if messagesType[indexPath.row] == "employee" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customerSideMessageCell", for: indexPath) as! CustomerViewMessageCell
+            
+            cell.messageLabel.text = self.messages[indexPath.row]
+            cell.dateLabel.text = self.messageDates[indexPath.row]
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customerSideCustomerCell", for: indexPath) as! CustomerViewCusMessageCell
+            
+            cell.messageLabel.text = self.messages[indexPath.row]
+            cell.dateLabel.text = self.messageDates[indexPath.row]
+            
+            return cell
         }
         
-        cell.textLabel?.text = "Customer message: " + self.messages[indexPath.row]
-        
-        
-        return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
 

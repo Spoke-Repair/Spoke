@@ -10,9 +10,13 @@ import UIKit
 
 class MessageCell: UITableViewCell {
 
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var messageLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -17,6 +17,9 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet var currentUser: UILabel!
     @IBOutlet var bikeID: UILabel!
     var messages = [String]()
+    var messageDates = [String]()
+    var messageType = [String]()
+    
     @IBOutlet var theTableView: UITableView!
     
     @IBAction func closeButton(_ sender: Any) {
@@ -35,11 +38,15 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         currentUser.text = storeOwnerID as! String
         bikeOwner.text = bikeOwnersList[myIndex]
         bikeID.text = bikeIDList[myIndex]
+        
+        
+        
         // Do any additional setup after loading the view.
        self.theTableView.reloadData()
         
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -57,8 +64,15 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
                 if let messageObjects = messageObjects {
                     for messageObect in messageObjects {
                         let txt = messageObect["message"] as! String
+                        let date = messageObect.createdAt as! Date
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "MM/dd/yyyy h:mm a"
+                        let formattedDate = dateFormatter.string(from: date)
+                        
                         self.messages.append(txt)
-                        print("Found message: "+(messageObect["message"] as! String))
+                        self.messageDates.append(formattedDate)
+                        self.messageType.append(messageObect["UserType"] as! String)
+                        //print("Found message: "+(messageObect["message"] as! String))
                         
                     }
                     self.theTableView.reloadData()
@@ -68,18 +82,33 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
        
         self.theTableView.reloadData()
     }
-
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (self.messages.count)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "messageCell")
         
-        cell.textLabel?.text = self.messages[indexPath.row]
+        if messageType[indexPath.row] == "employee"{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageCell
+            
+            cell.messageLabel.text = self.messages[indexPath.row]
+            cell.dateLabel.text = self.messageDates[indexPath.row]
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customerMessageCell", for: indexPath) as! CustomerMessageCell
+            
+            cell.messageLabel.text = self.messages[indexPath.row]
+            cell.dateLabel.text = self.messageDates[indexPath.row]
+            
+            return cell
+        }
         
-        
-        return cell
     }
     
     func validateField() -> Bool {
