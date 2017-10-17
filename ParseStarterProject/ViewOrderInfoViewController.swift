@@ -64,7 +64,7 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
                 if let messageObjects = messageObjects {
                     for messageObect in messageObjects {
                         let txt = messageObect["message"] as! String
-                        let date = messageObect.createdAt as! Date
+                        let date = messageObect.createdAt!
                         let dateFormatter = DateFormatter()
                         dateFormatter.dateFormat = "MM/dd/yyyy h:mm a"
                         let formattedDate = dateFormatter.string(from: date)

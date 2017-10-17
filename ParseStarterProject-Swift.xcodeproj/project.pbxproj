@@ -26,7 +26,6 @@
 		68A13A811F86FFD90015A6D1 /* ViewBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */; };
 		68A13A831F870A640015A6D1 /* CustomerAddMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */; };
 		68A13A851F8A8F590015A6D1 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A841F8A8F590015A6D1 /* MessageCell.swift */; };
-		68D23FA81F11873100A0D44E /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68D23FA71F11873100A0D44E /* background.jpg */; };
 		68E5D32A1F4B557500EFC857 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D3291F4B557500EFC857 /* SignUpController.swift */; };
 		68E5D32C1F4B6BA300EFC857 /* WorkListValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D32B1F4B6BA300EFC857 /* WorkListValues.swift */; };
 		68E5D3301F4B6C1E00EFC857 /* WorkListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D32F1F4B6C1E00EFC857 /* WorkListObject.swift */; };
@@ -69,7 +68,6 @@
 		68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBikeViewController.swift; sourceTree = "<group>"; };
 		68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerAddMessageVC.swift; sourceTree = "<group>"; };
 		68A13A841F8A8F590015A6D1 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
-		68D23FA71F11873100A0D44E /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../Desktop/background.jpg; sourceTree = "<group>"; };
 		68E5D3291F4B557500EFC857 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		68E5D32B1F4B6BA300EFC857 /* WorkListValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkListValues.swift; sourceTree = "<group>"; };
 		68E5D32F1F4B6C1E00EFC857 /* WorkListObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkListObject.swift; sourceTree = "<group>"; };
@@ -80,6 +78,7 @@
 		68F173F31F8AA872000CC893 /* CustomerMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMessageCell.swift; sourceTree = "<group>"; };
 		68F173F51F8AAF33000CC893 /* CustomerViewMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewMessageCell.swift; sourceTree = "<group>"; };
 		68F173F71F8AB081000CC893 /* CustomerViewCusMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewCusMessageCell.swift; sourceTree = "<group>"; };
+		68F173FB1F8C4BEB000CC893 /* ParseStarterProject-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ParseStarterProject-Swift.entitlements"; sourceTree = "<group>"; };
 		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,7 +119,6 @@
 				68E5D3331F54F0F900EFC857 /* Icons8-Ios7-Transport-Bicycle.ico */,
 				68E5D3391F57B76400EFC857 /* bikeBackground.png */,
 				68E5D3371F55129000EFC857 /* Urabo logo.png */,
-				68D23FA71F11873100A0D44E /* background.jpg */,
 				6832ABA61F3A7FE200D8D49A /* square.png */,
 				814C3AC91B69877600E307BB /* Info.plist */,
 			);
@@ -130,6 +128,7 @@
 		81BA813C1A49DA1800E65899 = {
 			isa = PBXGroup;
 			children = (
+				68F173FB1F8C4BEB000CC893 /* ParseStarterProject-Swift.entitlements */,
 				81BA81471A49DA1800E65899 /* ParseStarterProject */,
 				814C3AC51B69877600E307BB /* Resources */,
 				81BA816A1A49DB5600E65899 /* Frameworks */,
@@ -237,6 +236,11 @@
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = R6NAWUBW8J;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -263,7 +267,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68D23FA81F11873100A0D44E /* background.jpg in Resources */,
 				68E5D3381F55129000EFC857 /* Urabo logo.png in Resources */,
 				68E5D33A1F57B76400EFC857 /* bikeBackground.png in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
@@ -412,6 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "ParseStarterProject-Swift.entitlements";
 				DEVELOPMENT_TEAM = R6NAWUBW8J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -431,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "ParseStarterProject-Swift.entitlements";
 				DEVELOPMENT_TEAM = R6NAWUBW8J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
