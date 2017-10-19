@@ -4,12 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Used From camera scanner</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Can i use the camera?</string>
 	<key>CFBundleDisplayName</key>
-	<string>QR Scanner</string>
+	<string>Urabo</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -33,6 +29,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Can i use the camera?</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Used From camera scanner</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile</key>

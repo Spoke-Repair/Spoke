@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 
+
 //set as global so that we can access these fields in the next view
 
 var bikeDescriptionList = [String]() //contains the work orders description of what needs to be done to the bike
@@ -23,6 +24,7 @@ class OpenOrdersViewController: UIViewController, UITableViewDataSource, UITable
     
     
     @IBOutlet var theTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -81,6 +83,7 @@ class OpenOrdersViewController: UIViewController, UITableViewDataSource, UITable
     }
     override func viewDidAppear(_ animated: Bool) {
         
+        CommonUtils.addFCMTokenToParse()
     
     }
 

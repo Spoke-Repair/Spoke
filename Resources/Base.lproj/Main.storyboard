@@ -342,7 +342,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zpc-rS-xWV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="openOrderCell" id="Dc7-V7-Zbn">
@@ -540,7 +540,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hc9-C3-hpY">
-                                <rect key="frame" x="139" y="539" width="97" height="30"/>
+                                <rect key="frame" x="139" y="490" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Z9v-J4-UJ2"/>
                                     <constraint firstAttribute="width" constant="97" id="gqp-yr-jlE"/>
@@ -561,7 +561,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAw-Er-59W">
-                                <rect key="frame" x="165" y="577" width="44" height="30"/>
+                                <rect key="frame" x="165" y="528" width="44" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Oi7-jJ-3z1"/>
                                     <constraint firstAttribute="height" constant="30" id="PR1-x8-gFX"/>
@@ -666,7 +666,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DMc-fV-Q4D">
-                                <rect key="frame" x="67" y="164" width="240" height="128"/>
+                                <rect key="frame" x="67" y="164" width="240" height="79"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -682,7 +682,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uf-AF-cQf">
-                                <rect key="frame" x="149" y="318" width="81" height="30"/>
+                                <rect key="frame" x="149" y="269" width="81" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3Ko-hX-4OZ"/>
                                     <constraint firstAttribute="width" constant="81" id="seP-rz-wxP"/>
@@ -1589,11 +1589,12 @@
         <image name="square.png" width="276" height="276"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ebf-F7-SY6"/>
         <segue reference="fDc-c8-Fpp"/>
-        <segue reference="UiT-f9-kF3"/>
+        <segue reference="67v-yH-XnU"/>
         <segue reference="XjJ-Yk-v47"/>
         <segue reference="AqR-JP-6ru"/>
-        <segue reference="oxx-ef-PY2"/>
+        <segue reference="hE0-Mi-H1q"/>
         <segue reference="167-wI-gAe"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -32,6 +32,8 @@ class AddMessageFromStoreVC: UIViewController {
                 
                 if error == nil {
                     //go back a controller (ignore return value and surpress warning by assigning value
+                    //send notification
+                    CommonUtils.sendMessageToParseUser(userID: self.bikeOwnerID, message: "You have a new message!")
                     _ = self.navigationController?.popViewController(animated: true)
                 }else{
                     print("Error occured saving Message object from Store User")

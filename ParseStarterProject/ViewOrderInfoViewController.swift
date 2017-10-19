@@ -24,8 +24,10 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBAction func closeButton(_ sender: Any) {
         //var objectID = bikeObjectList[myIndex]
+        //send message to customer
+        CommonUtils.sendMessageToParseUser(userID: bikeOwnersList[myIndex], message: "Your bike is ready for pickup!")
+        //close the order
         
-    
     }
     @IBAction func addMessage(_ sender: Any) {
         self.performSegue(withIdentifier: "addMessageSegue", sender: self)

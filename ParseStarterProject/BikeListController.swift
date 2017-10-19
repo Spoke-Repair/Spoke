@@ -25,7 +25,9 @@ class BikeListController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       //associate user to this device for notification usage
+        CommonUtils.addFCMTokenToParse()
+
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -65,6 +67,9 @@ class BikeListController: UITableViewController {
         }
         
     }
+    
+    //no reason for having this function here other then idk
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
