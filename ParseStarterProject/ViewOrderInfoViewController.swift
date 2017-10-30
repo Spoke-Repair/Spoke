@@ -37,9 +37,10 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         theLabel.text = bikeDescriptionList[myIndex]
         objectLabel.text = workOrderIDList[myIndex]
-        currentUser.text = storeOwnerID as! String
+        currentUser.text = storeOwnerID
         bikeOwner.text = bikeOwnersList[myIndex]
         bikeID.text = bikeIDList[myIndex]
+
         
         
         

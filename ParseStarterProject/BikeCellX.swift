@@ -1,22 +1,20 @@
 //
-//  BikeListCell.swift
+//  BikeCellX.swift
 //  ParseStarterProject-Swift
 //
-//  Created by Garrett Huff on 8/9/17.
+//  Created by Garrett Huff on 10/30/17.
 //  Copyright © 2017 Parse. All rights reserved.
 //
 
 import UIKit
 
-class BikeListCell: UITableViewCell {
+class BikeCellX: UITableViewCell {
 
-    @IBOutlet var theText: UILabel!
-    @IBOutlet var bikePhoto: UIImageView!
-    
+    @IBOutlet var bikeText: UILabel!
+    @IBOutlet var bikeImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,6 +23,4 @@ class BikeListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-   
-
 }

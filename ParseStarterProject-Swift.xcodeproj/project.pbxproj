@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B752A2910E99E583C9E3716 /* Pods_ParseStarterProject_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1423ED643E8A61B53023D7 /* Pods_ParseStarterProject_Swift.framework */; };
+		68068D071FA7D9A8001873C7 /* BikeCellX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68068D051FA7D9A8001873C7 /* BikeCellX.swift */; };
+		68068D081FA7D9A8001873C7 /* BikeCellX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68068D061FA7D9A8001873C7 /* BikeCellX.xib */; };
 		6832ABA31F3A664E00D8D49A /* QRCodeGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABA21F3A664E00D8D49A /* QRCodeGeneratorViewController.swift */; };
 		6832ABA51F3A703300D8D49A /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABA41F3A703300D8D49A /* QRCodeReaderViewController.swift */; };
 		6832ABA71F3A7FE200D8D49A /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 6832ABA61F3A7FE200D8D49A /* square.png */; };
@@ -54,6 +56,8 @@
 /* Begin PBXFileReference section */
 		07745A23F1A3B0A79C38F9E5 /* Pods-ParseStarterProject-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseStarterProject-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParseStarterProject-Swift/Pods-ParseStarterProject-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		1E1423ED643E8A61B53023D7 /* Pods_ParseStarterProject_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParseStarterProject_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68068D051FA7D9A8001873C7 /* BikeCellX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeCellX.swift; sourceTree = "<group>"; };
+		68068D061FA7D9A8001873C7 /* BikeCellX.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeCellX.xib; sourceTree = "<group>"; };
 		6832ABA21F3A664E00D8D49A /* QRCodeGeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeGeneratorViewController.swift; sourceTree = "<group>"; };
 		6832ABA41F3A703300D8D49A /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		6832ABA61F3A7FE200D8D49A /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square.png; path = ../../../Desktop/square.png; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				6832ABA81F3BCABA00D8D49A /* SettingsViewController.swift */,
 				6832ABAA1F3BCCA500D8D49A /* BikeListController.swift */,
 				6832ABAC1F3BCFA400D8D49A /* BikeListCell.swift */,
+				68068D051FA7D9A8001873C7 /* BikeCellX.swift */,
+				68068D061FA7D9A8001873C7 /* BikeCellX.xib */,
 				6832ABAE1F3BDAA000D8D49A /* AddBikeViewController.swift */,
 				6832ABB01F3BEA5F00D8D49A /* DisplayBikeDataViewController.swift */,
 				6832ABB21F3F781200D8D49A /* MessageComposer.swift */,
@@ -293,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68E5D3381F55129000EFC857 /* Urabo logo.png in Resources */,
+				68068D081FA7D9A8001873C7 /* BikeCellX.xib in Resources */,
 				68E5D33A1F57B76400EFC857 /* bikeBackground.png in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
 				6832ABA71F3A7FE200D8D49A /* square.png in Resources */,
@@ -380,6 +387,7 @@
 				68A13A831F870A640015A6D1 /* CustomerAddMessageVC.swift in Sources */,
 				68E5D3301F4B6C1E00EFC857 /* WorkListObject.swift in Sources */,
 				6832ABB71F4119CE00D8D49A /* FoundBikeViewController.swift in Sources */,
+				68068D071FA7D9A8001873C7 /* BikeCellX.swift in Sources */,
 				6832ABAB1F3BCCA500D8D49A /* BikeListController.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				68F173F81F8AB081000CC893 /* CustomerViewCusMessageCell.swift in Sources */,
