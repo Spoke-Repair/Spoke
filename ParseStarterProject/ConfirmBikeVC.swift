@@ -52,7 +52,7 @@ class ConfirmBikeVC: UIViewController {
                     object["size"] = self.type
                     object.saveInBackground(block: { (success:Bool, error: Error?) in
                         if(success){
-                            self.performSegue(withIdentifier: "backToBikeListSegue", sender: self)
+                            self.performSegue(withIdentifier: "unwindToBeggining", sender: self)
                         }
                     })
                 }
@@ -60,12 +60,11 @@ class ConfirmBikeVC: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "backToBikeListSegue" {
-            let navVC = segue.destination as? UINavigationController
-            let vc = navVC?.viewControllers.first as! BikeListController
-
-        }
+    
+    @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
+        
+        //code
+        
     }
 
     /*

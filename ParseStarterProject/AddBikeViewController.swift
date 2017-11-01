@@ -62,7 +62,7 @@ class AddBikeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
@@ -75,7 +75,6 @@ class AddBikeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "scanQRSegue" {
-            print("HAHAHAHHA")
             if makeLabel.text != nil && modelLabel.text != nil && idLabel.text != nil {
                 if let addBikeVC = segue.destination as? AddBikeScannerVC {
                     addBikeVC.make = makeLabel.text

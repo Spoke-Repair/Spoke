@@ -5,12 +5,11 @@
 //  Created by Garrett Huff on 8/8/17.
 //  Copyright © 2017 Parse. All rights reserved.
 //
-
 import UIKit
 import AVFoundation
 
 class QRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-
+    /*
     @IBOutlet weak var square: UIImageView!
     var video = AVCaptureVideoPreviewLayer()
     var userID: String? = nil
@@ -19,7 +18,7 @@ class QRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjec
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       
+        
         //Creating session
         let session = AVCaptureSession()
         
@@ -38,21 +37,21 @@ class QRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjec
         
         let output = AVCaptureMetadataOutput()
         session.addOutput(output)
-
+        
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         
         output.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
-
+        
         video = AVCaptureVideoPreviewLayer(session: session)
-
+        
         video.frame = view.layer.bounds
-
+        
         view.layer.addSublayer(video)
         
         self.view.bringSubview(toFront: square)
         
         session.startRunning()
- 
+        
     }
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
@@ -67,7 +66,7 @@ class QRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjec
                     //let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
                     //alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
                     //alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
-                      //  UIPasteboard.general.string = object.stringValue
+                    //  UIPasteboard.general.string = object.stringValue
                     //}))
                     
                     //present(alert, animated: true, completion: nil)
@@ -93,18 +92,18 @@ class QRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjec
         if segue.identifier == "foundBikeSegue"{
             print("Im in prepare segue (found bike) and my ID is: "+userID!)
             /*
-            if let openBikeVC = segue.destination as? FoundBikeViewController {
-                openBikeVC.userId = userID
-            }*/
+             if let openBikeVC = segue.destination as? FoundBikeViewController {
+             openBikeVC.userId = userID
+             }*/
             
             let navVC = segue.destination as? UINavigationController
             let vc = navVC?.viewControllers.first as! FoundBikeViewController
             vc.userId = userID
         }
         
-       
+        
     }
     
-
-
+    */
+    
 }

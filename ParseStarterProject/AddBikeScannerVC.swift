@@ -30,11 +30,11 @@ class AddBikeScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         let session = AVCaptureSession()
         
         //Define capture devcie
-        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
         
         do
         {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
+            let input = try AVCaptureDeviceInput(device: captureDevice!)
             session.addInput(input)
         }
         catch
@@ -47,7 +47,7 @@ class AddBikeScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         
-        output.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
+        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
         
         video = AVCaptureVideoPreviewLayer(session: session)
         
@@ -61,13 +61,13 @@ class AddBikeScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         
     }
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
         if metadataObjects != nil && metadataObjects.count != 0
         {
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
             {
-                if object.type == AVMetadataObjectTypeQRCode
+                if object.type == AVMetadataObject.ObjectType.qr
                 {
                     bikeID = object.stringValue
                     //let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)

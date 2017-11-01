@@ -39,7 +39,7 @@ class QRCodeGeneratorViewController: UIViewController {
                 //let img = UIImage(ciImage: (filter?.outputImage)!)
                 //myImageView.image = img
                 
-                if let output = filter?.outputImage?.applying(transform){
+                if let output = filter?.outputImage?.transformed(by: transform){
                     let img = UIImage(ciImage: output)
                     self.myImageView.image = img
                     
