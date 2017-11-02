@@ -83,8 +83,9 @@ class AddBikeViewController: UIViewController {
                 }
             }
         }else if segue.identifier == "backToMyBikes" {
-            let navVC = segue.destination as? UINavigationController
-            let vc = navVC?.viewControllers.first as! BikeListController
+           // let navVC = segue.destination as? UINavigationController
+            //let vc = navVC?.viewControllers.first as! BikeListController
+        _ = self.navigationController?.popViewController(animated: true)
         }
     }
     

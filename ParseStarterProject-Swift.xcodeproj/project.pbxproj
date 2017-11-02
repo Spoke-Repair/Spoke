@@ -83,7 +83,7 @@
 		68E5D32B1F4B6BA300EFC857 /* WorkListValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkListValues.swift; sourceTree = "<group>"; };
 		68E5D32F1F4B6C1E00EFC857 /* WorkListObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkListObject.swift; sourceTree = "<group>"; };
 		68E5D3311F4B721C00EFC857 /* AvailableServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableServiceCell.swift; sourceTree = "<group>"; };
-		68E5D3331F54F0F900EFC857 /* Icons8-Ios7-Transport-Bicycle.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = "Icons8-Ios7-Transport-Bicycle.ico"; path = "../../Icons8-Ios7-Transport-Bicycle.ico"; sourceTree = "<group>"; };
+		68E5D3331F54F0F900EFC857 /* Icons8-Ios7-Transport-Bicycle.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = "Icons8-Ios7-Transport-Bicycle.ico"; path = "/Users/Garrett/Downloads/ParseServerStarterProject/Resources/../../Icons8-Ios7-Transport-Bicycle.ico"; sourceTree = "<absolute>"; };
 		68E5D3371F55129000EFC857 /* Urabo logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Urabo logo.png"; path = "../../Urabo logo.png"; sourceTree = "<group>"; };
 		68E5D3391F57B76400EFC857 /* bikeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bikeBackground.png; path = "../../../Pictures/Photo Editor Lite Movavi/bikeBackground.png"; sourceTree = "<group>"; };
 		68F173F31F8AA872000CC893 /* CustomerMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMessageCell.swift; sourceTree = "<group>"; };
