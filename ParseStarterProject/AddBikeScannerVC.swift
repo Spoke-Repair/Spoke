@@ -79,7 +79,7 @@ class AddBikeScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate
                     //present(alert, animated: true, completion: nil)
                     if(segueFlag == 0){
                         segueFlag = 1
-                        self.performSegue(withIdentifier: "confirmBike", sender: self)
+                        self.performSegue(withIdentifier: "takePhotoSegue", sender: self)
                         
                     }
                     //let vc = FoundBikeViewController()
@@ -96,14 +96,14 @@ class AddBikeScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "confirmBike"{
+        if segue.identifier == "takePhotoSegue"{
             
-             if let confirmBikeVC = segue.destination as? ConfirmBikeVC {
-                confirmBikeVC.userId = PFUser.current()?.objectId
-                confirmBikeVC.bikeId = bikeID
-                confirmBikeVC.make = make
-                confirmBikeVC.model = model
-                confirmBikeVC.type = type
+             if let photoBikeVC = segue.destination as? PhotoOfBikeController {
+                photoBikeVC.userId = PFUser.current()?.objectId
+                photoBikeVC.bikeId = bikeID
+                photoBikeVC.make = make
+                photoBikeVC.model = model
+                photoBikeVC.type = type
                 
              }
             

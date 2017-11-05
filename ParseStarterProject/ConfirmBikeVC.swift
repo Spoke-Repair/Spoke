@@ -16,16 +16,21 @@ class ConfirmBikeVC: UIViewController {
     var make: String? = nil
     var model: String? = nil
     var type: String? = nil
-    
+    var pictureOfBike: UIImage?
+
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var modelLabel: UILabel!
     @IBOutlet var makeLabel: UILabel!
     @IBOutlet var bikeIDLabel: UILabel!
+    @IBOutlet var theImageView: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +42,7 @@ class ConfirmBikeVC: UIViewController {
         self.makeLabel.text = make
         self.modelLabel.text = model
         self.typeLabel.text = type
+        self.theImageView.image = pictureOfBike
     }
     
     @IBAction func confirmBike(_ sender: Any) {
@@ -50,9 +56,12 @@ class ConfirmBikeVC: UIViewController {
                     object["userID"] = self.userId
                     object["make"] = self.make
                     object["size"] = self.type
+                    let imageData = UIImageJPEGRepresentation(self.pictureOfBike!, 0.1)
+                    let pimageFile = PFFile(data: imageData!)
+                    object["picture"] = pimageFile
                     object.saveInBackground(block: { (success:Bool, error: Error?) in
                         if(success){
-                            self.performSegue(withIdentifier: "unwindToBeggining", sender: self)
+                            self.performSegue(withIdentifier: "bkSegue", sender: self)
                         }
                     })
                 }

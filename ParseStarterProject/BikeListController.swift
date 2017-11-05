@@ -57,6 +57,8 @@ class BikeListController: UITableViewController {
                                 bikeList.append(object["model"] as! String)
                                 customerBikeIDList.append(object.objectId!)
                             }
+                            
+                            
                         }
                         self.tableView.reloadData()
 
@@ -99,6 +101,7 @@ class BikeListController: UITableViewController {
         let cell = Bundle.main.loadNibNamed("BikeCellX", owner: self, options: nil)?.first as! BikeCellX
         
         cell.bikeText.text = bikeList[indexPath.row]
+        
         // Configure the cell...
         
         return cell

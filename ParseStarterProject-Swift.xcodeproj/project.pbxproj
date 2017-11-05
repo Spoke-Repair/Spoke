@@ -27,6 +27,7 @@
 		6832ABBF1F4526D300D8D49A /* ConfirmBikeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */; };
 		687F93161F96D95E00253E00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 687F93151F96D7B000253E00 /* GoogleService-Info.plist */; };
 		687F93181F96DCDB00253E00 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F93171F96DCDB00253E00 /* CommonUtils.swift */; };
+		689B8AB11FAF988200EE395D /* PhotoOfBikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */; };
 		689EF6521F85AD73008066C6 /* AddMessageFromStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EF6511F85AD73008066C6 /* AddMessageFromStoreVC.swift */; };
 		68A13A811F86FFD90015A6D1 /* ViewBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */; };
 		68A13A831F870A640015A6D1 /* CustomerAddMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */; };
@@ -75,6 +76,7 @@
 		6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmBikeVC.swift; sourceTree = "<group>"; };
 		687F93151F96D7B000253E00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		687F93171F96DCDB00253E00 /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
+		689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfBikeController.swift; sourceTree = "<group>"; };
 		689EF6511F85AD73008066C6 /* AddMessageFromStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageFromStoreVC.swift; sourceTree = "<group>"; };
 		68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBikeViewController.swift; sourceTree = "<group>"; };
 		68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerAddMessageVC.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				68E5D3311F4B721C00EFC857 /* AvailableServiceCell.swift */,
 				68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */,
 				687F93171F96DCDB00253E00 /* CommonUtils.swift */,
+				689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				6832ABAF1F3BDAA000D8D49A /* AddBikeViewController.swift in Sources */,
 				68A13A831F870A640015A6D1 /* CustomerAddMessageVC.swift in Sources */,
 				68E5D3301F4B6C1E00EFC857 /* WorkListObject.swift in Sources */,
+				689B8AB11FAF988200EE395D /* PhotoOfBikeController.swift in Sources */,
 				6832ABB71F4119CE00D8D49A /* FoundBikeViewController.swift in Sources */,
 				68068D071FA7D9A8001873C7 /* BikeCellX.swift in Sources */,
 				6832ABAB1F3BCCA500D8D49A /* BikeListController.swift in Sources */,
