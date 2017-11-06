@@ -19,7 +19,9 @@ class AddBikeViewController: UIViewController {
     
     @IBAction func cancelButtonClicked(_ sender: Any) {
     //go to backToMyBikes segue
+        //better way to do this animated??
         self.performSegue(withIdentifier: "backToMyBikes", sender: self)
+        self.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func goToScanner(_ sender: Any) {
@@ -85,7 +87,8 @@ class AddBikeViewController: UIViewController {
         }else if segue.identifier == "backToMyBikes" {
            // let navVC = segue.destination as? UINavigationController
             //let vc = navVC?.viewControllers.first as! BikeListController
-        _ = self.navigationController?.popViewController(animated: true)
+        //_ = self.navigationController?.popViewController(animated: true)
+        
         }
     }
     
