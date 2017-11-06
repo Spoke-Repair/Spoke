@@ -61,6 +61,7 @@ class ConfirmBikeVC: UIViewController {
                     object["picture"] = pimageFile
                     object.saveInBackground(block: { (success:Bool, error: Error?) in
                         if(success){
+                            self.navigationController?.popToRootViewController(animated: false)
                             self.performSegue(withIdentifier: "bkSegue", sender: self)
                         }
                     })
