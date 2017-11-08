@@ -39,7 +39,7 @@ class ViewBikeViewController: UIViewController, UITableViewDelegate, UITableView
         messagesType.removeAll()
         let query = PFQuery(className: "OrderMessages")
         
-        query.whereKey("bikeID", equalTo: customerBikeIDList[customerIndex])
+        query.whereKey("bikeID", equalTo: bikeObjectList[customerIndex].bikeId)
         query.findObjectsInBackground(block: { (messageObjects: [PFObject]?, error: Error?) in
             if error == nil {
                 if let messageObjects = messageObjects {

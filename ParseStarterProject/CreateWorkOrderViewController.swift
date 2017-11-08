@@ -20,7 +20,7 @@ class CreateWorkOrderViewController: UIViewController, UITableViewDelegate, UITa
     @IBAction func submitOrder(_ sender: Any) {
         print("THe bike ID: " + bikeID!)
                //new object here
-        var newOrder = PFObject(className: "WorkOrders")
+        let newOrder = PFObject(className: "WorkOrders")
         newOrder["bikeID"] = bikeID
         newOrder["description"] = issueDescription.text
         newOrder["dueDate"] = dueDate.text
@@ -59,7 +59,7 @@ class CreateWorkOrderViewController: UIViewController, UITableViewDelegate, UITa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToOrders" {
             let navVC = segue.destination as? UINavigationController
-            let vc = navVC?.viewControllers.first as! OpenOrdersViewController
+            _ = navVC?.viewControllers.first as! OpenOrdersViewController
         }
     }
     

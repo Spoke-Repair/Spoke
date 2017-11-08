@@ -27,6 +27,7 @@
 		6832ABBF1F4526D300D8D49A /* ConfirmBikeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */; };
 		687F93161F96D95E00253E00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 687F93151F96D7B000253E00 /* GoogleService-Info.plist */; };
 		687F93181F96DCDB00253E00 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F93171F96DCDB00253E00 /* CommonUtils.swift */; };
+		6892573B1FB133530039B40F /* BikeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6892573A1FB133530039B40F /* BikeObject.swift */; };
 		689B8AB11FAF988200EE395D /* PhotoOfBikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */; };
 		689EF6521F85AD73008066C6 /* AddMessageFromStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EF6511F85AD73008066C6 /* AddMessageFromStoreVC.swift */; };
 		68A13A811F86FFD90015A6D1 /* ViewBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */; };
@@ -76,6 +77,7 @@
 		6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmBikeVC.swift; sourceTree = "<group>"; };
 		687F93151F96D7B000253E00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		687F93171F96DCDB00253E00 /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
+		6892573A1FB133530039B40F /* BikeObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeObject.swift; sourceTree = "<group>"; };
 		689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfBikeController.swift; sourceTree = "<group>"; };
 		689EF6511F85AD73008066C6 /* AddMessageFromStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageFromStoreVC.swift; sourceTree = "<group>"; };
 		68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBikeViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */,
 				687F93171F96DCDB00253E00 /* CommonUtils.swift */,
 				689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */,
+				6892573A1FB133530039B40F /* BikeObject.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				68F173F81F8AB081000CC893 /* CustomerViewCusMessageCell.swift in Sources */,
 				68E5D32A1F4B557500EFC857 /* SignUpController.swift in Sources */,
+				6892573B1FB133530039B40F /* BikeObject.swift in Sources */,
 				6832ABB11F3BEA5F00D8D49A /* DisplayBikeDataViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 				68F173F61F8AAF33000CC893 /* CustomerViewMessageCell.swift in Sources */,

@@ -14,6 +14,9 @@ var bikeList = [String]()
 var customerBikeIDList = [String]()
 var customerIndex: Int = 0;
 
+var bikeObjectList = [BikeObject]()
+
+
 class BikeListController: UITableViewController {
 
 
@@ -40,7 +43,7 @@ class BikeListController: UITableViewController {
     
     //was func viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
-        
+        bikeObjectList.removeAll()
         
         let query = PFQuery(className: "Bike")
         if let userID = PFUser.current()?.objectId {
@@ -50,13 +53,38 @@ class BikeListController: UITableViewController {
                 if error == nil {
                     if let objects = objects {
                         for object in objects {
-                            print("printing items from parse query")
-                            print(object["userID"])
-                            print(object["model"])
-                            if(!(bikeList.contains(object["model"] as! String))){
-                                bikeList.append(object["model"] as! String)
-                                customerBikeIDList.append(object.objectId!)
+                            //print("printing items from parse query")
+                            //print(object["userID"])
+                            //print(object["model"])
+                            let make = object["make"] as! String
+                            let model = object["model"] as! String
+                            let isOwned = object["isOwned"] as! Bool
+                            let size = object["size"] as! String
+                            let userId = object["userID"] as! String
+                            let bikeId = object.objectId!
+                            let bikeToAdd: BikeObject = BikeObject(make: make, model: model, size: size, isOwned: isOwned, userId: userId, bikeId: bikeId)
+                            
+
+                            if let picture = object["picture"] {
+                                let pImage = picture as! PFFile
+                                pImage.getDataInBackground(block: { (data: Data?, error: Error?) in
+                                    if let imageToSet = UIImage(data: data!) {
+                                        bikeToAdd.picture = imageToSet
+                                        print("Got image")
+                                        self.tableView.reloadData()
+                                    }
+                                    
+                                })
+                            
                             }
+                            /*
+                            if(!(bikeList.contains(object["model"] as! String))){
+                                //bikeList.append(object["model"] as! String)
+                                //customerBikeIDList.append(object.objectId!)
+                            }*/
+                            
+                                bikeObjectList.append(bikeToAdd)
+                                print("ADDED BIKE TO LIST")
                             
                             
                         }
@@ -91,7 +119,7 @@ class BikeListController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (bikeList.count)
+        return (bikeObjectList.count)
     }
 
     
@@ -100,10 +128,12 @@ class BikeListController: UITableViewController {
         //let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BikeListCell
         let cell = Bundle.main.loadNibNamed("BikeCellX", owner: self, options: nil)?.first as! BikeCellX
         
-        cell.bikeText.text = bikeList[indexPath.row]
-        
+        //cell.bikeText.text = bikeList[indexPath.row]
+        cell.bikeText.text = bikeObjectList[indexPath.row].make
         // Configure the cell...
-        
+       if(bikeObjectList[indexPath.row].doesPictureExist()){
+            cell.bikeImage.image = bikeObjectList[indexPath.row].picture
+        }
         return cell
     }
     
