@@ -13,6 +13,8 @@ import Parse
 var bikeList = [String]()
 var customerBikeIDList = [String]()
 var customerIndex: Int = 0;
+var indicator = UIActivityIndicatorView()
+
 
 var bikeObjectList = [BikeObject]()
 
@@ -28,10 +30,18 @@ class BikeListController: UITableViewController {
     }
     
     
+    func activityIndicator() {
+        indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        //associate user to this device for notification usage
         CommonUtils.addFCMTokenToParse()
+        activityIndicator()
 
         
         // Uncomment the following line to preserve selection between presentations
@@ -43,6 +53,12 @@ class BikeListController: UITableViewController {
     
     //was func viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
+        
+        indicator.startAnimating()
+        indicator.backgroundColor = UIColor.white
+        //disable touch while the tableview is loading
+        self.view.isUserInteractionEnabled = false
+        
         bikeObjectList.removeAll()
         
         let query = PFQuery(className: "Bike")
@@ -89,6 +105,9 @@ class BikeListController: UITableViewController {
                             
                         }
                         self.tableView.reloadData()
+                        self.view.isUserInteractionEnabled = true
+                        indicator.stopAnimating()
+                        indicator.hidesWhenStopped = true
 
                     }
                 }else {
