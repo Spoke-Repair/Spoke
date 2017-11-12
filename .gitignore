@@ -1,0 +1,12 @@
+#Suggestions come from https://stackoverflow.com/questions/49478/git-ignore-file-for-xcode-projects
+#and https://github.com/github/gitignore/blob/master/Swift.gitignore 
+
+#Finder metadata for Mac
+.DS_Store
+
+#Created by vim during editing as a backup
+*.swp
+
+#Personal settings used by Xcode
+xcuserdata/
+
