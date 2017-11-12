@@ -13,6 +13,8 @@ class SettingsViewController: UIViewController {
 
     @IBAction func logoutButton(_ sender: Any) {
        
+        
+        
         PFUser.logOut()
         self.performSegue(withIdentifier: "logoutSegue", sender: self)
     
