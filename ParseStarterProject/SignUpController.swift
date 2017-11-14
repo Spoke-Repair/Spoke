@@ -11,69 +11,84 @@ import Parse
 
 class SignUpController: UIViewController {
 
-    @IBOutlet var passwordText: UITextField!
-    @IBOutlet var emailText: UITextField!
-    @IBOutlet var lastNameText: UITextField!
-    @IBOutlet var firstNameText: UITextField!
+    @IBOutlet weak var prompt: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var input: UITextField!
+
+    private var loginErrorMsg: String?
+    private var currentPage = 0
+    private let prompts = ["What's your email address?", "Whats your first name?", "Whats your last name?", "What's your password?"]
+    private var userInfo: [String?] = [nil, nil, nil, nil]
     
+    @IBAction func proceed(_ sender: UIButton) {
+        guard let userInput = input.text?.trimmingCharacters(in: .whitespacesAndNewlines), userInput.count > 0 && currentPage < prompts.count else {
+            errorLabel.isHidden = false
+            return
+        }
+        errorLabel.isHidden = true
+        userInfo[currentPage] = userInput
+        input.text = ""
+        currentPage += 1
+        if currentPage == userInfo.count {
+            signUp(userInfo[0]!, userInfo[1]!, userInfo[2]!, userInfo[3]!)
+            return
+        }
+        else if currentPage == userInfo.count - 1 {
+            sender.setTitle("Submit", for: .normal)
+        }
+        prompt.text = prompts[currentPage]
+    }
+    
+    private func signUp(_ email: String, _ first: String, _ last: String, _ pass: String) {
+        let user = PFUser()
+        user.username = email
+        user.password = pass
+        user["firstname"] = first
+        user["lastname"] = last
+        user["type"] = "customer"
+        user.signUpInBackground() { (success, error) in
+            if error != nil {
+                print("Failed to create account \(email)")
+                self.loginErrorMsg = error?.localizedDescription
+                self.performSegue(withIdentifier: "backToLoginScreen", sender: self)
+                return
+            }
+            print("Created account \(email)")
+            user.saveInBackground(block: { (success: Bool, error: Error?) in
+                if(success){
+                    self.performSegue(withIdentifier: "signUpActivated", sender: self)
+                    
+                }
+            })
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let loginVC = segue.destination as? ViewController, let errMsg = loginErrorMsg else { return }
+        loginVC.errMsgStr = errMsg + ": " + (userInfo[0] ?? "")
+    }
+
     @IBAction func cancelSignUpButton(_ sender: Any) {
         self.performSegue(withIdentifier: "backToLoginScreen", sender: self)
     }
-    
-    @IBAction func signUpButton(_ sender: Any) {
-        let user = PFUser()
-        user.username = self.emailText.text
-        user.password = self.passwordText.text
-        if self.emailText.text != nil && self.passwordText.text != nil && self.firstNameText != nil && self.lastNameText != nil {
-            user.signUpInBackground { (success, error) in
-                
-                if error != nil {
-                    
-                    print("Sign up failed")
-                    
-                } else {
-                    print("signed up")
-                    user["type"] = "customer"
-                    user["firstname"] = self.firstNameText.text
-                    user["lastname"] = self.lastNameText.text
-                    user.saveInBackground(block: { (success: Bool, error: Error?) in
-                        if(success){
-                            self.performSegue(withIdentifier: "signUpActivated", sender: self)
 
-                        }
-                    })
-                }
-                
-            }
-        }
-
-    
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddBikeViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
+
+        prompt.text = prompts[currentPage]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

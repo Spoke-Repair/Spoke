@@ -13,7 +13,11 @@ import Parse
 class ViewController: UIViewController {
     
     var signupMode = true
+
+    //Used to store error message coming from account creation segue
+    var errMsgStr: String?
     
+    @IBOutlet var errorMsg: UILabel!
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var signUpButton: UIButton!
@@ -24,7 +28,8 @@ class ViewController: UIViewController {
                 
                 if error != nil {
                     
-                    print("login failed")
+                    self.errorMsg.text = error?.localizedDescription
+                    self.errorMsg.isHidden = false
                 
                 } else {
                     
@@ -59,6 +64,10 @@ class ViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        if let str = errMsgStr {
+            errorMsg.text = str
+            errorMsg.isHidden = false
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
