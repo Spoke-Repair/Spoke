@@ -30,6 +30,7 @@ class ViewController: UIViewController {
                     
                     self.errorMsg.text = error?.localizedDescription
                     self.errorMsg.isHidden = false
+                    CommonUtils.popUpAlert(message: "Your password is incorrect", sender: self)
                 
                 } else {
                     
@@ -44,13 +45,14 @@ class ViewController: UIViewController {
                         //segue to customer storyboard
                         print("logging in as customer")
                         self.performSegue(withIdentifier: "login", sender: self)
+                        
                     }
                 }
             
             })
         
             
-            
+        
     }
     
     @IBAction func changeMode(_ sender: Any) {

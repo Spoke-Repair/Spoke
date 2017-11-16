@@ -75,6 +75,19 @@ class SignUpController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prompt.text = prompts[currentPage]
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        prompt.center.x -= view.bounds.width
+        // animate it from the left to the right
+        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+            self.prompt.center.x += self.view.bounds.width
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
