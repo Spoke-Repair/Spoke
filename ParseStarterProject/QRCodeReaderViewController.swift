@@ -24,9 +24,7 @@ class QRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjec
         
         //Define capture devcie
         guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else {
-            let alert = UIAlertController(title: "Device Error", message: "Unable to access camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            CommonUtils.popUpAlert(message: "Unable to access camera", sender: self)
             return
         }
 

@@ -102,9 +102,8 @@ class CommonUtils {
         
     }
     
-    static func popUpAlert(message: String, sender: ViewController ) {
-        
-        let alertController = UIAlertController(title: "Oh no!", message: message, preferredStyle: .alert)
+    static func popUpAlert(message: String, sender: UIViewController) {
+        let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
         sender.present(alertController, animated: true, completion: nil)
         
