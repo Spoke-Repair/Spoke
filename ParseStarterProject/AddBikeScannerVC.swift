@@ -30,11 +30,16 @@ class AddBikeScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         let session = AVCaptureSession()
         
         //Define capture devcie
-        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
+        guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else {
+            let alert = UIAlertController(title: "Device Error", message: "Unable to access camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         
         do
         {
-            let input = try AVCaptureDeviceInput(device: captureDevice!)
+            let input = try AVCaptureDeviceInput(device: captureDevice)
             session.addInput(input)
         }
         catch
