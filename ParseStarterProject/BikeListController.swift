@@ -93,16 +93,12 @@ class BikeListController: UITableViewController {
                                 })
                             
                             }
-                            /*
                             if(!(bikeList.contains(object["model"] as! String))){
-                                //bikeList.append(object["model"] as! String)
-                                //customerBikeIDList.append(object.objectId!)
-                            }*/
-                            
-                                bikeObjectList.append(bikeToAdd)
-                                print("ADDED BIKE TO LIST")
-                            
-                            
+                                bikeList.append(object["model"] as! String)
+                                customerBikeIDList.append(object.objectId!)
+                            }
+                            bikeObjectList.append(bikeToAdd)
+                            print("ADDED BIKE TO LIST")
                         }
                         self.tableView.reloadData()
                         self.view.isUserInteractionEnabled = true
