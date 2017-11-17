@@ -32,6 +32,7 @@
 		68A13A811F86FFD90015A6D1 /* ViewBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */; };
 		68A13A831F870A640015A6D1 /* CustomerAddMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */; };
 		68A13A851F8A8F590015A6D1 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A841F8A8F590015A6D1 /* MessageCell.swift */; };
+		68D4A8171FBE60FA004EF5CA /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68D4A8161FBE60EF004EF5CA /* Lato-Regular.ttf */; };
 		68E5D32A1F4B557500EFC857 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D3291F4B557500EFC857 /* SignUpController.swift */; };
 		68E5D32C1F4B6BA300EFC857 /* WorkListValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D32B1F4B6BA300EFC857 /* WorkListValues.swift */; };
 		68E5D3301F4B6C1E00EFC857 /* WorkListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D32F1F4B6C1E00EFC857 /* WorkListObject.swift */; };
@@ -82,6 +83,7 @@
 		68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBikeViewController.swift; sourceTree = "<group>"; };
 		68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerAddMessageVC.swift; sourceTree = "<group>"; };
 		68A13A841F8A8F590015A6D1 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		68D4A8161FBE60EF004EF5CA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		68E5D3291F4B557500EFC857 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		68E5D32B1F4B6BA300EFC857 /* WorkListValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkListValues.swift; sourceTree = "<group>"; };
 		68E5D32F1F4B6C1E00EFC857 /* WorkListObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkListObject.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		81BA81471A49DA1800E65899 /* ParseStarterProject */ = {
 			isa = PBXGroup;
 			children = (
+				68D4A8161FBE60EF004EF5CA /* Lato-Regular.ttf */,
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
@@ -308,6 +311,7 @@
 				C2DB56471FB8C30400F6224D /* Urabo logo.png in Resources */,
 				C2DB56451FB8C2F600F6224D /* bikeBackground.png in Resources */,
 				C2DB56431FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico in Resources */,
+				68D4A8171FBE60FA004EF5CA /* Lato-Regular.ttf in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
 				C2DB56491FB8C30B00F6224D /* square.png in Resources */,

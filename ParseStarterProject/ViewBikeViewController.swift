@@ -11,10 +11,13 @@ import Parse
 
 class ViewBikeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var bikePicture: UIImageView!
+    @IBOutlet var modelLabel: UILabel!
     @IBOutlet var testLabel: UILabel!
     var messages = [String]()
     var messagesType = [String]() //ether employee or customer and corresponds to the message with the same index
     var messageDates = [String]()
+    @IBOutlet var makeLabel: UILabel!
     
     @IBOutlet var messagesTableView: UITableView!
     
@@ -24,7 +27,9 @@ class ViewBikeViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.bikePicture.layer.cornerRadius = self.bikePicture.frame.size.width / 2
+        self.bikePicture.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
 
@@ -35,6 +40,20 @@ class ViewBikeViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         //testLabel.text = customerBikeIDList[customerIndex]
+        self.makeLabel.text = bikeObjectList[customerIndex].make
+        self.modelLabel.text = bikeObjectList[customerIndex].model
+        
+        if bikeObjectList[customerIndex].doesPictureExist() {
+            if let picture = bikeObjectList[customerIndex].picture {
+                self.bikePicture.image = picture
+            }
+                
+            
+            
+        }
+        
+        
+        
         messages.removeAll()
         messagesType.removeAll()
         let query = PFQuery(className: "OrderMessages")
