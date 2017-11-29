@@ -17,8 +17,8 @@ class SignUpController: UIViewController {
 
     private var loginErrorMsg: String?
     private var currentPage = 0
-    private let prompts = ["What's your email address?", "Whats your first name?", "Whats your last name?", "What's your password?"]
-    private var userInfo: [String?] = [nil, nil, nil, nil]
+    private let prompts = ["What's your email address?", "Whats your first name?", "Whats your last name?", "What's your password?", "Re-enter your password"]
+    private var userInfo: [String?] = [nil, nil, nil, nil, nil]
     
     @IBAction func proceed(_ sender: UIButton) {
         guard let userInput = input.text?.trimmingCharacters(in: .whitespacesAndNewlines), userInput.count > 0 && currentPage < prompts.count else {
@@ -29,16 +29,36 @@ class SignUpController: UIViewController {
         userInfo[currentPage] = userInput
         input.text = ""
         currentPage += 1
-        if currentPage == userInfo.count {
+        if currentPage == prompts.count {
+
+            //Ensure that user typed password correctly
+            guard userInfo[3] == userInfo[4] else {
+                self.loginErrorMsg = "Failed - passwords must match for user"
+                self.performSegue(withIdentifier: "backToLoginScreen", sender: self)
+                return
+            }
+
             signUp(userInfo[0]!, userInfo[1]!, userInfo[2]!, userInfo[3]!)
             return
         }
-        else if currentPage == userInfo.count - 1 {
+        else if currentPage == prompts.count - 1 {
             sender.setTitle("Submit", for: .normal)
         }
-        prompt.text = prompts[currentPage]
+
+        sender.isEnabled = false
+        UIView.animate(withDuration: 0.25, animations: {
+            self.prompt.alpha = 0.0
+        }, completion: {(true) in
+            self.prompt.center.x -= self.view.bounds.width
+            self.prompt.alpha = 1.0
+            self.prompt.text = self.prompts[self.currentPage]
+            UIView.animate(withDuration: 0.25, animations: {
+                self.view.layoutIfNeeded()
+                sender.isEnabled = true
+            })
+        })
     }
-    
+
     private func signUp(_ email: String, _ first: String, _ last: String, _ pass: String) {
         let user = PFUser()
         user.username = email
@@ -57,14 +77,13 @@ class SignUpController: UIViewController {
             user.saveInBackground(block: { (success: Bool, error: Error?) in
                 if(success){
                     self.performSegue(withIdentifier: "signUpActivated", sender: self)
-                    
                 }
             })
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let loginVC = segue.destination as? ViewController, let errMsg = loginErrorMsg else { return }
+        guard let loginVC = segue.destination as? ViewController, let errMsg = self.loginErrorMsg else { return }
         loginVC.errMsgStr = errMsg + ": " + (userInfo[0] ?? "")
     }
 
@@ -74,20 +93,7 @@ class SignUpController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        prompt.text = prompts[currentPage]
-
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        prompt.center.x -= view.bounds.width
-        // animate it from the left to the right
-        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
-            self.prompt.center.x += self.view.bounds.width
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-        
+        self.prompt.text = self.prompts[self.currentPage]
     }
 
     override func didReceiveMemoryWarning() {
