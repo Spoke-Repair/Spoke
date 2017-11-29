@@ -40,6 +40,7 @@ class ViewBikeViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         //testLabel.text = customerBikeIDList[customerIndex]
+        print("PRINTING CUSTOMER INDEX: \(customerIndex)")
         self.makeLabel.text = bikeObjectList[customerIndex].make
         self.modelLabel.text = bikeObjectList[customerIndex].model
         

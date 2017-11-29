@@ -33,6 +33,7 @@
 		68A13A831F870A640015A6D1 /* CustomerAddMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */; };
 		68A13A851F8A8F590015A6D1 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A841F8A8F590015A6D1 /* MessageCell.swift */; };
 		68D4A8171FBE60FA004EF5CA /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68D4A8161FBE60EF004EF5CA /* Lato-Regular.ttf */; };
+		68D4A83D1FC2359C004EF5CA /* BikeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D4A83C1FC2359C004EF5CA /* BikeCollectionCell.swift */; };
 		68E5D32A1F4B557500EFC857 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D3291F4B557500EFC857 /* SignUpController.swift */; };
 		68E5D32C1F4B6BA300EFC857 /* WorkListValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D32B1F4B6BA300EFC857 /* WorkListValues.swift */; };
 		68E5D3301F4B6C1E00EFC857 /* WorkListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5D32F1F4B6C1E00EFC857 /* WorkListObject.swift */; };
@@ -50,6 +51,7 @@
 		81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81781A49E0DB00E65899 /* AudioToolbox.framework */; };
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
+		C2CA1E481FCE774A0064FAB6 /* BikeListHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CA1E471FCE774A0064FAB6 /* BikeListHome.swift */; };
 		C2DB56431FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico in Resources */ = {isa = PBXBuildFile; fileRef = C2DB56421FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico */; };
 		C2DB56451FB8C2F600F6224D /* bikeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DB56441FB8C2F600F6224D /* bikeBackground.png */; };
 		C2DB56471FB8C30400F6224D /* Urabo logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DB56461FB8C30400F6224D /* Urabo logo.png */; };
@@ -84,6 +86,7 @@
 		68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerAddMessageVC.swift; sourceTree = "<group>"; };
 		68A13A841F8A8F590015A6D1 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		68D4A8161FBE60EF004EF5CA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		68D4A83C1FC2359C004EF5CA /* BikeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeCollectionCell.swift; sourceTree = "<group>"; };
 		68E5D3291F4B557500EFC857 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		68E5D32B1F4B6BA300EFC857 /* WorkListValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkListValues.swift; sourceTree = "<group>"; };
 		68E5D32F1F4B6C1E00EFC857 /* WorkListObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkListObject.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 		81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		C2CA1E471FCE774A0064FAB6 /* BikeListHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeListHome.swift; sourceTree = "<group>"; };
 		C2DB56421FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "Icons8-Ios7-Transport-Bicycle.ico"; sourceTree = "<group>"; };
 		C2DB56441FB8C2F600F6224D /* bikeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikeBackground.png; sourceTree = "<group>"; };
 		C2DB56461FB8C30400F6224D /* Urabo logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Urabo logo.png"; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 				6832ABA21F3A664E00D8D49A /* QRCodeGeneratorViewController.swift */,
 				6832ABA41F3A703300D8D49A /* QRCodeReaderViewController.swift */,
 				6832ABA81F3BCABA00D8D49A /* SettingsViewController.swift */,
+				C2CA1E471FCE774A0064FAB6 /* BikeListHome.swift */,
+				68D4A83C1FC2359C004EF5CA /* BikeCollectionCell.swift */,
 				6832ABAA1F3BCCA500D8D49A /* BikeListController.swift */,
 				6832ABAC1F3BCFA400D8D49A /* BikeListCell.swift */,
 				68068D051FA7D9A8001873C7 /* BikeCellX.swift */,
@@ -391,6 +397,7 @@
 				6832ABAD1F3BCFA400D8D49A /* BikeListCell.swift in Sources */,
 				6832ABB91F45159A00D8D49A /* ViewOrderInfoViewController.swift in Sources */,
 				6832ABBB1F451D9F00D8D49A /* CreateWorkOrderViewController.swift in Sources */,
+				68D4A83D1FC2359C004EF5CA /* BikeCollectionCell.swift in Sources */,
 				6832ABBD1F45259F00D8D49A /* AddBikeScannerVC.swift in Sources */,
 				689EF6521F85AD73008066C6 /* AddMessageFromStoreVC.swift in Sources */,
 				6832ABAF1F3BDAA000D8D49A /* AddBikeViewController.swift in Sources */,
@@ -403,6 +410,7 @@
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				68F173F81F8AB081000CC893 /* CustomerViewCusMessageCell.swift in Sources */,
 				68E5D32A1F4B557500EFC857 /* SignUpController.swift in Sources */,
+				C2CA1E481FCE774A0064FAB6 /* BikeListHome.swift in Sources */,
 				6892573B1FB133530039B40F /* BikeObject.swift in Sources */,
 				6832ABB11F3BEA5F00D8D49A /* DisplayBikeDataViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,

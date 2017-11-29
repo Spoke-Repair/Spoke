@@ -10,17 +10,18 @@ import UIKit
 import Parse
 
 
-var bikeList = [String]()
-var customerBikeIDList = [String]()
-var customerIndex: Int = 0;
-var indicator = UIActivityIndicatorView()
+//var bikeList = [String]()
+//var customerBikeIDList = [String]()
+//var customerIndex: Int = 0;
+//var indicator = UIActivityIndicatorView()
 
 
-var bikeObjectList = [BikeObject]()
+//var bikeObjectList = [BikeObject]()
 
 
 class BikeListController: UITableViewController {
 
+    var indicator1 = UIActivityIndicatorView()
 
     @IBAction func addBike(_ sender: Any) {
        // let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -31,10 +32,10 @@ class BikeListController: UITableViewController {
     
     
     func activityIndicator() {
-        indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        indicator.center = self.view.center
-        self.view.addSubview(indicator)
+        indicator1 = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        indicator1.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        indicator1.center = self.view.center
+        self.view.addSubview(indicator1)
     }
     
     override func viewDidLoad() {
@@ -54,8 +55,8 @@ class BikeListController: UITableViewController {
     //was func viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         
-        indicator.startAnimating()
-        indicator.backgroundColor = UIColor.white
+        indicator1.startAnimating()
+        indicator1.backgroundColor = UIColor.white
         //disable touch while the tableview is loading
         self.view.isUserInteractionEnabled = false
         
@@ -102,8 +103,8 @@ class BikeListController: UITableViewController {
                         }
                         self.tableView.reloadData()
                         self.view.isUserInteractionEnabled = true
-                        indicator.stopAnimating()
-                        indicator.hidesWhenStopped = true
+                        self.indicator1.stopAnimating()
+                        self.indicator1.hidesWhenStopped = true
 
                     }
                 }else {
