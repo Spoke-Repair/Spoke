@@ -11,14 +11,13 @@ import Parse
 
 class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet var theLabel: UILabel!
-    @IBOutlet var objectLabel: UILabel!
-    @IBOutlet var bikeOwner: UILabel!
-    @IBOutlet var currentUser: UILabel!
-    @IBOutlet var bikeID: UILabel!
+    @IBOutlet var makeLabel: UILabel!
+    
+    @IBOutlet var modelLabel: UILabel!
     var messages = [String]()
     var messageDates = [String]()
     var messageType = [String]()
+    var currentUser = PFUser.current()?.objectId as! String
     
     @IBOutlet var theTableView: UITableView!
     
@@ -35,11 +34,14 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        theLabel.text = bikeDescriptionList[myIndex]
-        objectLabel.text = workOrderIDList[myIndex]
-        currentUser.text = storeOwnerID
-        bikeOwner.text = bikeOwnersList[myIndex]
-        bikeID.text = bikeIDList[myIndex]
+        self.makeLabel.text = BikeList[myIndex].make
+        self.modelLabel.text = BikeList[myIndex].model
+        
+       // theLabel.text = BikeList[myIndex].userId
+        //objectLabel.text = BikeList[myIndex].bikeId
+        //currentUser.text = storeOwnerID
+        //bikeOwner.text = BikeList[myIndex].userId
+        //bikeID.text = BikeList[myIndex].userId
 
         
         
@@ -61,7 +63,7 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         let query = PFQuery(className: "OrderMessages")
         
         //query.whereKey("StoreUserID", equalTo: storeOwnerID ).whereKey("userID", equalTo: bikeOwnersList[myIndex])
-        query.whereKey("bikeID", equalTo: bikeIDList[myIndex])
+        query.whereKey("bikeID", equalTo: BikeList[myIndex].bikeId)
         query.findObjectsInBackground(block: { (messageObjects: [PFObject]?, error: Error?) in
             if error == nil {
                 if let messageObjects = messageObjects {
@@ -114,18 +116,7 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     
-    func validateField() -> Bool {
-        
-        if self.bikeOwner.text != nil && self.bikeID != nil && self.currentUser != nil {
-            
-            return true
-            
-        }
-        
-        return false
-    }
 
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -134,16 +125,13 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "addMessageSegue" {
-            if (validateField()){
                 let addMessageController = segue.destination as! AddMessageFromStoreVC
                 //force unwrap because we have already validated with validateFieldFunction
-                addMessageController.bikeID = self.bikeID.text!
-                addMessageController.bikeOwnerID = self.bikeOwner.text!
-                addMessageController.storeID = self.currentUser.text!
+                addMessageController.bikeID = BikeList[myIndex].bikeId
+                addMessageController.bikeOwnerID = BikeList[myIndex].userId
+                addMessageController.storeID = self.currentUser
                 
-            }else{
-                print("error at addMessageSegue")
-            }
+           
             
         }
         
