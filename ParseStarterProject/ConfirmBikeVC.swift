@@ -21,7 +21,7 @@ class ConfirmBikeVC: UIViewController {
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var modelLabel: UILabel!
     @IBOutlet var makeLabel: UILabel!
-    @IBOutlet var bikeIDLabel: UILabel!
+   // @IBOutlet var bikeIDLabel: UILabel!
     @IBOutlet var theImageView: UIImageView!
     
     
@@ -38,7 +38,7 @@ class ConfirmBikeVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.bikeIDLabel.text = bikeId
+       // self.bikeIDLabel.text = bikeId
         self.makeLabel.text = make
         self.modelLabel.text = model
         self.typeLabel.text = type
