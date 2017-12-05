@@ -21,7 +21,7 @@ class ConfirmBikeVC: UIViewController {
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var modelLabel: UILabel!
     @IBOutlet var makeLabel: UILabel!
-   // @IBOutlet var bikeIDLabel: UILabel!
+    @IBOutlet var bikeIDLabel: UILabel!
     @IBOutlet var theImageView: UIImageView!
     
     
@@ -38,7 +38,7 @@ class ConfirmBikeVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     override func viewDidAppear(_ animated: Bool) {
-       // self.bikeIDLabel.text = bikeId
+        self.bikeIDLabel.text = bikeId
         self.makeLabel.text = make
         self.modelLabel.text = model
         self.typeLabel.text = type
@@ -49,24 +49,35 @@ class ConfirmBikeVC: UIViewController {
         let query = PFQuery(className: "Bike")
         query.whereKey("objectId", equalTo: bikeId!)
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
-            if (error == nil){
-                if let object = objects?[0] {
-                    object["isOwned"] = true
-                    object["model"] = self.model
-                    object["userID"] = self.userId
-                    object["make"] = self.make
-                    object["size"] = self.type
-                    let imageData = UIImageJPEGRepresentation(self.pictureOfBike!, 0.1)
-                    let pimageFile = PFFile(data: imageData!)
-                    object["picture"] = pimageFile
-                    object.saveInBackground(block: { (success:Bool, error: Error?) in
-                        if(success){
-                            self.navigationController?.popToRootViewController(animated: false)
-                            self.performSegue(withIdentifier: "bkSegue", sender: self)
-                        }
-                    })
-                }
+print("find objects")
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
             }
+print("error is nil")
+print("objects: \(objects!)") // prints empty array
+print("objects![0]: \(objects![0])") //Never prints - but DOES NOT throw an error curiously
+            guard let object = objects?[0] else {
+                print("Unable to obtain object from query")
+                return
+            }
+print("passed guards")
+            object["isOwned"] = true
+            object["model"] = self.model
+            object["userID"] = self.userId
+            object["make"] = self.make
+            object["size"] = self.type
+            let imageData = UIImageJPEGRepresentation(self.pictureOfBike!, 0.1)
+            let pimageFile = PFFile(data: imageData!)
+            object["picture"] = pimageFile
+            object.saveInBackground(block: { (success:Bool, error: Error?) in
+                guard success, error == nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                self.navigationController?.popToRootViewController(animated: false)
+                self.performSegue(withIdentifier: "bkSegue", sender: self)
+            })
         }
     }
     
