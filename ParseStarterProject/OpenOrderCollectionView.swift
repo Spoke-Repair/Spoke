@@ -19,15 +19,15 @@ var MyIndex = 0
 var BikeList = [BikeObject]()
 
 class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-   
+    
     @IBOutlet var bikeCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -66,7 +66,7 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
                                 if let bikeObjects = bikeObjects {
                                     for object in bikeObjects {
                                         //we have the bike were looking for so get the user of the Bikes id
-                                       
+                                        
                                         let make = object["make"] as! String
                                         let model = object["model"] as! String
                                         let isOwned = object["isOwned"] as! Bool
@@ -102,7 +102,7 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
                         
                         
                     }
-                   // self.theTable.reloadData()
+                    // self.theTable.reloadData()
                     self.bikeCollectionView.reloadData()
                 }
             }else{
@@ -115,7 +115,7 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
     
     override func viewDidAppear(_ animated: Bool) {
         
-       // CommonUtils.addFCMTokenToParse()
+        // CommonUtils.addFCMTokenToParse()
         
     }
     
@@ -158,6 +158,6 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
         return cell
     }
     
-
-   
+    
+    
 }

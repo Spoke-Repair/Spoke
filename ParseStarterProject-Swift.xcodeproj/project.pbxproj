@@ -51,6 +51,8 @@
 		81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81781A49E0DB00E65899 /* AudioToolbox.framework */; };
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
+		C212487B1FD618BF00F50C8C /* OpenOrderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */; };
+		C212487D1FD6198900F50C8C /* BikeOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212487C1FD6198900F50C8C /* BikeOrderCell.swift */; };
 		C2CA1E481FCE774A0064FAB6 /* BikeListHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CA1E471FCE774A0064FAB6 /* BikeListHome.swift */; };
 		C2DB56431FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico in Resources */ = {isa = PBXBuildFile; fileRef = C2DB56421FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico */; };
 		C2DB56451FB8C2F600F6224D /* bikeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DB56441FB8C2F600F6224D /* bikeBackground.png */; };
@@ -109,6 +111,8 @@
 		81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrderCollectionView.swift; sourceTree = "<group>"; };
+		C212487C1FD6198900F50C8C /* BikeOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeOrderCell.swift; sourceTree = "<group>"; };
 		C2CA1E471FCE774A0064FAB6 /* BikeListHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeListHome.swift; sourceTree = "<group>"; };
 		C2DB56421FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "Icons8-Ios7-Transport-Bicycle.ico"; sourceTree = "<group>"; };
 		C2DB56441FB8C2F600F6224D /* bikeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikeBackground.png; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 				687F93171F96DCDB00253E00 /* CommonUtils.swift */,
 				689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */,
 				6892573A1FB133530039B40F /* BikeObject.swift */,
+				C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */,
+				C212487C1FD6198900F50C8C /* BikeOrderCell.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68A13A811F86FFD90015A6D1 /* ViewBikeViewController.swift in Sources */,
+				C212487B1FD618BF00F50C8C /* OpenOrderCollectionView.swift in Sources */,
 				6832ABBF1F4526D300D8D49A /* ConfirmBikeVC.swift in Sources */,
 				6832ABAD1F3BCFA400D8D49A /* BikeListCell.swift in Sources */,
 				6832ABB91F45159A00D8D49A /* ViewOrderInfoViewController.swift in Sources */,
@@ -424,6 +431,7 @@
 				6832ABB31F3F781200D8D49A /* MessageComposer.swift in Sources */,
 				68F173F41F8AA872000CC893 /* CustomerMessageCell.swift in Sources */,
 				687F93181F96DCDB00253E00 /* CommonUtils.swift in Sources */,
+				C212487D1FD6198900F50C8C /* BikeOrderCell.swift in Sources */,
 				68E5D3321F4B721C00EFC857 /* AvailableServiceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
