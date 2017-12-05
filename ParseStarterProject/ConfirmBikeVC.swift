@@ -37,7 +37,7 @@ class ConfirmBikeVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.bikeIDLabel.text = bikeId
         self.makeLabel.text = make
         self.modelLabel.text = model
