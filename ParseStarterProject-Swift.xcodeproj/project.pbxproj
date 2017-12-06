@@ -54,6 +54,7 @@
 		C212487B1FD618BF00F50C8C /* OpenOrderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */; };
 		C212487D1FD6198900F50C8C /* BikeOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212487C1FD6198900F50C8C /* BikeOrderCell.swift */; };
 		C28E5A511FD8987800D3473B /* spoke.png in Resources */ = {isa = PBXBuildFile; fileRef = C28E5A501FD8987800D3473B /* spoke.png */; };
+		C28E5A531FD89DBA00D3473B /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E5A521FD89DBA00D3473B /* UIExtensions.swift */; };
 		C2CA1E481FCE774A0064FAB6 /* BikeListHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CA1E471FCE774A0064FAB6 /* BikeListHome.swift */; };
 		C2DB56431FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico in Resources */ = {isa = PBXBuildFile; fileRef = C2DB56421FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico */; };
 		C2DB56451FB8C2F600F6224D /* bikeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DB56441FB8C2F600F6224D /* bikeBackground.png */; };
@@ -115,6 +116,7 @@
 		C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrderCollectionView.swift; sourceTree = "<group>"; };
 		C212487C1FD6198900F50C8C /* BikeOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeOrderCell.swift; sourceTree = "<group>"; };
 		C28E5A501FD8987800D3473B /* spoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spoke.png; sourceTree = "<group>"; };
+		C28E5A521FD89DBA00D3473B /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		C2CA1E471FCE774A0064FAB6 /* BikeListHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeListHome.swift; sourceTree = "<group>"; };
 		C2DB56421FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "Icons8-Ios7-Transport-Bicycle.ico"; sourceTree = "<group>"; };
 		C2DB56441FB8C2F600F6224D /* bikeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikeBackground.png; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
+				C28E5A521FD89DBA00D3473B /* UIExtensions.swift */,
 				68F173F71F8AB081000CC893 /* CustomerViewCusMessageCell.swift */,
 				68F173F51F8AAF33000CC893 /* CustomerViewMessageCell.swift */,
 				68F173F31F8AA872000CC893 /* CustomerMessageCell.swift */,
@@ -405,6 +408,7 @@
 				68A13A811F86FFD90015A6D1 /* ViewBikeViewController.swift in Sources */,
 				C212487B1FD618BF00F50C8C /* OpenOrderCollectionView.swift in Sources */,
 				6832ABBF1F4526D300D8D49A /* ConfirmBikeVC.swift in Sources */,
+				C28E5A531FD89DBA00D3473B /* UIExtensions.swift in Sources */,
 				6832ABAD1F3BCFA400D8D49A /* BikeListCell.swift in Sources */,
 				6832ABB91F45159A00D8D49A /* ViewOrderInfoViewController.swift in Sources */,
 				6832ABBB1F451D9F00D8D49A /* CreateWorkOrderViewController.swift in Sources */,

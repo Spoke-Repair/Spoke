@@ -11,48 +11,40 @@ import UIKit
 import Parse
 
 class ViewController: UIViewController {
-    
+
     var signupMode = true
 
     //Used to store error message coming from account creation segue
     var errMsgStr: String?
-    
+
     @IBOutlet var errorMsg: UILabel!
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var changeMode: UIButton!
     @IBAction func signupOrLogin(_ sender: Any) {
-    
+
             PFUser.logInWithUsername(inBackground: username.text!, password: password.text!, block: {(user, error) in
-                
+
                 if error != nil {
-                    
                     self.errorMsg.text = error?.localizedDescription
                     self.errorMsg.isHidden = false
                     CommonUtils.popUpAlert(message: "Your password is incorrect", sender: self)
-                
                 } else {
-                    
                     print("Login success")
                     //print(user!["type"])
                     let type = user!["type"] as! String
                     if type == "employee"{
                         print("logging in as employee")
                         self.performSegue(withIdentifier: "loginEmployee", sender: self)
-
-                    }else{
+                    } else {
                         //segue to customer storyboard
                         print("logging in as customer")
                         self.performSegue(withIdentifier: "login", sender: self)
-                        
                     }
                 }
             
             })
-        
-            
-        
     }
     
     @IBAction func changeMode(_ sender: Any) {
@@ -62,14 +54,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
         
         if let str = errMsgStr {
             errorMsg.text = str
             errorMsg.isHidden = false
         }
+
+        username.underline()
+        password.underline()
     }
     
     override func viewDidAppear(_ animated: Bool) {

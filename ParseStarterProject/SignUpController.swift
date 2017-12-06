@@ -94,6 +94,7 @@ class SignUpController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prompt.text = self.prompts[self.currentPage]
+        self.input.underline()
     }
 
     override func didReceiveMemoryWarning() {
