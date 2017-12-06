@@ -17,7 +17,7 @@ class SignUpController: UIViewController {
 
     private var loginErrorMsg: String?
     private var currentPage = 0
-    private let prompts = ["What's your email address?", "Whats your first name?", "Whats your last name?", "What's your password?", "Re-enter your password"]
+    private let prompts = ["What's your email address?", "What's your first name?", "What's your last name?", "What's your password?", "Re-enter your password"]
     private var userInfo: [String?] = [nil, nil, nil, nil, nil]
     
     @IBAction func proceed(_ sender: UIButton) {
