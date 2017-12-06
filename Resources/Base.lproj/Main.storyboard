@@ -52,8 +52,19 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meA-UU-faH">
-                                <rect key="frame" x="273" y="239" width="32" height="30"/>
-                                <state key="normal" title="Next"/>
+                                <rect key="frame" x="250" y="239" width="55" height="30"/>
+                                <color key="backgroundColor" red="0.93408334260000003" green="0.41672497990000001" blue="0.55791944270000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="Q3d-2r-1Nl"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="proceed:" destination="Tva-6p-79Y" eventType="touchUpInside" id="T76-zE-I3P"/>
                                 </connections>
@@ -104,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RbQ-bX-OXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1306.5" y="-260.5"/>
+            <point key="canvasLocation" x="-1308" y="-261.31934032983509"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1738,7 +1749,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="fDc-c8-Fpp"/>
         <segue reference="UiT-f9-kF3"/>
-        <segue reference="AqR-JP-6ru"/>
+        <segue reference="keg-Jk-ugW"/>
         <segue reference="hE0-Mi-H1q"/>
         <segue reference="167-wI-gAe"/>
     </inferredMetricsTieBreakers>
