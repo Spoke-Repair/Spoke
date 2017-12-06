@@ -53,6 +53,7 @@
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
 		C212487B1FD618BF00F50C8C /* OpenOrderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */; };
 		C212487D1FD6198900F50C8C /* BikeOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212487C1FD6198900F50C8C /* BikeOrderCell.swift */; };
+		C28E5A511FD8987800D3473B /* spoke.png in Resources */ = {isa = PBXBuildFile; fileRef = C28E5A501FD8987800D3473B /* spoke.png */; };
 		C2CA1E481FCE774A0064FAB6 /* BikeListHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CA1E471FCE774A0064FAB6 /* BikeListHome.swift */; };
 		C2DB56431FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico in Resources */ = {isa = PBXBuildFile; fileRef = C2DB56421FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico */; };
 		C2DB56451FB8C2F600F6224D /* bikeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DB56441FB8C2F600F6224D /* bikeBackground.png */; };
@@ -113,6 +114,7 @@
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrderCollectionView.swift; sourceTree = "<group>"; };
 		C212487C1FD6198900F50C8C /* BikeOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeOrderCell.swift; sourceTree = "<group>"; };
+		C28E5A501FD8987800D3473B /* spoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spoke.png; sourceTree = "<group>"; };
 		C2CA1E471FCE774A0064FAB6 /* BikeListHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeListHome.swift; sourceTree = "<group>"; };
 		C2DB56421FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "Icons8-Ios7-Transport-Bicycle.ico"; sourceTree = "<group>"; };
 		C2DB56441FB8C2F600F6224D /* bikeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bikeBackground.png; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				814C3AC81B69877600E307BB /* Images.xcassets */,
+				C28E5A501FD8987800D3473B /* spoke.png */,
 				C2DB56421FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico */,
 				C2DB56441FB8C2F600F6224D /* bikeBackground.png */,
 				C2DB56461FB8C30400F6224D /* Urabo logo.png */,
@@ -321,6 +324,7 @@
 			files = (
 				68068D081FA7D9A8001873C7 /* BikeCellX.xib in Resources */,
 				C2DB56471FB8C30400F6224D /* Urabo logo.png in Resources */,
+				C28E5A511FD8987800D3473B /* spoke.png in Resources */,
 				C2DB56451FB8C2F600F6224D /* bikeBackground.png in Resources */,
 				C2DB56431FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico in Resources */,
 				68D4A8171FBE60FA004EF5CA /* Lato-Regular.ttf in Resources */,
