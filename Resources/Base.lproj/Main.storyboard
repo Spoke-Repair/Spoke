@@ -130,16 +130,12 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mr9-Fz-gLz">
-                                <rect key="frame" x="317" y="313" width="42" height="33"/>
+                                <rect key="frame" x="16" y="313" width="343" height="33"/>
+                                <color key="backgroundColor" red="0.93408334260000003" green="0.41672497990000001" blue="0.55791944270000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signupOrLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zho-ug-NtO"/>
                                 </connections>
@@ -169,10 +165,11 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VU-mV-JJJ">
-                                <rect key="frame" x="16" y="313" width="56" height="33"/>
+                                <rect key="frame" x="16" y="374" width="343" height="33"/>
+                                <color key="backgroundColor" red="0.43032091859999999" green="0.81405514479999996" blue="0.9564242959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="SignUp">
-                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="SIGN UP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="changeMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XJu-hn-lJo"/>
@@ -185,16 +182,18 @@
                             <constraint firstItem="bf0-lp-AmV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7wY-hH-8vK"/>
                             <constraint firstItem="bf0-lp-AmV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="94E-CL-zZ3"/>
                             <constraint firstItem="HEe-o7-0N6" firstAttribute="trailing" secondItem="3nI-zx-zvc" secondAttribute="trailing" id="9TG-A9-gtq"/>
-                            <constraint firstItem="Mr9-Fz-gLz" firstAttribute="top" secondItem="HEe-o7-0N6" secondAttribute="bottom" constant="28" id="Dh5-B2-Yrd"/>
-                            <constraint firstItem="7VU-mV-JJJ" firstAttribute="top" secondItem="HEe-o7-0N6" secondAttribute="bottom" constant="28" id="FZ5-dK-R68"/>
                             <constraint firstItem="GGF-wr-ED3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J3h-7Y-47e"/>
-                            <constraint firstItem="7VU-mV-JJJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NV3-WA-YPy"/>
+                            <constraint firstItem="7VU-mV-JJJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="S2R-Da-Eif"/>
+                            <constraint firstItem="Mr9-Fz-gLz" firstAttribute="top" secondItem="HEe-o7-0N6" secondAttribute="bottom" constant="28" id="X30-4a-6XG"/>
                             <constraint firstItem="HEe-o7-0N6" firstAttribute="leading" secondItem="3nI-zx-zvc" secondAttribute="leading" id="X9k-kp-h9Y"/>
                             <constraint firstItem="3nI-zx-zvc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XIp-jq-DR7"/>
+                            <constraint firstItem="7VU-mV-JJJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gzK-XD-dWh"/>
                             <constraint firstItem="HEe-o7-0N6" firstAttribute="top" secondItem="3nI-zx-zvc" secondAttribute="bottom" constant="28" id="iEw-dx-nCz"/>
+                            <constraint firstItem="7VU-mV-JJJ" firstAttribute="top" secondItem="Mr9-Fz-gLz" secondAttribute="bottom" constant="28" id="j8p-ua-PQ5"/>
                             <constraint firstItem="3nI-zx-zvc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jRm-45-UqF"/>
+                            <constraint firstItem="Mr9-Fz-gLz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="khv-22-iMM"/>
                             <constraint firstItem="GGF-wr-ED3" firstAttribute="top" secondItem="bf0-lp-AmV" secondAttribute="bottom" constant="10" id="xCX-Wz-sgL"/>
-                            <constraint firstItem="Mr9-Fz-gLz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zAp-WL-OwC"/>
+                            <constraint firstItem="Mr9-Fz-gLz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zRJ-EZ-DwL"/>
                         </constraints>
                     </view>
                     <connections>
