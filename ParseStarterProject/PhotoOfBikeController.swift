@@ -39,12 +39,11 @@ class PhotoOfBikeController: UIViewController, UIImagePickerControllerDelegate, 
     //save in parse and segue
         
         if(buttonToggle == false){
+        
             openCamera()
-            if(picture != nil){
-                buttonToggle = true
-                continueButton.titleLabel?.text = "Continue"
-            }
+        
         }else{
+            
             self.performSegue(withIdentifier: "confirmBike", sender: self)
 
         }
@@ -56,14 +55,15 @@ class PhotoOfBikeController: UIViewController, UIImagePickerControllerDelegate, 
         self.picture = image
         imagePicked.image = image
         dismiss(animated:true, completion: nil)
+        buttonToggle = true
+        continueButton.contentHorizontalAlignment = .center
+        continueButton.titleLabel?.text = "Continue"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(buttonToggle == false){
-            continueButton.titleLabel?.text = "Take a picture!"
-        }
+        
 
         // Do any additional setup after loading the view.
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B752A2910E99E583C9E3716 /* Pods_ParseStarterProject_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1423ED643E8A61B53023D7 /* Pods_ParseStarterProject_Swift.framework */; };
+		68035B571FD8DF0F00A601B2 /* phoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 68035B561FD8DF0E00A601B2 /* phoneIcon.png */; };
 		68068D071FA7D9A8001873C7 /* BikeCellX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68068D051FA7D9A8001873C7 /* BikeCellX.swift */; };
 		68068D081FA7D9A8001873C7 /* BikeCellX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68068D061FA7D9A8001873C7 /* BikeCellX.xib */; };
 		6832ABA31F3A664E00D8D49A /* QRCodeGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABA21F3A664E00D8D49A /* QRCodeGeneratorViewController.swift */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		07745A23F1A3B0A79C38F9E5 /* Pods-ParseStarterProject-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseStarterProject-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParseStarterProject-Swift/Pods-ParseStarterProject-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		1E1423ED643E8A61B53023D7 /* Pods_ParseStarterProject_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParseStarterProject_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68035B561FD8DF0E00A601B2 /* phoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phoneIcon.png; sourceTree = "<group>"; };
 		68068D051FA7D9A8001873C7 /* BikeCellX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeCellX.swift; sourceTree = "<group>"; };
 		68068D061FA7D9A8001873C7 /* BikeCellX.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeCellX.xib; sourceTree = "<group>"; };
 		6832ABA21F3A664E00D8D49A /* QRCodeGeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeGeneratorViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				68035B561FD8DF0E00A601B2 /* phoneIcon.png */,
 				814C3AC81B69877600E307BB /* Images.xcassets */,
 				C2DB56421FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico */,
 				C2DB56441FB8C2F600F6224D /* bikeBackground.png */,
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68068D081FA7D9A8001873C7 /* BikeCellX.xib in Resources */,
+				68035B571FD8DF0F00A601B2 /* phoneIcon.png in Resources */,
 				C2DB56471FB8C30400F6224D /* Urabo logo.png in Resources */,
 				C2DB56451FB8C2F600F6224D /* bikeBackground.png in Resources */,
 				C2DB56431FB8C2EB00F6224D /* Icons8-Ios7-Transport-Bicycle.ico in Resources */,

@@ -7,6 +7,7 @@
 //
 import UIKit
 import AVFoundation
+import Parse
 
 class QRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
@@ -73,11 +74,35 @@ class QRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjec
                     //}))
                     
                     //present(alert, animated: true, completion: nil)
-                    if(segueFlag == 0){
-                        segueFlag = 1
-                        self.performSegue(withIdentifier: "foundBikeSegue", sender: self)
+                    //check if bike is owned
+                    let query = PFQuery(className: "Bike")
+
+                    query.whereKey("objectId", equalTo: userID)
+                    query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+                        if(error == nil){
+                            if let objects = objects {
+                                if(objects[0]["isOwned"] as! Bool == true){
+                                    
+                                    if(self.segueFlag == 0){
+                                        self.segueFlag = 1
+                                        self.performSegue(withIdentifier: "foundBikeSegue", sender: self)
+                                        
+                                    }
+                                    
+                                }else{
+                                    CommonUtils.popUpAlert(message: "This bike is not owned!", sender: self)
+                                }
+                                
+                            }
+                        }else{
+                            CommonUtils.popUpAlert(message: "Could not retrieve Bike info. Check your network connection", sender: self)
+                        }
                         
                     }
+                    
+                    
+                    
+                    
                     //let vc = FoundBikeViewController()
                     //vc.userId = userID
                     //self.present(vc, animated: true, completion: nil)

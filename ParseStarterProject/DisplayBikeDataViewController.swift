@@ -17,6 +17,7 @@ class DisplayBikeDataViewController: UIViewController {
     @IBOutlet var theMakeLabel: UILabel!
     @IBOutlet var firstname: UILabel!
     @IBOutlet var lastname: UILabel!
+    @IBOutlet var bikePicture: UIImageView!
     
     @IBAction func backButton(_ sender: Any) {
         self.performSegue(withIdentifier: "backToBikeInfo", sender: self)
@@ -53,6 +54,34 @@ class DisplayBikeDataViewController: UIViewController {
                             print(objects[0]["model"])
                             self.theModelLabel.text = objects[0]["model"] as? String
                             self.theMakeLabel.text = objects[0]["make"] as? String
+                        
+                            //new code
+                        let make = objects[0]["make"] as! String
+                        let model = objects[0]["model"] as! String
+                        let isOwned = objects[0]["isOwned"] as! Bool
+                        let size = objects[0]["size"] as! String
+                        let userId = objects[0]["userID"] as! String
+                        let bikeId = objects[0].objectId!
+                        let bikeToAdd: BikeObject = BikeObject(make: make, model: model, size: size, isOwned: isOwned, userId: userId, bikeId: bikeId)
+                        
+                        if let picture = objects[0]["picture"] {
+                            let pImage = picture as! PFFile
+                            pImage.getDataInBackground(block: { (data: Data?, error: Error?) in
+                                if let imageToSet = UIImage(data: data!) {
+                                    bikeToAdd.picture = imageToSet
+                                    self.bikePicture.image = bikeToAdd.picture
+                                }
+                                
+                            })
+                            
+                        }
+                        
+                   
+                            //end new code
+                        
+                        
+                        
+                        
                         
                             let userQuery = PFUser.query()
 
