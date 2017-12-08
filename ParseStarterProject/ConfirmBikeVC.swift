@@ -46,6 +46,9 @@ class ConfirmBikeVC: UIViewController {
     }
     
     @IBAction func confirmBike(_ sender: Any) {
+      
+        
+        
         let query = PFQuery(className: "Bike")
         query.whereKey("objectId", equalTo: bikeId!)
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in

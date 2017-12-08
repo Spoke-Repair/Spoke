@@ -24,6 +24,7 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet var currentDate: UILabel!
     @IBOutlet var bikeCollectionView: UICollectionView!
     
+    @IBOutlet var nextBikeLabel: UILabel!
     var bikesDue = 0
     
     override func viewDidLoad() {
@@ -136,7 +137,7 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
     
     override func viewDidAppear(_ animated: Bool) {
         self.bikesDueLabel.text = "You have \(bikesDue) orders due today"
-
+        self.nextBikeLabel.text = "Next bike for repair: \(BikeList[0].make)"
         // CommonUtils.addFCMTokenToParse()
         
     }

@@ -17,6 +17,7 @@ class CreateWorkOrderViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet var issueDescription: UITextField!
     @IBOutlet var dueDate: UITextField!
     var userID: String? = nil
+    
     @IBAction func submitOrder(_ sender: Any) {
         print("THe bike ID: " + bikeID!)
                //new object here
