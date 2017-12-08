@@ -11,10 +11,17 @@ import Alamofire
 import Parse
 import FirebaseInstanceID
 import FirebaseMessaging
+import UIKit
+
 /*
  This is a class for helper util methods
 */
 class CommonUtils {
+    
+    enum ConnectionResult {
+        case success()
+        case failue()
+    }
     
     /*
      Use this method once a user is logged in to associate the device with their account

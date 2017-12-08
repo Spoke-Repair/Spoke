@@ -20,10 +20,17 @@ var BikeList = [BikeObject]()
 
 class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet var bikesDueLabel: UILabel!
+    @IBOutlet var currentDate: UILabel!
     @IBOutlet var bikeCollectionView: UICollectionView!
+    
+    @IBOutlet var nextBikeLabel: UILabel!
+    var bikesDue = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         
         // Do any additional setup after loading the view.
     }
@@ -36,6 +43,13 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let result = formatter.string(from: date)
+        
+        self.currentDate.text = result
+        
         //get the Store owners ID for later use in chat
         StoreOwnerID = (PFUser.current()?.objectId)!
         
@@ -43,6 +57,8 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
         WorkOrderIDList.removeAll()
         BikeOwnersList.removeAll()
         BikeIDList.removeAll()
+        
+        self.bikesDue = 0
         
         let query = PFQuery(className: "WorkOrders")
         query.whereKey("isOpen", equalTo: "open")
@@ -53,6 +69,10 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
                         BikeDescriptionList.append(object["description"] as! String)
                         BikeIDList.append(object["bikeID"] as! String)
                         WorkOrderIDList.append(object.objectId!)
+                        let bikeDate = object["dueDate"] as! String
+                        if bikeDate == result {
+                            self.bikesDue += 1
+                        }
                         
                         // bikeOwnersList.append(object["userID"] as! String)
                         //here query to get the bike object based on the objectID to get the bike owners ID
@@ -110,11 +130,14 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
             }
             
         })
+   
+        
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        self.bikesDueLabel.text = "You have \(bikesDue) orders due today"
+        self.nextBikeLabel.text = "Next bike for repair: \(BikeList[0].make)"
         // CommonUtils.addFCMTokenToParse()
         
     }

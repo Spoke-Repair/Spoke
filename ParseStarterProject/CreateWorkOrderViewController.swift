@@ -17,6 +17,7 @@ class CreateWorkOrderViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet var issueDescription: UITextField!
     @IBOutlet var dueDate: UITextField!
     var userID: String? = nil
+    
     @IBAction func submitOrder(_ sender: Any) {
         print("THe bike ID: " + bikeID!)
                //new object here
@@ -59,7 +60,7 @@ class CreateWorkOrderViewController: UIViewController, UITableViewDelegate, UITa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToOrders" {
             let navVC = segue.destination as? UINavigationController
-            _ = navVC?.viewControllers.first as! OpenOrdersViewController
+            _ = navVC?.viewControllers.first as! OpenOrderCollectionView
         }
     }
     

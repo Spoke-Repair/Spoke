@@ -19,9 +19,12 @@ class PhotoOfBikeController: UIViewController, UIImagePickerControllerDelegate, 
     var type: String? = nil
     var picture: UIImage? = nil
     
-    @IBOutlet var imagePicked: UIImageView!
+    var buttonToggle = false
     
-    @IBAction func openCamera(_ sender: Any) {
+    @IBOutlet var imagePicked: UIImageView!
+    @IBOutlet var continueButton: UIButton!
+    
+    func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
@@ -34,10 +37,17 @@ class PhotoOfBikeController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func continueButton(_ sender: Any) {
     //save in parse and segue
-        if(picture != nil) {
+        
+        if(buttonToggle == false){
+        
+            openCamera()
+        
+        }else{
+            
             self.performSegue(withIdentifier: "confirmBike", sender: self)
+
         }
-    
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -45,10 +55,15 @@ class PhotoOfBikeController: UIViewController, UIImagePickerControllerDelegate, 
         self.picture = image
         imagePicked.image = image
         dismiss(animated:true, completion: nil)
+        buttonToggle = true
+        continueButton.contentHorizontalAlignment = .center
+        continueButton.titleLabel?.text = "Continue"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
     }
