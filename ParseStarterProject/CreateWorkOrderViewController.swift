@@ -60,7 +60,7 @@ class CreateWorkOrderViewController: UIViewController, UITableViewDelegate, UITa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToOrders" {
             let navVC = segue.destination as? UINavigationController
-            _ = navVC?.viewControllers.first as! OpenOrdersViewController
+            _ = navVC?.viewControllers.first as! OpenOrderCollectionView
         }
     }
     
