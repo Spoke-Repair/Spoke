@@ -60,6 +60,9 @@ class AddBikeViewController: UIViewController {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddBikeViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        self.makeLabel.underline()
+        self.modelLabel.underline()
+        self.idLabel.underline()
         
         // Do any additional setup after loading the view.
     }

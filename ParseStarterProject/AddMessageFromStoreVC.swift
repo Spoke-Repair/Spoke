@@ -51,6 +51,7 @@ class AddMessageFromStoreVC: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddMessageFromStoreVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        self.message.underline()
 
         // Do any additional setup after loading the view.
     }
