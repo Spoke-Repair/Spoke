@@ -1765,7 +1765,6 @@
                         <outlet property="typeLabel" destination="KwK-gJ-f6v" id="dWx-ta-668"/>
                         <segue destination="3WM-Gh-6zu" kind="unwind" identifier="unwindToBeggining" unwindAction="unwindToViewControllerWithSegue:" id="cTN-eW-ZVK"/>
                         <segue destination="3WM-Gh-6zu" kind="unwind" unwindAction="unwindToViewControllerWithSegue:" id="kHx-YD-IpN"/>
-                        <segue destination="Uft-kl-qrc" kind="show" identifier="bkSegue" id="Wvg-T4-LhY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AxO-aZ-5rL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1879,7 +1878,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="hA1-75-SA0">
             <objects>
-                <tabBarController id="Uft-kl-qrc" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="originalTabBar" id="Uft-kl-qrc" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="VOJ-rY-O7y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1977,7 +1976,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1zi-XM-f2o"/>
-        <segue reference="Wvg-T4-LhY"/>
+        <segue reference="keg-Jk-ugW"/>
         <segue reference="AFd-cV-I9L"/>
         <segue reference="167-wI-gAe"/>
     </inferredMetricsTieBreakers>

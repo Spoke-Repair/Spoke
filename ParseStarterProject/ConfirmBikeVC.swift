@@ -38,7 +38,6 @@ class ConfirmBikeVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.bikeIDLabel.text = bikeId
         self.makeLabel.text = make
         self.modelLabel.text = model
         self.typeLabel.text = type
@@ -52,19 +51,19 @@ class ConfirmBikeVC: UIViewController {
         let query = PFQuery(className: "Bike")
         query.whereKey("objectId", equalTo: bikeId!)
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
-print("find objects")
+            print("find objects")
             guard error == nil else {
                 print(error!.localizedDescription)
-                return
+            return
             }
-print("error is nil")
-print("objects: \(objects!)") // prints empty array
-print("objects![0]: \(objects![0])") //Never prints - but DOES NOT throw an error curiously
+            print("error is nil")
+            print("objects: \(objects!)") // prints empty array
+            print("objects![0]: \(objects![0])") //Never prints - but DOES NOT throw an error curiously
             guard let object = objects?[0] else {
                 print("Unable to obtain object from query")
                 return
             }
-print("passed guards")
+            print("passed guards")
             object["isOwned"] = true
             object["model"] = self.model
             object["userID"] = self.userId
@@ -78,8 +77,12 @@ print("passed guards")
                     print(error!.localizedDescription)
                     return
                 }
-                self.navigationController?.popToRootViewController(animated: false)
-                self.performSegue(withIdentifier: "bkSegue", sender: self)
+               // self.navigationController?.popToRootViewController(animated: false)
+               // self.performSegue(withIdentifier: "bkSegue", sender: self)
+                let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "originalTabBar") as! UITabBarController
+                self.present(vc, animated: true, completion: nil)
+            
             })
         }
     }
