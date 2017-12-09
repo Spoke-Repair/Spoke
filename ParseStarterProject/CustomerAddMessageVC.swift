@@ -35,11 +35,6 @@ class CustomerAddMessageVC: UIViewController {
             })
             
             
-            
-            
-            
-            
-            
         }else{
             print("Enter a message idiot")
         }

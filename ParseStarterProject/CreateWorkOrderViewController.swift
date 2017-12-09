@@ -29,7 +29,12 @@ class CreateWorkOrderViewController: UIViewController, UITableViewDelegate, UITa
         newOrder.saveInBackground { (success: Bool, error: Error?) in
             if(success){
                 print("Saved new object")
-                self.performSegue(withIdentifier: "backToOrders", sender: self)
+                //self.performSegue(withIdentifier: "backToOrders", sender: self)
+                let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "homeTabBarController") as! UITabBarController
+                self.present(vc, animated: true, completion: nil)
+            
+            
             }else {
                 print("An error occured")
             }
@@ -59,9 +64,13 @@ class CreateWorkOrderViewController: UIViewController, UITableViewDelegate, UITa
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToOrders" {
-            let navVC = segue.destination as? UINavigationController
-            _ = navVC?.viewControllers.first as! OpenOrderCollectionView
+          //  let navVC = segue.destination as? UINavigationController
+            //_ = navVC?.viewControllers.first as! OpenOrderCollectionView
+            //this needs to be unwind??
+            
         }
+        
+        
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
