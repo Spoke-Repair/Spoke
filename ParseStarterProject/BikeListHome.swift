@@ -16,33 +16,31 @@ var bikeObjectList = [BikeObject]()
 class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var indicator = UIActivityIndicatorView()
-
-   
     @IBOutlet var bikeCollectionView: UICollectionView!
-    
     @IBOutlet var visitBlogButton: UIButton!
+
     @IBAction func visitBlogButton(_ sender: Any) {
     //send the user to the blog
     }
+
     @IBAction func addBike(_ sender: Any) {
         // let storyboard = UIStoryboard(name: "Main", bundle: nil)
         //let vc = storyboard.instantiateViewController(withIdentifier: "addBikeVC")
         //self.present(vc, animated: true, completion: nil)
         self.performSegue(withIdentifier: "addBike", sender: self)
     }
-    
-    
+
     func activityIndicator() {
         indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         indicator.center = self.view.center
         self.view.addSubview(indicator)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (bikeObjectList.count)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BikeCollectionCell", for: indexPath) as! BikeCollectionCell
         cell.textLabel.text = bikeObjectList[indexPath.row].make
@@ -65,8 +63,7 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
                 print("CASE default")
                 cell.contentView.backgroundColor = UIColor(displayP3Red: 237/255, green: 248/255, blue: 245/255, alpha: 1.0)
         }
-        
-        
+
         return cell
     }
     
@@ -82,15 +79,8 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
         activityIndicator()
         visitBlogButton.layer.cornerRadius = 7
         visitBlogButton.clipsToBounds = true
-        
-        
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     override func viewWillAppear(_ animated: Bool) {
         
         indicator.startAnimating()
@@ -147,7 +137,8 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
                         self.indicator.hidesWhenStopped = true
                         
                     }
-                }else {
+                }
+                else {
                     //there was an error
                     print("There was an error...")
                 }
@@ -163,16 +154,4 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
             _ = navVC?.viewControllers.first as! AddBikeViewController
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
