@@ -30,6 +30,10 @@ class ConfirmBikeVC: UIViewController {
         newBike["isOwned"] = true
         newBike["userID"] = PFUser.current()?.objectId
         newBike.saveInBackground(block: {(success:Bool, error: Error?) in
+            guard error == nil else {
+                CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
+                return
+            }
             let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "originalTabBar") as! UITabBarController
             self.present(vc, animated: true, completion: nil)
