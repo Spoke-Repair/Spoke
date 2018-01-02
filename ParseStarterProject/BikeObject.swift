@@ -28,7 +28,6 @@ class BikeObject {
         self.userId = userId
         self.picture = nil
         self.bikeId = bikeId
-        
     }
     
     init(make: String, model: String, size: String, isOwned: Bool, userId: String, bikeId: String, picture: UIImage ){
@@ -39,18 +38,9 @@ class BikeObject {
         self.userId = userId
         self.picture = picture
         self.bikeId = bikeId
-        
     }
     
     func doesPictureExist() -> Bool {
-        
-        if(self.picture == nil) {
-            return false
-        }else{
-            return true
-        }
-    
+        return self.picture != nil
     }
-    
-    
 }

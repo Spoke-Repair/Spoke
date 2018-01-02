@@ -3,7 +3,6 @@
 //  
 //
 //  Created by Garrett Huff on 11/19/17.
-//hello
 
 import UIKit
 import Parse
@@ -20,17 +19,14 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
     @IBOutlet var visitBlogButton: UIButton!
 
     @IBAction func visitBlogButton(_ sender: Any) {
-    //send the user to the blog
+        //send the user to the blog
     }
 
     @IBAction func addBike(_ sender: Any) {
-        // let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let vc = storyboard.instantiateViewController(withIdentifier: "addBikeVC")
-        //self.present(vc, animated: true, completion: nil)
         self.performSegue(withIdentifier: "addBike", sender: self)
     }
 
-    func activityIndicator() {
+    private func activityIndicator() {
         indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         indicator.center = self.view.center
@@ -87,20 +83,17 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
         indicator.backgroundColor = UIColor.white
         //disable touch while the tableview is loading
         self.view.isUserInteractionEnabled = false
-        
+
         bikeObjectList.removeAll()
-        
+
         let query = PFQuery(className: "Bike")
         if let userID = PFUser.current()?.objectId {
-            print("user ID: "+userID)
+            print("user ID: " + userID)
             query.whereKey("userID", equalTo: userID)
             query.findObjectsInBackground(block: { (objects: [PFObject]?, error: Error?) in
                 if error == nil {
                     if let objects = objects {
                         for object in objects {
-                            //print("printing items from parse query")
-                            //print(object["userID"])
-                            //print(object["model"])
                             let make = object["make"] as! String
                             let model = object["model"] as! String
                             let isOwned = object["isOwned"] as! Bool
@@ -108,8 +101,7 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
                             let userId = object["userID"] as! String
                             let bikeId = object.objectId!
                             let bikeToAdd: BikeObject = BikeObject(make: make, model: model, size: size, isOwned: isOwned, userId: userId, bikeId: bikeId)
-                            
-                            
+
                             if let picture = object["picture"] {
                                 let pImage = picture as! PFFile
                                 pImage.getDataInBackground(block: { (data: Data?, error: Error?) in
@@ -119,9 +111,7 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
                                        // self.tableView.reloadData()
                                         self.bikeCollectionView.reloadData()
                                     }
-                                    
                                 })
-                                
                             }
                             if(!(bikeList.contains(object["model"] as! String))){
                                 bikeList.append(object["model"] as! String)

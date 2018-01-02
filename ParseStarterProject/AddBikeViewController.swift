@@ -21,7 +21,7 @@ class AddBikeViewController: UIViewController {
     }
     
     @IBAction func goToScanner(_ sender: Any) {
-        if makeLabel.text?.count != 0 && modelLabel.text?.count != 0 && sizeLabel.text?.count != 0 {
+        if !(makeLabel.text ?? "").isEmpty && !(modelLabel.text ?? "").isEmpty && !(sizeLabel.text ?? "").isEmpty {
             self.performSegue(withIdentifier: "scanQRSegue", sender: self)
         }
         else {
