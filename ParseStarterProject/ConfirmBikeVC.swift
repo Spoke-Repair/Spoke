@@ -27,7 +27,6 @@ class ConfirmBikeVC: UIViewController {
     }
     
     @IBAction func confirmBike(_ sender: Any) {
-        newBike["isOwned"] = true
         newBike["userID"] = PFUser.current()?.objectId
         newBike.saveInBackground(block: {(success:Bool, error: Error?) in
             guard error == nil else {

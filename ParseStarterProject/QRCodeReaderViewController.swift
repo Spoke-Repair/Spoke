@@ -68,7 +68,7 @@ class QRCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjec
                 print("Failed bike ID: \(self.userID!)")
                 return
             }
-            guard objects?[0]["isOwned"] as! Bool == true else {
+            guard objects?[0]["userID"] != nil else {
                 CommonUtils.popUpAlert(message: "Bike is not assigned to owner", sender: self)
                 print("Unowned bike ID: \(self.userID!)")
                 return

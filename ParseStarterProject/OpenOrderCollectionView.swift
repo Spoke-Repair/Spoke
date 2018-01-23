@@ -89,7 +89,7 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
                                         
                                         let make = object["make"] as! String
                                         let model = object["model"] as! String
-                                        let isOwned = object["isOwned"] as! Bool
+                                        let isOwned = object["userID"] != nil
                                         let size = object["size"] as! String
                                         let userId = object["userID"] as! String
                                         let bikeId = object.objectId!

@@ -58,7 +58,7 @@ class DisplayBikeDataViewController: UIViewController {
                             //new code
                         let make = objects[0]["make"] as! String
                         let model = objects[0]["model"] as! String
-                        let isOwned = objects[0]["isOwned"] as! Bool
+                        let isOwned = objects[0]["userID"] != nil
                         let size = objects[0]["size"] as! String
                         let userId = objects[0]["userID"] as! String
                         let bikeId = objects[0].objectId!
