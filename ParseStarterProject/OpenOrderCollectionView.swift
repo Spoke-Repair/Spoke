@@ -26,40 +26,30 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
     
     @IBOutlet var nextBikeLabel: UILabel!
     var bikesDue = 0
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-       
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
         let result = formatter.string(from: date)
-        
+
         self.currentDate.text = result
-        
+
         //get the Store owners ID for later use in chat
         StoreOwnerID = (PFUser.current()?.objectId)!
-        
+
         BikeDescriptionList.removeAll()
         WorkOrderIDList.removeAll()
         BikeOwnersList.removeAll()
         BikeIDList.removeAll()
-        
+
         self.bikesDue = 0
-        
+
         let query = PFQuery(className: "WorkOrders")
         query.whereKey("isOpen", equalTo: "open")
         query.findObjectsInBackground(block: { (objects: [PFObject]?, error: Error?) in
@@ -73,20 +63,18 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
                         if bikeDate == result {
                             self.bikesDue += 1
                         }
-                        
+
                         // bikeOwnersList.append(object["userID"] as! String)
                         //here query to get the bike object based on the objectID to get the bike owners ID
                         let bikeUserQuery = PFQuery(className: "Bike")
                         bikeUserQuery.whereKey("objectId", equalTo: object["bikeID"])
                         //execute query to find the userID of the bike
                         bikeUserQuery.findObjectsInBackground(block: { (bikeObjects: [PFObject]?, bikeError: Error?) in
-                            
                             if bikeError == nil {
-                                
                                 if let bikeObjects = bikeObjects {
                                     for object in bikeObjects {
                                         //we have the bike were looking for so get the user of the Bikes id
-                                        
+
                                         let make = object["make"] as! String
                                         let model = object["model"] as! String
                                         let isOwned = object["userID"] != nil
@@ -94,8 +82,7 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
                                         let userId = object["userID"] as! String
                                         let bikeId = object.objectId!
                                         let bikeToAdd: BikeObject = BikeObject(make: make, model: model, size: size, isOwned: isOwned, userId: userId, bikeId: bikeId)
-                                        
-                                        
+
                                         if let picture = object["picture"] {
                                             let pImage = picture as! PFFile
                                             pImage.getDataInBackground(block: { (data: Data?, error: Error?) in
@@ -105,22 +92,14 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
                                                     // self.tableView.reloadData()
                                                     self.bikeCollectionView.reloadData()
                                                 }
-                                                
                                             })
-                                            
                                         }
                                         BikeList.append(bikeToAdd)
                                         BikeOwnersList.append(object["userID"] as! String)
-                                        
                                     }
                                 }
                             }
-                            
                         })
-                        
-                        
-                        
-                        
                     }
                     // self.theTable.reloadData()
                     self.bikeCollectionView.reloadData()
@@ -128,30 +107,25 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
             }else{
                 print("An error occured finding work orders")
             }
-            
         })
-   
-        
-        
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         self.bikesDueLabel.text = "You have \(bikesDue) orders due today"
         self.nextBikeLabel.text = "Next bike for repair: \(BikeList[0].make)"
         // CommonUtils.addFCMTokenToParse()
         
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         myIndex = indexPath.row
         self.performSegue(withIdentifier: "openOrderSegue", sender: self)
     }
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (BikeList.count)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BikeOrderCollection", for: indexPath) as! BikeOrderCell
@@ -176,11 +150,6 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
             print("CASE default")
             cell.contentView.backgroundColor = UIColor(displayP3Red: 237/255, green: 248/255, blue: 245/255, alpha: 1.0)
         }
-        
-        
         return cell
     }
-    
-    
-    
 }

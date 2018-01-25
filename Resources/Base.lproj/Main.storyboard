@@ -428,18 +428,11 @@
                             <constraint firstAttribute="trailing" secondItem="AyZ-zM-QpP" secondAttribute="trailing" id="zY6-rp-XKV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0KQ-Nc-FDm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZSS-br-HQf">
-                            <connections>
-                                <action selector="addBike:" destination="we8-6d-fyy" id="cxz-g4-2td"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="0KQ-Nc-FDm"/>
                     <connections>
                         <outlet property="bikeCollectionView" destination="AyZ-zM-QpP" id="86g-fN-bcH"/>
                         <outlet property="visitBlogButton" destination="jR1-Gv-ma5" id="uuD-4H-C7L"/>
                         <segue destination="iYY-zw-wHO" kind="show" identifier="customerViewBike" id="HV3-X4-ES3"/>
-                        <segue destination="dt9-mO-QR3" kind="show" identifier="addBike" id="JXV-Me-j8L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ct6-Mm-3eV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -501,7 +494,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="WGk-uT-Lt5">
             <objects>
-                <tabBarController storyboardIdentifier="homeTabBarController" id="LTU-Rz-Z5h" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="shopTabBarController" id="LTU-Rz-Z5h" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="SDj-ai-Kur">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1044,7 +1037,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bxv-U9-sXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2666" y="2015"/>
+            <point key="canvasLocation" x="2846" y="1928"/>
         </scene>
         <!--Open Order Collection View-->
         <scene sceneID="BXE-Vp-Cmn">
@@ -1217,7 +1210,13 @@
                             <constraint firstAttribute="trailing" secondItem="1p3-1o-ieQ" secondAttribute="trailing" id="zBi-ZE-pMa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SiX-EH-mET"/>
+                    <navigationItem key="navigationItem" id="SiX-EH-mET">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hac-9w-ifm">
+                            <connections>
+                                <segue destination="dt9-mO-QR3" kind="show" id="9qq-uN-5Wn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bikeCollectionView" destination="1p3-1o-ieQ" id="ThX-mY-N7i"/>
                         <outlet property="bikesDueLabel" destination="Vb2-ji-RJp" id="8U1-Lo-p8Q"/>
@@ -1525,6 +1524,66 @@
             </objects>
             <point key="canvasLocation" x="6810.3999999999996" y="1745.577211394303"/>
         </scene>
+        <!--Enter Phone Number View Controller-->
+        <scene sceneID="lA9-vP-6xY">
+            <objects>
+                <viewController id="Y2N-Oe-Djl" customClass="EnterPhoneNumberViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fMV-no-lgV"/>
+                        <viewControllerLayoutGuide type="bottom" id="3cc-dd-3Mt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sCh-wK-k2L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ym-oF-PUS">
+                                <rect key="frame" x="109" y="110" width="157" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aX-V6-NbQ">
+                                <rect key="frame" x="87.5" y="156" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="vsS-Y1-zEw"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PT-bd-pow">
+                                <rect key="frame" x="163" y="318" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <segue destination="N9A-Ly-vo9" kind="show" identifier="addBikeSegue" id="ErK-OJ-bC3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6aX-V6-NbQ" firstAttribute="centerX" secondItem="sCh-wK-k2L" secondAttribute="centerX" id="JaC-0m-jeH"/>
+                            <constraint firstItem="3ym-oF-PUS" firstAttribute="centerX" secondItem="sCh-wK-k2L" secondAttribute="centerX" id="hvu-9u-Wwd"/>
+                            <constraint firstItem="6aX-V6-NbQ" firstAttribute="top" secondItem="3ym-oF-PUS" secondAttribute="bottom" constant="25" id="lvk-d2-7M1"/>
+                            <constraint firstItem="3ym-oF-PUS" firstAttribute="top" secondItem="fMV-no-lgV" secondAttribute="bottom" constant="46" id="zFD-Vo-ix9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JpE-Ja-mg4">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kDs-cT-8ec">
+                            <connections>
+                                <segue destination="XOA-Fb-ASl" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="6lA-Kc-nFd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="phoneField" destination="6aX-V6-NbQ" id="ddT-ym-jkd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HHU-xH-czZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XOA-Fb-ASl" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2030" y="3196"/>
+        </scene>
         <!--Add Bike-->
         <scene sceneID="uk5-zo-1fI">
             <objects>
@@ -1556,7 +1615,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wY-mG-xOn">
-                                <rect key="frame" x="0.0" y="562" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
                                 <color key="backgroundColor" red="0.92811131477355957" green="0.97323185205459595" blue="0.95902198553085327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="3GB-7W-Z7C"/>
@@ -1577,7 +1636,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Please press the below button to scan a QR code, and then place it on your bike." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrY-xI-ZcX">
-                                <rect key="frame" x="67" y="369" width="240" height="128"/>
+                                <rect key="frame" x="67" y="369" width="240" height="177"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="wGa-PT-2sc"/>
@@ -1619,24 +1678,17 @@
                             <constraint firstItem="TrY-xI-ZcX" firstAttribute="centerX" secondItem="8wY-mG-xOn" secondAttribute="centerX" id="xmh-xe-szq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Bike" id="S9q-ep-sI1">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="XZx-eo-FJn">
-                            <connections>
-                                <action selector="cancelButtonClicked:" destination="N9A-Ly-vo9" id="k2t-mz-rQG"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Add Bike" id="S9q-ep-sI1"/>
                     <connections>
                         <outlet property="makeLabel" destination="5cb-bu-bB9" id="u0c-9l-mHO"/>
                         <outlet property="modelLabel" destination="JS1-Ix-xEo" id="D8Y-ic-wGc"/>
                         <outlet property="sizeLabel" destination="NZV-d7-wBV" id="Sg9-jj-O9q"/>
                         <segue destination="cWW-cW-hIP" kind="show" identifier="scanQRSegue" id="fVm-cJ-fXw"/>
-                        <segue destination="Uft-kl-qrc" kind="show" identifier="backToMyBikes" id="00M-tD-Af9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LAC-p7-ImK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5772" y="572.56371814092961"/>
+            <point key="canvasLocation" x="2846" y="2925"/>
         </scene>
         <!--Add Bike ScannerVC-->
         <scene sceneID="x0y-ed-8V5">
@@ -1651,7 +1703,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.png" translatesAutoresizingMaskIntoConstraints="NO" id="1jf-Gw-J3e">
-                                <rect key="frame" x="25" y="127" width="325" height="413"/>
+                                <rect key="frame" x="25" y="171" width="325" height="325"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1669,7 +1721,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgO-sp-yrr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6840.8000000000002" y="572.56371814092961"/>
+            <point key="canvasLocation" x="3916" y="2925"/>
         </scene>
         <!--Confirm BikeVC-->
         <scene sceneID="wkd-iF-oyx">
@@ -1684,13 +1736,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKl-Tu-qlV">
-                                <rect key="frame" x="8" y="372" width="88" height="34"/>
+                                <rect key="frame" x="8" y="416" width="88" height="34"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pys-cf-yYy">
-                                <rect key="frame" x="127" y="372" width="120" height="34"/>
+                                <rect key="frame" x="127" y="416" width="120" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="PhP-KH-Re6"/>
                                     <constraint firstAttribute="width" constant="120" id="enx-ew-PEh"/>
@@ -1714,7 +1766,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg4-nM-c9J">
-                                <rect key="frame" x="16" y="28" width="184" height="46"/>
+                                <rect key="frame" x="16" y="72" width="184" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="184" id="yos-M4-yZu"/>
                                 </constraints>
@@ -1723,7 +1775,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahN-v0-qWV">
-                                <rect key="frame" x="8" y="95" width="359" height="248"/>
+                                <rect key="frame" x="8" y="139" width="359" height="248"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="248" id="HRg-Bc-HP5"/>
                                 </constraints>
@@ -1769,7 +1821,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AxO-aZ-5rL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="3WM-Gh-6zu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="9024.7999999999993" y="555.47226386806597"/>
+            <point key="canvasLocation" x="6097" y="3196"/>
         </scene>
         <!--Photo Of Bike Controller-->
         <scene sceneID="YSI-mZ-INp">
@@ -1798,7 +1850,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a Picture of your bike" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqj-tg-war">
-                                <rect key="frame" x="16" y="28" width="307" height="60"/>
+                                <rect key="frame" x="16" y="72" width="307" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="sz6-hb-fdG"/>
                                 </constraints>
@@ -1807,7 +1859,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons8-Ios7-Transport-Bicycle.ico" translatesAutoresizingMaskIntoConstraints="NO" id="Y4W-pG-Enb">
-                                <rect key="frame" x="0.0" y="96" width="375" height="348"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="348"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="348" id="Ou0-6Q-rrH"/>
                                     <constraint firstAttribute="width" constant="375" id="lC9-Oz-7JB"/>
@@ -1837,7 +1889,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ye6-GK-XAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7816.8000000000002" y="572.56371814092961"/>
+            <point key="canvasLocation" x="5062" y="2925"/>
         </scene>
         <!--Code-->
         <scene sceneID="z86-dj-dED">
@@ -1877,7 +1929,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="hA1-75-SA0">
             <objects>
-                <tabBarController storyboardIdentifier="originalTabBar" id="Uft-kl-qrc" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="customerTabBar" id="Uft-kl-qrc" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="VOJ-rY-O7y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1923,12 +1975,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="N9A-Ly-vo9" kind="relationship" relationship="rootViewController" id="WF5-4q-kdQ"/>
+                        <segue destination="Y2N-Oe-Djl" kind="relationship" relationship="rootViewController" id="fU9-bo-tLV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZI-Rj-gzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4746" y="403"/>
+            <point key="canvasLocation" x="2030" y="2411"/>
         </scene>
         <!--Home-->
         <scene sceneID="NIz-w9-qaO">
@@ -1974,8 +2026,8 @@
         <image name="square.png" width="276" height="276"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1zi-XM-f2o"/>
-        <segue reference="00M-tD-Af9"/>
+        <segue reference="fDc-c8-Fpp"/>
+        <segue reference="AqR-JP-6ru"/>
         <segue reference="AFd-cV-I9L"/>
         <segue reference="167-wI-gAe"/>
     </inferredMetricsTieBreakers>

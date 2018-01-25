@@ -27,14 +27,13 @@ class ConfirmBikeVC: UIViewController {
     }
     
     @IBAction func confirmBike(_ sender: Any) {
-        newBike["userID"] = PFUser.current()?.objectId
         newBike.saveInBackground(block: {(success:Bool, error: Error?) in
             guard error == nil else {
                 CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
                 return
             }
             let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "originalTabBar") as! UITabBarController
+            let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "shopTabBarController") as! UITabBarController
             self.present(vc, animated: true, completion: nil)
         })
     }

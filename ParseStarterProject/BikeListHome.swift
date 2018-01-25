@@ -125,23 +125,12 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
                         self.view.isUserInteractionEnabled = true
                         self.indicator.stopAnimating()
                         self.indicator.hidesWhenStopped = true
-                        
                     }
                 }
                 else {
-                    //there was an error
                     print("There was an error...")
                 }
             })
-            
-        }
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addBike" {
-            let navVC = segue.destination as? UINavigationController
-            _ = navVC?.viewControllers.first as! AddBikeViewController
         }
     }
 }

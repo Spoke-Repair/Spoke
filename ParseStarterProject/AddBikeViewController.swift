@@ -14,12 +14,7 @@ class AddBikeViewController: UIViewController {
     @IBOutlet var makeLabel: UITextField!
     @IBOutlet var modelLabel: UITextField!
     @IBOutlet var sizeLabel: UITextField!
-    
-    @IBAction func cancelButtonClicked(_ sender: Any) {
-        self.performSegue(withIdentifier: "backToMyBikes", sender: self)
-        self.dismiss(animated: false, completion: nil)
-    }
-    
+
     @IBAction func goToScanner(_ sender: Any) {
         if !(makeLabel.text ?? "").isEmpty && !(modelLabel.text ?? "").isEmpty && !(sizeLabel.text ?? "").isEmpty {
             self.performSegue(withIdentifier: "scanQRSegue", sender: self)
