@@ -11,6 +11,7 @@ import Parse
 
 class AddBikeViewController: UIViewController {
 
+    var phoneNumber: String!
     @IBOutlet var makeLabel: UITextField!
     @IBOutlet var modelLabel: UITextField!
     @IBOutlet var sizeLabel: UITextField!
@@ -41,9 +42,10 @@ class AddBikeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "scanQRSegue", let addBikeVC = segue.destination as? AddBikeScannerVC {
             let newBike = PFObject(className: "Bike")
-            newBike["make"] = makeLabel.text
-            newBike["model"] = modelLabel.text
-            newBike["size"] = sizeLabel.text
+            newBike["phone"] = self.phoneNumber
+            newBike["make"] = self.makeLabel.text
+            newBike["model"] = self.modelLabel.text
+            newBike["size"] = self.sizeLabel.text
             addBikeVC.newBike = newBike
         }
     }
