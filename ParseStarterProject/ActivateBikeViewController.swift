@@ -34,10 +34,23 @@ class ActivateBikeViewController: UIViewController {
                 CommonUtils.popUpAlert(message: "Warning: Multiple IDs associated with this activation code", sender: self)
                 return
             }
+            guard let currentUser = PFUser.current() else {
+                CommonUtils.popUpAlert(message: "Error - currently not logged in as a user", sender: self)
+                return
+            }
+
             let bike = objects![0]
-            bike["userID"] = PFUser.current()?.objectId
-            bike.saveInBackground() //Save is not working because this user doesn't have permission to write to that bike row
-//            CommonUtils.popUpAlert(message: "Success!", sender: self)
+            bike["userID"] = currentUser.objectId
+            bike.acl!.setWriteAccess(true, for: currentUser) //this is not changing the write permissions as it should be
+
+            bike.saveInBackground {
+                (success: Bool, error: Error?) in
+                guard success && error == nil else {
+                    CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
+                    return
+                }
+                CommonUtils.popUpAlert(message: "Success!", sender: self)
+            }
         }
 
     }
