@@ -9,7 +9,6 @@
 import UIKit
 
 class LandingPageVC: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,15 +24,4 @@ class LandingPageVC: UIViewController {
         triangle.fillColor = UIColor.cyan.cgColor
         self.view.layer.addSublayer(triangle)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

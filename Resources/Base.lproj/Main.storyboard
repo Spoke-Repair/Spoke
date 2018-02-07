@@ -591,7 +591,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I AM A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXf-Bw-khp">
                                 <rect key="frame" x="162" y="206" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43046081852791873" green="0.43046081852791873" blue="0.43046081852791873" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.50376744920000005" green="0.50376744920000005" blue="0.50376744920000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq5-0r-DTz">
@@ -612,6 +612,9 @@
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="N6u-lb-RXE" kind="show" id="MfD-Iu-wzZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -629,7 +632,102 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42M-WH-Ryj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1108" y="741"/>
+            <point key="canvasLocation" x="-2079" y="752"/>
+        </scene>
+        <!--New Shop PhoneVC-->
+        <scene sceneID="uMM-je-Uo2">
+            <objects>
+                <viewController id="N6u-lb-RXE" customClass="NewShopPhoneVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A7T-v7-6rr"/>
+                        <viewControllerLayoutGuide type="bottom" id="PhB-ek-inc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hQq-8n-H5S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spoke.png" translatesAutoresizingMaskIntoConstraints="NO" id="dS6-4x-hER">
+                                <rect key="frame" x="0.0" y="25" width="375" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="eNl-Nq-smz"/>
+                                    <constraint firstAttribute="width" constant="375" id="vfv-ix-tiU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE A NEW SHOP ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-ht-GUl">
+                                <rect key="frame" x="59" y="203" width="257" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.50376744920000005" green="0.50376744920000005" blue="0.50376744920000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter shop phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-eO-vv5">
+                                <rect key="frame" x="87" y="274" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="KAb-rq-saA"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cS-qq-42A">
+                                <rect key="frame" x="152" y="354" width="70" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="X41-DA-ok5"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZPA-Qa-7Xz"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Kq8-Uf-BHq" kind="show" identifier="addressSegue" id="NQq-Yd-nRp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mz8-eO-vv5" firstAttribute="centerX" secondItem="hQq-8n-H5S" secondAttribute="centerX" id="5gB-Zy-AEd"/>
+                            <constraint firstItem="dS6-4x-hER" firstAttribute="top" secondItem="A7T-v7-6rr" secondAttribute="bottom" constant="5" id="BLU-xr-Fsl"/>
+                            <constraint firstItem="dS6-4x-hER" firstAttribute="centerX" secondItem="hQq-8n-H5S" secondAttribute="centerX" id="HkL-69-i3G"/>
+                            <constraint firstItem="mz8-eO-vv5" firstAttribute="top" secondItem="tE2-ht-GUl" secondAttribute="bottom" constant="50" id="Hqi-Em-Pdt"/>
+                            <constraint firstItem="tE2-ht-GUl" firstAttribute="centerX" secondItem="hQq-8n-H5S" secondAttribute="centerX" id="VpZ-mC-KAY"/>
+                            <constraint firstItem="tE2-ht-GUl" firstAttribute="top" secondItem="dS6-4x-hER" secondAttribute="bottom" constant="50" id="Xzy-nL-rMb"/>
+                            <constraint firstItem="4cS-qq-42A" firstAttribute="centerX" secondItem="hQq-8n-H5S" secondAttribute="centerX" id="gsk-gm-Qa7"/>
+                            <constraint firstItem="4cS-qq-42A" firstAttribute="top" secondItem="mz8-eO-vv5" secondAttribute="bottom" constant="50" id="yHJ-RU-irR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="phoneField" destination="mz8-eO-vv5" id="2Wg-hV-CLO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZnJ-0E-NlQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1212" y="751.57421289355329"/>
+        </scene>
+        <!--New Shop AddressVC-->
+        <scene sceneID="Wpd-B3-fP8">
+            <objects>
+                <viewController id="Kq8-Uf-BHq" customClass="NewShopAddressVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A1x-b0-zlN"/>
+                        <viewControllerLayoutGuide type="bottom" id="HNl-XF-XTZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z9i-pn-y9K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0EE-tO-C4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1212" y="1569"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WGk-uT-Lt5">
@@ -2167,7 +2265,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fDc-c8-Fpp"/>
-        <segue reference="AqR-JP-6ru"/>
+        <segue reference="keg-Jk-ugW"/>
         <segue reference="AFd-cV-I9L"/>
         <segue reference="167-wI-gAe"/>
     </inferredMetricsTieBreakers>

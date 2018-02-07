@@ -53,6 +53,8 @@
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
 		C20B6F5E202AB683008656E9 /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B6F5D202AB683008656E9 /* LandingPageVC.swift */; };
+		C20B6F60202ACEAB008656E9 /* NewShopPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B6F5F202ACEAB008656E9 /* NewShopPhoneVC.swift */; };
+		C20B6F62202ADD1B008656E9 /* NewShopAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B6F61202ADD1B008656E9 /* NewShopAddressVC.swift */; };
 		C212487B1FD618BF00F50C8C /* OpenOrderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */; };
 		C212487D1FD6198900F50C8C /* BikeOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212487C1FD6198900F50C8C /* BikeOrderCell.swift */; };
 		C24E2030201C24B300485E7A /* ActivateBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24E202F201C24B200485E7A /* ActivateBikeViewController.swift */; };
@@ -119,6 +121,8 @@
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		C20B6F5D202AB683008656E9 /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
+		C20B6F5F202ACEAB008656E9 /* NewShopPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopPhoneVC.swift; sourceTree = "<group>"; };
+		C20B6F61202ADD1B008656E9 /* NewShopAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopAddressVC.swift; sourceTree = "<group>"; };
 		C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrderCollectionView.swift; sourceTree = "<group>"; };
 		C212487C1FD6198900F50C8C /* BikeOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeOrderCell.swift; sourceTree = "<group>"; };
 		C24E202F201C24B200485E7A /* ActivateBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateBikeViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 				C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */,
 				C212487C1FD6198900F50C8C /* BikeOrderCell.swift */,
 				C20B6F5D202AB683008656E9 /* LandingPageVC.swift */,
+				C20B6F5F202ACEAB008656E9 /* NewShopPhoneVC.swift */,
+				C20B6F61202ADD1B008656E9 /* NewShopAddressVC.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -453,9 +459,11 @@
 				6832ABA91F3BCABA00D8D49A /* SettingsViewController.swift in Sources */,
 				6832ABA31F3A664E00D8D49A /* QRCodeGeneratorViewController.swift in Sources */,
 				6832ABB31F3F781200D8D49A /* MessageComposer.swift in Sources */,
+				C20B6F62202ADD1B008656E9 /* NewShopAddressVC.swift in Sources */,
 				68F173F41F8AA872000CC893 /* CustomerMessageCell.swift in Sources */,
 				687F93181F96DCDB00253E00 /* CommonUtils.swift in Sources */,
 				C212487D1FD6198900F50C8C /* BikeOrderCell.swift in Sources */,
+				C20B6F60202ACEAB008656E9 /* NewShopPhoneVC.swift in Sources */,
 				68E5D3321F4B721C00EFC857 /* AvailableServiceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
