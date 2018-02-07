@@ -9,6 +9,16 @@
 import UIKit
 
 class LandingPageVC: UIViewController {
+
+    var loginError: Error?
+
+    override func viewDidAppear(_ animated: Bool) {
+        guard loginError?.localizedDescription == nil else {
+            CommonUtils.popUpAlert(message: loginError!.localizedDescription, sender: self)
+            return
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

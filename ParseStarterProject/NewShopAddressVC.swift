@@ -49,9 +49,8 @@ class NewShopAddressVC: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "passwordSegue", let passwordVC = segue.destination as? NewShopPasswordVC {
-            let user = PFUser()
-            user["address"] = addressField.text!
-            passwordVC.user = user
+            self.user["address"] = addressField.text!
+            passwordVC.user = self.user
         }
     }
 
