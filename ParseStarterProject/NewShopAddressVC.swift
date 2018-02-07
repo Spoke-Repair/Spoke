@@ -12,21 +12,47 @@ import Parse
 class NewShopAddressVC: UIViewController {
 
     var user: PFUser!
-    
+    @IBOutlet weak var addressField: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        addressField.underline()
 
-        // Do any additional setup after loading the view.
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0, y: self.view.frame.height - 100))
+        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.width))
+        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.height))
+        path.addLine(to: CGPoint(x: 0, y: self.view.frame.height))
+        path.close()
+        
+        let triangle = CAShapeLayer()
+        triangle.path = path.cgPath
+        triangle.fillColor = UIColor.cyan.cgColor
+        self.view.layer.addSublayer(triangle)
     }
 
-    /*
-    // MARK: - Navigation
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch identifier {
+        case "passwordSegue":
+            if !(addressField.text ?? "").isEmpty {
+                return true
+            }
+            else {
+                CommonUtils.popUpAlert(message: "Please enter a valid address", sender: self)
+                return false
+            }
+        default:
+            break
+        }
+        return true
+    }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "passwordSegue", let passwordVC = segue.destination as? NewShopPasswordVC {
+            let user = PFUser()
+            user["address"] = addressField.text!
+            passwordVC.user = user
+        }
     }
-    */
 
 }

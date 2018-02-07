@@ -711,6 +711,24 @@
             </objects>
             <point key="canvasLocation" x="-1212" y="751.57421289355329"/>
         </scene>
+        <!--New Shop PasswordVC-->
+        <scene sceneID="BdE-qn-3GS">
+            <objects>
+                <viewController id="6kD-w0-4i8" customClass="NewShopPasswordVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AeM-Ja-hHn"/>
+                        <viewControllerLayoutGuide type="bottom" id="m4Z-VS-CXP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A4G-hk-b4I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQY-H4-WXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2113" y="1568"/>
+        </scene>
         <!--New Shop AddressVC-->
         <scene sceneID="Wpd-B3-fP8">
             <objects>
@@ -722,8 +740,67 @@
                     <view key="view" contentMode="scaleToFill" id="z9i-pn-y9K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spoke.png" translatesAutoresizingMaskIntoConstraints="NO" id="znh-tt-G98">
+                                <rect key="frame" x="0.0" y="28" width="375" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Vik-B8-Wg7"/>
+                                    <constraint firstAttribute="width" constant="375" id="uYi-8T-vps"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCH FOR ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbX-zz-E4W">
+                                <rect key="frame" x="95.5" y="206" width="184" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.50376744920000005" green="0.50376744920000005" blue="0.50376744920000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mFG-sf-xpP">
+                                <rect key="frame" x="87.5" y="277" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ay4-mY-vxS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ak9-8O-HXc">
+                                <rect key="frame" x="152.5" y="357" width="70" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IfY-Lu-Iit"/>
+                                    <constraint firstAttribute="width" constant="70" id="ruU-Db-qTv"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="6kD-w0-4i8" kind="show" identifier="passwordSegue" id="p34-xk-CyP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mFG-sf-xpP" firstAttribute="top" secondItem="sbX-zz-E4W" secondAttribute="bottom" constant="50" id="1Xh-Ih-rzi"/>
+                            <constraint firstItem="ak9-8O-HXc" firstAttribute="centerX" secondItem="z9i-pn-y9K" secondAttribute="centerX" id="5TC-FY-oPL"/>
+                            <constraint firstItem="sbX-zz-E4W" firstAttribute="top" secondItem="znh-tt-G98" secondAttribute="bottom" constant="50" id="Cz2-j8-7R2"/>
+                            <constraint firstItem="znh-tt-G98" firstAttribute="top" secondItem="A1x-b0-zlN" secondAttribute="bottom" constant="8" id="EAW-QA-ycR"/>
+                            <constraint firstItem="sbX-zz-E4W" firstAttribute="centerX" secondItem="z9i-pn-y9K" secondAttribute="centerX" id="N88-3z-kNk"/>
+                            <constraint firstItem="znh-tt-G98" firstAttribute="centerX" secondItem="z9i-pn-y9K" secondAttribute="centerX" id="eDS-Y9-sQU"/>
+                            <constraint firstItem="mFG-sf-xpP" firstAttribute="centerX" secondItem="z9i-pn-y9K" secondAttribute="centerX" id="jdt-5m-dgV"/>
+                            <constraint firstItem="ak9-8O-HXc" firstAttribute="top" secondItem="mFG-sf-xpP" secondAttribute="bottom" constant="50" id="nFX-zL-Lcj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressField" destination="mFG-sf-xpP" id="r9P-zC-IHY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0EE-tO-C4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
