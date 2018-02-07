@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Gf7-0T-FXH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -549,6 +549,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l93-GK-Not" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="861.60000000000002" y="2208.8455772113944"/>
+        </scene>
+        <!--Landing PageVC-->
+        <scene sceneID="ELs-28-ZaG">
+            <objects>
+                <viewController id="Gf7-0T-FXH" customClass="LandingPageVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VLX-g8-vxA"/>
+                        <viewControllerLayoutGuide type="bottom" id="747-Rn-Dha"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ws0-Tu-R0w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spoke.png" translatesAutoresizingMaskIntoConstraints="NO" id="UVi-OP-hGG">
+                                <rect key="frame" x="0.0" y="28" width="375" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="3rX-oH-a9u"/>
+                                    <constraint firstAttribute="width" constant="375" id="QiJ-F2-drT"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lge-B1-Gdj">
+                                <rect key="frame" x="137.5" y="377" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1z4-Gc-rTG"/>
+                                    <constraint firstAttribute="width" constant="100" id="lJw-3c-GLQ"/>
+                                </constraints>
+                                <state key="normal" title="Customer">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I AM A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXf-Bw-khp">
+                                <rect key="frame" x="162" y="206" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.43046081852791873" green="0.43046081852791873" blue="0.43046081852791873" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq5-0r-DTz">
+                                <rect key="frame" x="152" y="277" width="70" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="5XI-tI-ZGl"/>
+                                    <constraint firstAttribute="height" constant="50" id="9N7-g0-uhx"/>
+                                </constraints>
+                                <state key="normal" title="Shop">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XXf-Bw-khp" firstAttribute="centerX" secondItem="Ws0-Tu-R0w" secondAttribute="centerX" id="AJj-lH-LN4"/>
+                            <constraint firstItem="XXf-Bw-khp" firstAttribute="top" secondItem="UVi-OP-hGG" secondAttribute="bottom" constant="50" id="HAx-KT-tCV"/>
+                            <constraint firstItem="UVi-OP-hGG" firstAttribute="centerX" secondItem="Ws0-Tu-R0w" secondAttribute="centerX" id="K7k-Fi-bke"/>
+                            <constraint firstItem="Lge-B1-Gdj" firstAttribute="centerX" secondItem="Ws0-Tu-R0w" secondAttribute="centerX" id="WQd-XI-JJn"/>
+                            <constraint firstItem="UVi-OP-hGG" firstAttribute="top" secondItem="VLX-g8-vxA" secondAttribute="bottom" constant="8" id="dWJ-qx-r2n"/>
+                            <constraint firstItem="Oq5-0r-DTz" firstAttribute="top" secondItem="XXf-Bw-khp" secondAttribute="bottom" constant="50" id="hG1-Yk-D8f"/>
+                            <constraint firstItem="Oq5-0r-DTz" firstAttribute="centerX" secondItem="Ws0-Tu-R0w" secondAttribute="centerX" id="mK8-8X-aIJ"/>
+                            <constraint firstItem="Lge-B1-Gdj" firstAttribute="top" secondItem="Oq5-0r-DTz" secondAttribute="bottom" constant="50" id="xAQ-vI-MB2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="42M-WH-Ryj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1108" y="741"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WGk-uT-Lt5">
