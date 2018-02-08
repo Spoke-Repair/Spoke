@@ -31,7 +31,7 @@ class LandingPageVC: UIViewController {
         
         let triangle = CAShapeLayer()
         triangle.path = path.cgPath
-        triangle.fillColor = UIColor.cyan.cgColor
+        triangle.fillColor = UIColor(red:0.79, green:0.93, blue:0.98, alpha:1.0).cgColor
         self.view.layer.addSublayer(triangle)
     }
 }
