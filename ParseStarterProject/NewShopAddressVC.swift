@@ -33,7 +33,7 @@ class NewShopAddressVC: UIViewController {
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         switch identifier {
-        case "passwordSegue":
+        case "newShopPhotoSegue":
             if !(addressField.text ?? "").isEmpty {
                 return true
             }
@@ -48,9 +48,9 @@ class NewShopAddressVC: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "passwordSegue", let passwordVC = segue.destination as? NewShopPasswordVC {
+        if segue.identifier == "newShopPhotoSegue", let photoVC = segue.destination as? NewShopPhotoVC {
             self.user["address"] = addressField.text!
-            passwordVC.user = self.user
+            photoVC.user = self.user
         }
     }
 

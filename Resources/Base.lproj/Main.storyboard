@@ -789,7 +789,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQY-H4-WXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2113" y="1568"/>
+            <point key="canvasLocation" x="-1212" y="2410"/>
         </scene>
         <!--New Shop AddressVC-->
         <scene sceneID="Wpd-B3-fP8">
@@ -844,7 +844,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="6kD-w0-4i8" kind="show" identifier="passwordSegue" id="p34-xk-CyP"/>
+                                    <segue destination="QJ9-QS-jGj" kind="show" identifier="newShopPhotoSegue" id="syC-9d-f2u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -866,7 +866,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0EE-tO-C4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1212" y="1569"/>
+            <point key="canvasLocation" x="-2079" y="1554"/>
+        </scene>
+        <!--New Shop PhotoVC-->
+        <scene sceneID="eE6-0A-CaH">
+            <objects>
+                <viewController id="QJ9-QS-jGj" customClass="NewShopPhotoVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tdm-Uf-N51"/>
+                        <viewControllerLayoutGuide type="bottom" id="ba9-9K-o4V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XPZ-vn-h8t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7G-fO-dzd">
+                                <rect key="frame" x="16" y="593" width="343" height="74"/>
+                                <color key="backgroundColor" red="0.92816370729999997" green="0.9729949832" blue="0.96068292860000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="G9c-vv-QSE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
+                                <state key="normal" title="Take a picture">
+                                    <color key="titleColor" red="0.43011096119999997" green="0.81807619330000003" blue="0.95633047819999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButton:" destination="QJ9-QS-jGj" eventType="touchUpInside" id="aA8-S3-VKl"/>
+                                    <action selector="continueButton:" destination="wYM-wF-JFr" eventType="touchUpInside" id="e1e-gE-22L"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons8-Ios7-Transport-Bicycle.ico" translatesAutoresizingMaskIntoConstraints="NO" id="3f7-hs-ZDn">
+                                <rect key="frame" x="0.0" y="86" width="375" height="348"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3f7-hs-ZDn" secondAttribute="height" multiplier="125:116" id="VAT-Nv-7Rm"/>
+                                    <constraint firstAttribute="height" constant="348" id="xpD-iT-pPN"/>
+                                    <constraint firstAttribute="width" constant="375" id="yrc-fw-VZi"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3f7-hs-ZDn" secondAttribute="trailing" id="3FM-so-XAe"/>
+                            <constraint firstItem="k7G-fO-dzd" firstAttribute="leading" secondItem="XPZ-vn-h8t" secondAttribute="leadingMargin" id="3Ng-1O-0Vp"/>
+                            <constraint firstItem="3f7-hs-ZDn" firstAttribute="top" secondItem="Tdm-Uf-N51" secondAttribute="bottom" constant="66" id="BkL-Tp-p3c"/>
+                            <constraint firstItem="3f7-hs-ZDn" firstAttribute="leading" secondItem="XPZ-vn-h8t" secondAttribute="leading" id="C7J-LO-Zya"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k7G-fO-dzd" secondAttribute="trailing" id="CjB-bf-9U4"/>
+                            <constraint firstItem="k7G-fO-dzd" firstAttribute="centerX" secondItem="XPZ-vn-h8t" secondAttribute="centerX" id="hwi-cI-u9K"/>
+                            <constraint firstItem="ba9-9K-o4V" firstAttribute="top" secondItem="k7G-fO-dzd" secondAttribute="bottom" id="qT6-Zq-xw6"/>
+                            <constraint firstItem="3f7-hs-ZDn" firstAttribute="width" secondItem="3f7-hs-ZDn" secondAttribute="height" multiplier="125:116" id="urG-Dj-gmD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="k7G-fO-dzd" id="bH8-Vq-hDJ"/>
+                        <outlet property="imagePicked" destination="3f7-hs-ZDn" id="HPY-S1-Js6"/>
+                        <segue destination="6kD-w0-4i8" kind="show" identifier="newShopPasswordSegue" id="rKE-sb-tW1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R8J-Se-DJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1212" y="1553.9730134932536"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WGk-uT-Lt5">
