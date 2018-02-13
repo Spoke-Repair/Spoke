@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         var newString = ""
         
         //alternative logic to see if character was deleted
-        if(newLength < (textField.text?.count)!) {
+        if(newLength < (textField.text?.count)! && phoneNumberEntered == false) {
             
             //(210) - 4
             
@@ -135,9 +135,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
             
         } else {
-            
+            textField.text = textField.text! + string
             self.password = textField.text!
-            
+            print("Password in function is: \(self.password)")
+            return false
         }
         
         
@@ -147,6 +148,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
    
     @IBAction func login(_ sender: Any) {
 
+            self.phoneNumber = self.phoneNumber.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)
+            self.phoneNumber = self.phoneNumber.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
+            self.phoneNumber = self.phoneNumber.replacingOccurrences(of: "(", with: "", options: NSString.CompareOptions.literal, range: nil)
+            self.phoneNumber = self.phoneNumber.replacingOccurrences(of: ")", with: "", options: NSString.CompareOptions.literal, range: nil)
+        
+        print("Phone number: \(self.phoneNumber)")
+        print("Password: \(self.password)")
+        
+        
+        
             PFUser.logInWithUsername(inBackground: self.phoneNumber, password: self.password, block: {(user, error) in
 
                 if error != nil {
