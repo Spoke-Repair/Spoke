@@ -33,8 +33,6 @@
 		68A13A811F86FFD90015A6D1 /* ViewBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */; };
 		68A13A831F870A640015A6D1 /* CustomerAddMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */; };
 		68A13A851F8A8F590015A6D1 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A841F8A8F590015A6D1 /* MessageCell.swift */; };
-		68A4F603202A86BA0090487D /* CustomerOrStoreSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A4F602202A86BA0090487D /* CustomerOrStoreSelectionView.swift */; };
-		68A4F605202A871E0090487D /* CustomerOrStoreSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68A4F604202A871E0090487D /* CustomerOrStoreSelectionView.xib */; };
 		68A4F607202BD2B90090487D /* arrow-right-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A4F606202BD2B80090487D /* arrow-right-gray.png */; };
 		68BBC7882029384800374289 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BBC7862029384700374289 /* Background.png */; };
 		68BBC7892029384800374289 /* spoke-logo-rasterized.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BBC7872029384800374289 /* spoke-logo-rasterized.png */; };
@@ -100,8 +98,6 @@
 		68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBikeViewController.swift; sourceTree = "<group>"; };
 		68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerAddMessageVC.swift; sourceTree = "<group>"; };
 		68A13A841F8A8F590015A6D1 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
-		68A4F602202A86BA0090487D /* CustomerOrStoreSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerOrStoreSelectionView.swift; sourceTree = "<group>"; };
-		68A4F604202A871E0090487D /* CustomerOrStoreSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerOrStoreSelectionView.xib; sourceTree = "<group>"; };
 		68A4F606202BD2B80090487D /* arrow-right-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-right-gray.png"; path = "Resources/arrow-right-gray.png"; sourceTree = SOURCE_ROOT; };
 		68BBC7862029384700374289 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		68BBC7872029384800374289 /* spoke-logo-rasterized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spoke-logo-rasterized.png"; sourceTree = "<group>"; };
@@ -237,8 +233,6 @@
 				6832ABAC1F3BCFA400D8D49A /* BikeListCell.swift */,
 				68068D051FA7D9A8001873C7 /* BikeCellX.swift */,
 				68068D061FA7D9A8001873C7 /* BikeCellX.xib */,
-				68A4F602202A86BA0090487D /* CustomerOrStoreSelectionView.swift */,
-				68A4F604202A871E0090487D /* CustomerOrStoreSelectionView.xib */,
 				6832ABAE1F3BDAA000D8D49A /* AddBikeViewController.swift */,
 				6832ABB01F3BEA5F00D8D49A /* DisplayBikeDataViewController.swift */,
 				6832ABB21F3F781200D8D49A /* MessageComposer.swift */,
@@ -357,7 +351,6 @@
 			files = (
 				68068D081FA7D9A8001873C7 /* BikeCellX.xib in Resources */,
 				68035B571FD8DF0F00A601B2 /* phoneIcon.png in Resources */,
-				68A4F605202A871E0090487D /* CustomerOrStoreSelectionView.xib in Resources */,
 				C2DB56471FB8C30400F6224D /* Urabo logo.png in Resources */,
 				68BBC7892029384800374289 /* spoke-logo-rasterized.png in Resources */,
 				C28E5A511FD8987800D3473B /* spoke.png in Resources */,
@@ -444,7 +437,6 @@
 			files = (
 				68A13A811F86FFD90015A6D1 /* ViewBikeViewController.swift in Sources */,
 				C212487B1FD618BF00F50C8C /* OpenOrderCollectionView.swift in Sources */,
-				68A4F603202A86BA0090487D /* CustomerOrStoreSelectionView.swift in Sources */,
 				6832ABBF1F4526D300D8D49A /* ConfirmBikeVC.swift in Sources */,
 				C2ABB955201926E400A003C1 /* EnterPhoneNumberViewController.swift in Sources */,
 				C28E5A531FD89DBA00D3473B /* UIExtensions.swift in Sources */,

@@ -31,6 +31,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let newLength = (textField.text?.count)! + string.count - range.length
         var newString = ""
         
+        //alternative route if char was deleted from password field
+        if(newLength < (textField.text?.count)! && phoneNumberEntered == true) {
+            textField.text!.removeLast()
+            return false
+        }
+        
         //alternative logic to see if character was deleted
         if(newLength < (textField.text?.count)! && phoneNumberEntered == false) {
             
