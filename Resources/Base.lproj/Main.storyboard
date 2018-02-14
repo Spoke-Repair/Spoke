@@ -156,7 +156,7 @@
                                 <rect key="frame" x="68" y="369" width="234" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="VqY-lj-eQC"/>
                                 </connections>
@@ -447,7 +447,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ea-If-RGg">
                                 <rect key="frame" x="163" y="205" width="49" height="30"/>
@@ -1961,11 +1961,10 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PT-bd-pow">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PT-bd-pow">
                                 <rect key="frame" x="163" y="318" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <segue destination="N9A-Ly-vo9" kind="show" identifier="addBikeSegue" id="ErK-OJ-bC3"/>
@@ -1975,8 +1974,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6aX-V6-NbQ" firstAttribute="centerX" secondItem="sCh-wK-k2L" secondAttribute="centerX" id="JaC-0m-jeH"/>
+                            <constraint firstItem="3PT-bd-pow" firstAttribute="centerX" secondItem="sCh-wK-k2L" secondAttribute="centerX" id="T8g-J2-QPi"/>
                             <constraint firstItem="3ym-oF-PUS" firstAttribute="centerX" secondItem="sCh-wK-k2L" secondAttribute="centerX" id="hvu-9u-Wwd"/>
                             <constraint firstItem="6aX-V6-NbQ" firstAttribute="top" secondItem="3ym-oF-PUS" secondAttribute="bottom" constant="25" id="lvk-d2-7M1"/>
+                            <constraint firstItem="3PT-bd-pow" firstAttribute="top" secondItem="6aX-V6-NbQ" secondAttribute="bottom" constant="132" id="uDk-55-Hso"/>
                             <constraint firstItem="3ym-oF-PUS" firstAttribute="top" secondItem="fMV-no-lgV" secondAttribute="bottom" constant="46" id="zFD-Vo-ix9"/>
                         </constraints>
                     </view>
@@ -2440,9 +2441,10 @@
         <image name="square.png" width="276" height="276"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="rKE-sb-tW1"/>
         <segue reference="fDc-c8-Fpp"/>
-        <segue reference="3Fc-oT-kvb"/>
+        <segue reference="AqR-JP-6ru"/>
         <segue reference="AFd-cV-I9L"/>
-        <segue reference="167-wI-gAe"/>
+        <segue reference="wta-C6-mpP"/>
     </inferredMetricsTieBreakers>
 </document>
