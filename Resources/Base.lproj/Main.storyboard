@@ -131,8 +131,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN TO A CUSTOMER ACCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQk-Xk-d6w">
-                                <rect key="frame" x="81.5" y="264" width="212" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN TO ACCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQk-Xk-d6w">
+                                <rect key="frame" x="124.5" y="264" width="127" height="16"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -166,6 +166,31 @@
                                     <constraint firstAttribute="height" constant="223" id="TNe-H4-SUB"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qo-ho-O9B">
+                                <rect key="frame" x="147" y="581" width="80" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="SLk-hn-jKx"/>
+                                    <constraint firstAttribute="height" constant="50" id="cgV-GM-5u1"/>
+                                </constraints>
+                                <state key="normal" title="SIGN UP">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rA-7q-zIz">
+                                <rect key="frame" x="121" y="557" width="134" height="16"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -174,14 +199,20 @@
                             <constraint firstItem="oQM-2C-zeH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="8Oz-oU-LQG"/>
                             <constraint firstItem="4Pa-eG-r9u" firstAttribute="top" secondItem="M6b-ep-P1g" secondAttribute="bottom" constant="42.5" id="99x-Xt-N65"/>
                             <constraint firstItem="4Pa-eG-r9u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BkX-wc-bTj"/>
+                            <constraint firstItem="0qo-ho-O9B" firstAttribute="top" secondItem="6rA-7q-zIz" secondAttribute="bottom" constant="8" id="LRQ-0N-Fb9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0qo-ho-O9B" secondAttribute="bottom" constant="36" id="Mdc-gl-Sk0"/>
                             <constraint firstItem="M6b-ep-P1g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qfv-EF-dg5"/>
                             <constraint firstItem="fQk-Xk-d6w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rh3-dQ-UH5"/>
                             <constraint firstItem="fQk-Xk-d6w" firstAttribute="top" secondItem="oQM-2C-zeH" secondAttribute="bottom" constant="8" id="cbh-hS-Xn5"/>
+                            <constraint firstItem="0qo-ho-O9B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fJs-wO-naW"/>
+                            <constraint firstItem="6rA-7q-zIz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qnI-gX-6az"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="instructionLabel" destination="fQk-Xk-d6w" id="619-nI-bMg"/>
+                        <outlet property="noAccountLabel" destination="6rA-7q-zIz" id="RT5-9c-4zX"/>
                         <outlet property="otherLabel" destination="M6b-ep-P1g" id="R4L-EC-Ix2"/>
+                        <outlet property="signUpButton" destination="0qo-ho-O9B" id="wiL-Ew-3Ql"/>
                         <outlet property="username" destination="4Pa-eG-r9u" id="cSY-Kp-Zpx"/>
                         <segue destination="Uft-kl-qrc" kind="show" identifier="login" id="AqR-JP-6ru"/>
                         <segue destination="LTU-Rz-Z5h" kind="show" identifier="loginEmployee" id="VBl-gK-uZO"/>
@@ -2435,6 +2466,6 @@
         <segue reference="fDc-c8-Fpp"/>
         <segue reference="AqR-JP-6ru"/>
         <segue reference="AFd-cV-I9L"/>
-        <segue reference="wta-C6-mpP"/>
+        <segue reference="167-wI-gAe"/>
     </inferredMetricsTieBreakers>
 </document>
