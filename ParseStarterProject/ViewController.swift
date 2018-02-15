@@ -189,7 +189,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.username.delegate = self
-    
+        
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0, y: self.view.frame.height - 100))
+        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.width))
+        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.height))
+        path.addLine(to: CGPoint(x: 0, y: self.view.frame.height))
+        path.close()
+        
+        let triangle = CAShapeLayer()
+        triangle.path = path.cgPath
+        triangle.fillColor = UIColor(red:0.79, green:0.93, blue:0.98, alpha:1.0).cgColor
+        self.view.layer.addSublayer(triangle)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -200,28 +211,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if let userType = PFUser.current()?["type"] as? String! {
                 if userType == "employee" {
                     self.performSegue(withIdentifier: "loginEmployee", sender: self)
-
                 }else{
                     self.performSegue(withIdentifier: "login", sender: self)
-
                 }
             }
-
         }
     }
-    
+
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
-    }
- 
- 
-    
-    
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

@@ -34,7 +34,6 @@
 		68A13A831F870A640015A6D1 /* CustomerAddMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */; };
 		68A13A851F8A8F590015A6D1 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A841F8A8F590015A6D1 /* MessageCell.swift */; };
 		68A4F607202BD2B90090487D /* arrow-right-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A4F606202BD2B80090487D /* arrow-right-gray.png */; };
-		68BBC7882029384800374289 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BBC7862029384700374289 /* Background.png */; };
 		68BBC7892029384800374289 /* spoke-logo-rasterized.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BBC7872029384800374289 /* spoke-logo-rasterized.png */; };
 		68BBC78B20293AB100374289 /* Rectangle-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 68BBC78A20293AB100374289 /* Rectangle-2.png */; };
 		68D4A8171FBE60FA004EF5CA /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68D4A8161FBE60EF004EF5CA /* Lato-Regular.ttf */; };
@@ -104,7 +103,6 @@
 		68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerAddMessageVC.swift; sourceTree = "<group>"; };
 		68A13A841F8A8F590015A6D1 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		68A4F606202BD2B80090487D /* arrow-right-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-right-gray.png"; path = "Resources/arrow-right-gray.png"; sourceTree = SOURCE_ROOT; };
-		68BBC7862029384700374289 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		68BBC7872029384800374289 /* spoke-logo-rasterized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spoke-logo-rasterized.png"; sourceTree = "<group>"; };
 		68BBC78A20293AB100374289 /* Rectangle-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rectangle-2.png"; sourceTree = "<group>"; };
 		68D4A8161FBE60EF004EF5CA /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				68E8B0C82031021100D5C1B7 /* Image uploaded from iOS.png */,
 				68A4F606202BD2B80090487D /* arrow-right-gray.png */,
 				68BBC78A20293AB100374289 /* Rectangle-2.png */,
-				68BBC7862029384700374289 /* Background.png */,
 				68BBC7872029384800374289 /* spoke-logo-rasterized.png */,
 				68035B561FD8DF0E00A601B2 /* phoneIcon.png */,
 				814C3AC81B69877600E307BB /* Images.xcassets */,
@@ -375,7 +372,6 @@
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
 				68BBC78B20293AB100374289 /* Rectangle-2.png in Resources */,
-				68BBC7882029384800374289 /* Background.png in Resources */,
 				68A4F607202BD2B90090487D /* arrow-right-gray.png in Resources */,
 				C2DB56491FB8C30B00F6224D /* square.png in Resources */,
 				687F93161F96D95E00253E00 /* GoogleService-Info.plist in Resources */,
