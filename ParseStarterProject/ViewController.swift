@@ -193,6 +193,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+        else if let errMsgStr = errMsgStr {
+            CommonUtils.popUpAlert(message: errMsgStr, sender: self)
+        }
     }
 
     @objc func dismissKeyboard() {

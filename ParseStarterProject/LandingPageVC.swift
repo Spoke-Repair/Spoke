@@ -34,4 +34,11 @@ class LandingPageVC: UIViewController {
         triangle.fillColor = UIColor(red:0.79, green:0.93, blue:0.98, alpha:1.0).cgColor
         self.view.layer.addSublayer(triangle)
     }
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
+            CommonUtils.popUpAlert(message: "Can't transiton to view", sender: self)
+            return
+        }
+        self.present(vc, animated: true, completion: nil)
+    }
 }

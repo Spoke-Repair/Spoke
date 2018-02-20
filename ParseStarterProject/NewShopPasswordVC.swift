@@ -12,7 +12,6 @@ import Parse
 class NewShopPasswordVC: UIViewController {
 
     var user: PFUser!
-    var loginError: Error?
     @IBOutlet weak var prompt: UILabel!
     @IBOutlet weak var passwordField: UITextField!
     var firstPassword: String?
@@ -75,26 +74,31 @@ class NewShopPasswordVC: UIViewController {
     private func signup() {
         self.user.signUpInBackground() { (success1, error1) in
             guard error1 == nil else {
-                self.loginError = error1
-                self.performSegue(withIdentifier: "failedLoginSegue", sender: self)
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
+                    CommonUtils.popUpAlert(message: "Can't transiton to View", sender: self)
+                    return
+                }
+                vc.errMsgStr = error1?.localizedDescription
+                self.present(vc, animated: true, completion: nil)
                 return
             }
             print("Saved account for \(self.user.username!)")
-            self.user.saveInBackground(block: { (success: Bool, error2: Error?) in
+            self.user.saveInBackground(block: { (success2: Bool, error2: Error?) in
                 guard error2 == nil else {
-                    self.loginError = error2
-                    self.performSegue(withIdentifier: "failedLoginSegue", sender: self)
+                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
+                        CommonUtils.popUpAlert(message: "Can't transiton to View", sender: self)
+                        return
+                    }
+                    vc.errMsgStr = error2?.localizedDescription
+                    self.present(vc, animated: true, completion: nil)
                     return
                 }
-                self.performSegue(withIdentifier: "signUpSuccessSegue", sender: self)
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "customerTabBar") else {
+                    CommonUtils.popUpAlert(message: "Can't transiton to view", sender: self)
+                    return
+                }
+                self.present(vc, animated: true, completion: nil)
             })
         }
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "failedLoginSegue", let landingVC = segue.destination as? LandingPageVC {
-            landingVC.loginError = self.loginError
-        }
-    }
-
 }
