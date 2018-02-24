@@ -155,7 +155,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
                 print(response as! String)
                 Auth.auth().signIn(withCustomToken: response as! String) { (user1, error2) in
-                    guard error2 != nil else {
+                    guard error2 == nil else {
                         CommonUtils.popUpAlert(message: error2!.localizedDescription, sender: self)
                         return
                     }
