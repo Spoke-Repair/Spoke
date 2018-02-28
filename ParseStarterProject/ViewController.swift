@@ -9,6 +9,8 @@
 
 import UIKit
 import Parse
+import Firebase
+import FirebaseAuth
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
@@ -139,13 +141,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
         print("Phone number: \(self.phoneNumber)")
         print("Password: \(self.password)")
-
+        var type = ""
             PFUser.logInWithUsername(inBackground: self.phoneNumber, password: self.password, block: {(user, error) in
                 if error != nil {
                     CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
                 } else {
                     print("Login success")
-                    let type = user!["type"] as! String
+                    type = user!["type"] as! String
                     if type == "employee"{
                         print("logging in as employee")
                         self.performSegue(withIdentifier: "loginEmployee", sender: self)
@@ -199,4 +201,38 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    
+    func getFirebaseToken(uid: String) -> String {
+        
+        var token = ""
+        PFCloud.callFunction(inBackground: "generateFirebaseToken", withParameters: ["uid": uid], block: { (object: Any?, error: Error?) in
+            
+            token = object as! String
+            print("FIREBASE TOKEN: \(token)")
+            let utf8Data = token.data(using: String.Encoding.utf8)
+            let base64EncodedStringToken = utf8Data?.base64EncodedString()
+            let base64EncodedDataToken = utf8Data?.base64EncodedData()
+
+            
+            
+            Auth.auth().signIn(withCustomToken: base64EncodedStringToken!, completion: { (user, error) in
+                
+                if(error != nil) {
+                    print("Firebase error: \(error)")
+                }
+                
+            })
+
+        })
+        
+        return token
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "loginEmployee"{
+//            var token = self.getFirebaseToken(uid: (PFUser.current()?.objectId)!)
+//        }
+    }
+    
 }

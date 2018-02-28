@@ -7,6 +7,7 @@ target 'ParseStarterProject-Swift' do
 
   # Pods for ParseStarterProject-Swift
    pod 'Firebase/Core'
+   pod 'Firebase/Auth'
    pod 'FirebaseMessaging', '=2.0.0'
    pod 'FirebaseInstanceID', '=2.0.0'
    pod 'Alamofire', '~> 4.5'
