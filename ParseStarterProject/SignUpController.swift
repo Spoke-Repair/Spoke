@@ -29,6 +29,12 @@ class SignUpController: UIViewController, UITextFieldDelegate {
         triangle.path = path.cgPath
         triangle.fillColor = UIColor(red:0.79, green:0.93, blue:0.98, alpha:1.0).cgColor
         self.view.layer.addSublayer(triangle)
+        
+        self.textField.underline()
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -46,11 +52,7 @@ class SignUpController: UIViewController, UITextFieldDelegate {
             
             //(210) - 4
             if(newLength == 8){
-                print("Should remove spaces dash and parenthesis")
-                textField.text = textField.text!.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)
-                textField.text = textField.text!.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
-                textField.text = textField.text!.replacingOccurrences(of: ")", with: "", options: NSString.CompareOptions.literal, range: nil)
-                
+                textField.text = strip(from: textField.text!, characters: ["-", " ", ")"])
             }
             
             //(210) - 432 -
@@ -159,8 +161,6 @@ class SignUpController: UIViewController, UITextFieldDelegate {
             CommonUtils.popUpAlert(message: "Please enter a password", sender: self)
             return
         }
-        print("self.textField.text - " + self.textField.text!)
-        print("self.password - " + self.password!)
         guard self.textField.text == self.password else {
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
             vc.errMsgStr = "Passwords must match!"
@@ -171,10 +171,18 @@ class SignUpController: UIViewController, UITextFieldDelegate {
             CommonUtils.popUpAlert(message: "Can't transition to view", sender: self)
             return
         }
+        vc.user = PFUser()
+        vc.user?.username = strip(from: self.phoneNumber, characters: ["-", " ", "(", ")"])
+        vc.user?.password = self.password
+        vc.user?["type"] = "customer"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func dismissKeyboard() {
-        self.view.endEditing(true)
+    private func strip(from number: String, characters: [String]) -> String {
+        var newNumber = number
+        for char in characters {
+            newNumber = newNumber.replacingOccurrences(of: char, with: "", options: NSString.CompareOptions.literal, range: nil)
+        }
+        return newNumber
     }
 }

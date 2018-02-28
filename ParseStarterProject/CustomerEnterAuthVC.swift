@@ -7,10 +7,96 @@
 //
 
 import UIKit
+import Parse
 
 class CustomerEnterAuthVC: UIViewController {
-
+    
+    @IBOutlet weak var instructionLabel: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    var user:PFUser?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CustomerEnterAuthVC.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+        
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0, y: self.view.frame.height - 100))
+        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.width))
+        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.height))
+        path.addLine(to: CGPoint(x: 0, y: self.view.frame.height))
+        path.close()
+        
+        let triangle = CAShapeLayer()
+        triangle.path = path.cgPath
+        triangle.fillColor = UIColor(red:0.79, green:0.93, blue:0.98, alpha:1.0).cgColor
+        self.view.layer.addSublayer(triangle)
+        
+        self.textField.underline()
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func login() {
+        
+        //Ensure text field is not empty
+        guard let user = self.user, !(textField.text ?? "").isEmpty else {
+            CommonUtils.popUpAlert(message: "Please enter the code", sender: self)
+            return
+        }
+        
+        //Obtain bike from the object id the user provided
+        let query = PFQuery(className: "Bike")
+        query.getObjectInBackground(withId: self.textField.text!) { (bike: PFObject?, error: Error?) in
+            
+            //Ensure query was successful
+            guard let bike = bike, error == nil else {
+                let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                vc.errMsgStr = error?.localizedDescription
+                self.present(vc, animated: true, completion: nil)
+                return
+            }
+            
+            guard bike["userID"] == nil else {
+                let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                vc.errMsgStr = "That item already has an owner!"
+                self.present(vc, animated: true, completion: nil)
+                return
+            }
+            
+            //Verify the phone number for the bike matches the user's number
+            guard bike["phone"] as? String == user.username else {
+                let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                vc.errMsgStr = "Your phone number doesn't match the number for that item!"
+                self.present(vc, animated: true, completion: nil)
+                return
+            }
+            
+            //Sign up user
+            user.signUpInBackground() {(success: Bool, error: Error?) in
+                guard error == nil else {
+                    let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                    vc.errMsgStr = error?.localizedDescription
+                    self.present(vc, animated: true, completion: nil)
+                    return
+                }
+                
+                //Update bike to acknowledge new owner
+                bike["userID"] = user.objectId
+                bike.saveInBackground() { (success, error) in
+                    guard success && error == nil else {
+                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                        vc.errMsgStr = error?.localizedDescription
+                        self.present(vc, animated: true, completion: nil)
+                        return
+                    }
+                    let vc = self.storyboard!.instantiateViewController(withIdentifier: "customerTabBar")
+                    self.present(vc, animated: true, completion: nil)
+                }
+            }
+        }
     }
 }

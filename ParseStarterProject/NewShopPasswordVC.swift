@@ -72,33 +72,15 @@ class NewShopPasswordVC: UIViewController {
     }
     
     private func signup() {
-        self.user.signUpInBackground() { (success1, error1) in
-            guard error1 == nil else {
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
-                    CommonUtils.popUpAlert(message: "Can't transiton to View", sender: self)
-                    return
-                }
-                vc.errMsgStr = error1?.localizedDescription
+        self.user.signUpInBackground() { (success, error) in
+            guard error == nil else {
+                let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                vc.errMsgStr = error?.localizedDescription
                 self.present(vc, animated: true, completion: nil)
                 return
             }
-            print("Saved account for \(self.user.username!)")
-            self.user.saveInBackground(block: { (success2: Bool, error2: Error?) in
-                guard error2 == nil else {
-                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
-                        CommonUtils.popUpAlert(message: "Can't transiton to View", sender: self)
-                        return
-                    }
-                    vc.errMsgStr = error2?.localizedDescription
-                    self.present(vc, animated: true, completion: nil)
-                    return
-                }
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "customerTabBar") else {
-                    CommonUtils.popUpAlert(message: "Can't transiton to view", sender: self)
-                    return
-                }
-                self.present(vc, animated: true, completion: nil)
-            })
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "shopTabBarController")
+            self.present(vc, animated: true, completion: nil)
         }
     }
 }
