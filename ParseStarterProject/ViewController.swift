@@ -131,37 +131,40 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
    
-    @IBAction func login(_ sender: Any) {
-            self.phoneNumber = self.phoneNumber.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)
-            self.phoneNumber = self.phoneNumber.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
-            self.phoneNumber = self.phoneNumber.replacingOccurrences(of: "(", with: "", options: NSString.CompareOptions.literal, range: nil)
-            self.phoneNumber = self.phoneNumber.replacingOccurrences(of: ")", with: "", options: NSString.CompareOptions.literal, range: nil)
-
+    @objc func login(_ sender: Any) {
+        self.phoneNumber = self.phoneNumber.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)
+        self.phoneNumber = self.phoneNumber.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
+        self.phoneNumber = self.phoneNumber.replacingOccurrences(of: "(", with: "", options: NSString.CompareOptions.literal, range: nil)
+        self.phoneNumber = self.phoneNumber.replacingOccurrences(of: ")", with: "", options: NSString.CompareOptions.literal, range: nil)
+        
         print("Phone number: \(self.phoneNumber)")
         print("Password: \(self.password)")
-
-            PFUser.logInWithUsername(inBackground: self.phoneNumber, password: self.password, block: {(user, error) in
-                if error != nil {
-                    CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
+        
+        PFUser.logInWithUsername(inBackground: self.phoneNumber, password: self.password, block: {(user, error) in
+            if error != nil {
+                CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
+            } else {
+                print("Login success")
+                let type = user!["type"] as! String
+                if type == "employee"{
+                    print("logging in as employee")
+                    self.performSegue(withIdentifier: "loginEmployee", sender: self)
                 } else {
-                    print("Login success")
-                    let type = user!["type"] as! String
-                    if type == "employee"{
-                        print("logging in as employee")
-                        self.performSegue(withIdentifier: "loginEmployee", sender: self)
-                    } else {
-                        //segue to customer storyboard
-                        print("logging in as customer")
-                        self.performSegue(withIdentifier: "login", sender: self)
-                    }
+                    //segue to customer storyboard
+                    print("logging in as customer")
+                    self.performSegue(withIdentifier: "login", sender: self)
                 }
-            })
+            }
+        })
     }
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.username.delegate = self
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
 
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0, y: self.view.frame.height - 100))
