@@ -109,9 +109,8 @@ class SignUpController: UIViewController, UITextFieldDelegate {
                     button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
                     button.imageEdgeInsets = UIEdgeInsetsMake(2, -16, 2, 10)
                     button.frame = CGRect(x: CGFloat(textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
-                    button.addTarget(self, action: #selector(self.login), for: .touchUpInside)
+                    button.addTarget(self, action: #selector(self.enteredFirstPassword), for: .touchUpInside)
                     self.instructionLabel.text = "Enter your password"
-                    self.mainLabel.text = "Welcome"
                     textField.rightView = button
                     textField.keyboardType = UIKeyboardType.default
                     textField.isSecureTextEntry = true
@@ -131,8 +130,37 @@ class SignUpController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    @objc func enteredFirstPassword() {
+        guard !(self.textField.text ?? "").isEmpty else {
+            CommonUtils.popUpAlert(message: "Please enter a password", sender: self)
+            return
+        }
+        UIView.animate(withDuration: 1, animations: {
+            self.password = self.textField.text!
+            self.textField.text = ""
+            self.textField.placeholder = "Re-enter password"
+            
+            let button = UIButton(type: .custom)
+            button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
+            button.imageEdgeInsets = UIEdgeInsetsMake(2, -16, 2, 10)
+            button.frame = CGRect(x: CGFloat(self.textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
+            button.addTarget(self, action: #selector(self.login), for: .touchUpInside)
+            self.instructionLabel.text = "Now re-enter your password"
+            self.textField.rightView = button
+            self.textField.keyboardType = UIKeyboardType.default
+            self.textField.isSecureTextEntry = true
+            self.textField.rightViewMode = .always
+            
+            self.textField.center.x += self.view.bounds.width
+        }, completion: nil)
+    }
+    
     @objc func login() {
-        print(self.password ?? "Error")
+        guard !(self.textField.text ?? "").isEmpty else {
+            CommonUtils.popUpAlert(message: "Please enter a password", sender: self)
+            return
+        }
+        print("Second password entered")
     }
     
     @objc func dismissKeyboard() {
