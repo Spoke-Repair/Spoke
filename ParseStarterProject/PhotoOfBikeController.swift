@@ -12,46 +12,39 @@ import Parse
 class PhotoOfBikeController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var newBike: PFObject!
-    var buttonToggle = false
-    @IBOutlet var imagePicked: UIImageView!
-    @IBOutlet var continueButton: UIButton!
 
-    func openCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera;
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
-    @IBAction func continueButton(_ sender: Any) {
-        //save in parse and segue
-        if (buttonToggle == false){
-            openCamera()
+    @IBAction func takePhoto(_ sender: UIBarButtonItem) {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            CommonUtils.popUpAlert(message: "Camera is not available!", sender: self)
+            return
         }
-        else {
-            self.performSegue(withIdentifier: "confirmBike", sender: self)
-        }
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera;
+        imagePicker.allowsEditing = false
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func skipPhoto(_ sender: UIBarButtonItem) {
+        self.newBike.remove(forKey: "picture")
+        proceed(nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        imagePicked.image = image
+        let image: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         dismiss(animated:true, completion: nil)
-        buttonToggle = true
-        continueButton.contentHorizontalAlignment = .center
-        continueButton.titleLabel?.text = "Continue"
+        newBike["picture"] = PFFile(data: UIImageJPEGRepresentation(image, 0.1)!)
+        proceed(image)
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "confirmBike", let confirmBikeVC = segue.destination as? ConfirmBikeVC {
-            let imageData = UIImageJPEGRepresentation(self.imagePicked.image!, 0.1)
-            let pimageFile = PFFile(data: imageData!)
-            newBike["picture"] = pimageFile
-            confirmBikeVC.newBike = newBike
-            confirmBikeVC.bikePicture = self.imagePicked.image!
-        }
+    
+    private func proceed(_ image: UIImage?) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "ConfirmBikeVC") as! ConfirmBikeVC
+        vc.newBike = self.newBike
+        vc.bikePicture = image
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

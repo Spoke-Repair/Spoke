@@ -2209,7 +2209,7 @@
         <!--Confirm BikeVC-->
         <scene sceneID="wkd-iF-oyx">
             <objects>
-                <viewController id="mxf-jX-YKt" customClass="ConfirmBikeVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmBikeVC" id="mxf-jX-YKt" customClass="ConfirmBikeVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bJP-Je-5u8"/>
                         <viewControllerLayoutGuide type="bottom" id="C7e-6q-fOr"/>
@@ -2257,7 +2257,7 @@
                                 <color key="textColor" red="0.93408334260000003" green="0.41672497990000001" blue="0.55791944270000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahN-v0-qWV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons8-Ios7-Transport-Bicycle.ico" translatesAutoresizingMaskIntoConstraints="NO" id="ahN-v0-qWV">
                                 <rect key="frame" x="8" y="139" width="359" height="248"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="248" id="HRg-Bc-HP5"/>
@@ -2318,61 +2318,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUX-ZB-LRu">
-                                <rect key="frame" x="0.0" y="593" width="375" height="74"/>
-                                <color key="backgroundColor" red="0.92816370725631714" green="0.97299498319625854" blue="0.96068292856216431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="4VX-wk-ZEW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
-                                <state key="normal" title="Take a picture">
-                                    <color key="titleColor" red="0.43011096119999997" green="0.81807619330000003" blue="0.95633047819999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="continueButton:" destination="wYM-wF-JFr" eventType="touchUpInside" id="rPV-MC-WcP"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a Picture of your bike" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqj-tg-war">
-                                <rect key="frame" x="16" y="72" width="307" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="sz6-hb-fdG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
-                                <color key="textColor" red="0.93408334260000003" green="0.41672497990000001" blue="0.55791944270000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take photo of bicycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BG5-Sr-99h">
+                                <rect key="frame" x="106" y="94" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons8-Ios7-Transport-Bicycle.ico" translatesAutoresizingMaskIntoConstraints="NO" id="Y4W-pG-Enb">
-                                <rect key="frame" x="0.0" y="140" width="375" height="348"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="348" id="Ou0-6Q-rrH"/>
-                                    <constraint firstAttribute="width" constant="375" id="lC9-Oz-7JB"/>
-                                    <constraint firstAttribute="width" secondItem="Y4W-pG-Enb" secondAttribute="height" multiplier="125:116" id="uhf-ug-Vuq"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Y4W-pG-Enb" firstAttribute="top" secondItem="aqj-tg-war" secondAttribute="bottom" constant="8" id="4gZ-Pi-CGW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aqj-tg-war" secondAttribute="trailing" constant="36" id="4jK-3a-ric"/>
-                            <constraint firstItem="aqj-tg-war" firstAttribute="top" secondItem="xX1-DO-RNg" secondAttribute="bottom" constant="8" symbolic="YES" id="CbQ-NP-lwr"/>
-                            <constraint firstItem="Y4W-pG-Enb" firstAttribute="leading" secondItem="7JU-Sq-KcA" secondAttribute="leading" id="Eaj-nL-l7k"/>
-                            <constraint firstItem="DUX-ZB-LRu" firstAttribute="trailing" secondItem="Y4W-pG-Enb" secondAttribute="trailing" id="Jpn-LZ-F4g"/>
-                            <constraint firstItem="DUX-ZB-LRu" firstAttribute="leading" secondItem="Y4W-pG-Enb" secondAttribute="leading" id="Yev-PA-cUs"/>
-                            <constraint firstItem="aqj-tg-war" firstAttribute="leading" secondItem="7JU-Sq-KcA" secondAttribute="leadingMargin" id="ZdO-Oi-SHr"/>
-                            <constraint firstItem="DUX-ZB-LRu" firstAttribute="bottom" secondItem="xH9-Gq-2Ti" secondAttribute="top" id="cZz-c3-pm5"/>
-                            <constraint firstItem="Y4W-pG-Enb" firstAttribute="top" secondItem="aqj-tg-war" secondAttribute="bottom" constant="8" symbolic="YES" id="kiL-Rn-3qs"/>
-                            <constraint firstAttribute="trailing" secondItem="Y4W-pG-Enb" secondAttribute="trailing" id="nHE-BG-JOQ"/>
+                            <constraint firstItem="BG5-Sr-99h" firstAttribute="top" secondItem="xX1-DO-RNg" secondAttribute="bottom" constant="30" id="gKw-2H-RvO"/>
+                            <constraint firstItem="BG5-Sr-99h" firstAttribute="centerX" secondItem="7JU-Sq-KcA" secondAttribute="centerX" id="jeU-NW-3bX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OVW-GC-r42">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Skip photo" id="kRt-aR-5RX">
+                                <connections>
+                                    <action selector="skipPhoto:" destination="wYM-wF-JFr" id="mnw-B0-kiO"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="camera" id="1lH-pe-j2y">
+                                <connections>
+                                    <action selector="takePhoto:" destination="wYM-wF-JFr" id="s1E-Dm-Kpf"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
-                        <outlet property="continueButton" destination="DUX-ZB-LRu" id="HlF-Os-d8t"/>
-                        <outlet property="imagePicked" destination="Y4W-pG-Enb" id="rO7-lV-6P3"/>
-                        <segue destination="mxf-jX-YKt" kind="show" identifier="confirmBike" id="0iW-7s-5KO"/>
+                        <segue destination="mxf-jX-YKt" kind="show" id="SBK-gd-1TP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ye6-GK-XAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5062" y="2925"/>
+            <point key="canvasLocation" x="5061.6000000000004" y="2924.8875562218891"/>
         </scene>
         <!--Code-->
         <scene sceneID="z86-dj-dED">

@@ -32,8 +32,7 @@ class ConfirmBikeVC: UIViewController {
                 CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
                 return
             }
-            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "shopTabBarController") as! UITabBarController
+            let vc : UITabBarController = self.storyboard!.instantiateViewController(withIdentifier: "shopTabBarController") as! UITabBarController
             self.present(vc, animated: true, completion: nil)
         })
     }
