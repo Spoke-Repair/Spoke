@@ -277,7 +277,7 @@
                         <outlet property="noAccountLabel" destination="6rA-7q-zIz" id="RT5-9c-4zX"/>
                         <outlet property="otherLabel" destination="M6b-ep-P1g" id="R4L-EC-Ix2"/>
                         <outlet property="signUpButton" destination="0qo-ho-O9B" id="wiL-Ew-3Ql"/>
-                        <outlet property="username" destination="4Pa-eG-r9u" id="cSY-Kp-Zpx"/>
+                        <outlet property="textField" destination="4Pa-eG-r9u" id="cSY-Kp-Zpx"/>
                         <segue destination="Uft-kl-qrc" kind="show" identifier="login" id="AqR-JP-6ru"/>
                         <segue destination="LTU-Rz-Z5h" kind="show" identifier="loginEmployee" id="VBl-gK-uZO"/>
                     </connections>

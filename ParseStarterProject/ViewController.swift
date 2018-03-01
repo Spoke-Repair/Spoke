@@ -15,132 +15,58 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var signupMode = true
     var phoneNumberEntered = false
     var phoneNumber = ""
-    //Used to store error message coming from account creation segue
+    //Used to store error messages to display when account creation fails
     var errMsgStr: String?
 
     @IBOutlet var otherLabel: UILabel!
     @IBOutlet var instructionLabel: UILabel!
     @IBOutlet var noAccountLabel: UILabel!
-    @IBOutlet var username: UITextField!
-    var password = ""
+    @IBOutlet var textField: UITextField!
     @IBOutlet var signUpButton: UIButton!
-    @IBOutlet var changeMode: UIButton!
-    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let newLength = (textField.text?.count)! + string.count - range.length
-        var newString = ""
-
-        //alternative route if char was deleted from password field
-        if(newLength < (textField.text?.count)! && phoneNumberEntered == true) {
-            textField.text!.removeLast()
-            return false
-        }
-
-        //alternative logic to see if character was deleted
-        if(newLength < (textField.text?.count)! && phoneNumberEntered == false) {
-
-            //(210) - 4
-            if(newLength == 8){
-                print("Should remove spaces dash and parenthesis")
-                textField.text = textField.text!.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)
-                textField.text = textField.text!.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
-                textField.text = textField.text!.replacingOccurrences(of: ")", with: "", options: NSString.CompareOptions.literal, range: nil)
-
-            }
-
-            //(210) - 432 -
-            //length 14
-            if(newLength == 14) {
-                newString = textField.text!
-                newString.removeLast()
-                newString.removeLast()
-                newString.removeLast()
-                textField.text = newString
-            }
-            if(newLength == 13) {
-                newString = textField.text!
-                newString.removeLast()
-                newString.removeLast()
-                textField.text = newString
-            }
+        //Not currently entering a phone number, so proceed normally
+        if phoneNumberEntered {
             return true
         }
-        if(phoneNumberEntered == false){
-            if(newLength == 1){
-                textField.text! += "("
-            }
-            if(newLength == 4) {
-                newString = textField.text! + string + ") - "
-                textField.text = newString
-                return false
-            }
-            if(newLength == 5){
-                newString = textField.text! + ") - " + string
-                textField.text = newString
-                return false
-            }
-            if(newLength == 11) {
-                
-                newString = textField.text! + string + " - "
-                textField.text = newString
-                return false
-            }
-            if(newLength == 12) {
-                newString = textField.text! + " - " + string
-                textField.text = newString
-                return false
-            }
-            if(newLength == 18) {
-                textField.text = textField.text! + string
-                signUpButton.isHidden = true
-                noAccountLabel.isHidden = true
-                UIView.animate(withDuration: 1, animations: {
-
-                    self.phoneNumber = textField.text!
-                    self.phoneNumberEntered = true
-                    textField.placeholder = "Enter a password"
-                    textField.text = ""
-
-                    //create button for end of text input
-                    let button = UIButton(type: .custom)
-                    button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
-                    button.imageEdgeInsets = UIEdgeInsetsMake(2, -16, 2, 10)
-                    button.frame = CGRect(x: CGFloat(textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
-                    button.addTarget(self, action: #selector(self.login), for: .touchUpInside)
-                    self.instructionLabel.text = "ENTER YOUR PASSWORD"
-                    self.otherLabel.text = "Welcome"
-                    textField.rightView = button
-                    textField.keyboardType = UIKeyboardType.default
-                    textField.isSecureTextEntry = true
-                    textField.rightViewMode = .always
-
-                    self.username.center.x += self.view.bounds.width
-                }, completion: nil)
-
-                return false
-            }
-        } else {
-            textField.text = textField.text! + string
-            self.password = textField.text!
-            print("Password in function is: \(self.password)")
+        
+        //Deleting character, and any preceeding non-numeric characters
+        if string.isEmpty {
+            textField.text = textField.text!.replacingOccurrences(of: "\\D*\\d$", with: "", options: .regularExpression)
             return false
         }
 
+        //Prevent pasting into the text field and non-numerics and attempting too many characters
+        if string.count > 1 || string.range(of: "\\D", options: .regularExpression) != nil || textField.text!.range(of: "^\\(\\d{3}\\) - \\d{3} - \\d{4}$", options: .regularExpression) != nil {
+            return false
+        }
+        
+        //Potentially obtain phone formatting characters to suffix the current string
+        let regexToFormat: [String: String] = ["^$": "(", "^\\(\\d{3}$": ") - ", "^\\(\\d{3}\\) - \\d{3}$": " - "]
+        for (key, val) in regexToFormat {
+            if textField.text!.range(of: key, options: .regularExpression) != nil {
+                textField.text! += val
+                break
+            }
+        }
+        
         return true
     }
     
-   
     @objc func login(_ sender: Any) {
+        guard !(textField.text ?? "").isEmpty else {
+            CommonUtils.popUpAlert(message: "Please enter your password", sender: self)
+            return
+        }
         self.phoneNumber = self.phoneNumber.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)
         self.phoneNumber = self.phoneNumber.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
         self.phoneNumber = self.phoneNumber.replacingOccurrences(of: "(", with: "", options: NSString.CompareOptions.literal, range: nil)
         self.phoneNumber = self.phoneNumber.replacingOccurrences(of: ")", with: "", options: NSString.CompareOptions.literal, range: nil)
         
         print("Phone number: \(self.phoneNumber)")
-        print("Password: \(self.password)")
+        print("Password: \(textField.text!)")
         
-        PFUser.logInWithUsername(inBackground: self.phoneNumber, password: self.password, block: {(user, error) in
+        PFUser.logInWithUsername(inBackground: self.phoneNumber, password: textField.text!, block: {(user, error) in
             if error != nil {
                 CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
             } else {
@@ -158,12 +84,52 @@ class ViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
+    @objc private func proceedToPassword() {
+        guard textField.text!.range(of: "^\\(\\d{3}\\) - \\d{3} - \\d{4}$", options: .regularExpression) != nil else {
+            CommonUtils.popUpAlert(message: "Please enter your phone number", sender: self)
+            return
+        }
+        signUpButton.isHidden = true
+        noAccountLabel.isHidden = true
+        self.phoneNumber = textField.text!
+        self.phoneNumberEntered = true
+        textField.placeholder = "Enter a password"
+        textField.text = ""
+        UIView.animate(withDuration: 1, animations: {
+            //create button for end of text input
+            let button = UIButton(type: .custom)
+            button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
+            button.imageEdgeInsets = UIEdgeInsetsMake(2, -16, 2, 10)
+            button.frame = CGRect(x: CGFloat(self.textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
+            button.addTarget(self, action: #selector(self.login), for: .touchUpInside)
+            self.textField.rightView = button
+            self.textField.rightViewMode = .always
+
+            self.instructionLabel.text = "ENTER YOUR PASSWORD"
+            self.otherLabel.text = "Welcome"
+            self.textField.keyboardType = UIKeyboardType.default
+            self.textField.isSecureTextEntry = true
+            self.textField.center.x += self.view.bounds.width
+        }, completion: nil)
+    }
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.username.delegate = self
+        self.textField.delegate = self
         self.allowHideKeyboardWithTap()
         self.addDesignShape()
+        self.textField.underline()
+        
+        UIView.animate(withDuration: 1, animations: {
+            //create button for end of text input
+            let button = UIButton(type: .custom)
+            button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
+            button.imageEdgeInsets = UIEdgeInsetsMake(2, -16, 2, 10)
+            button.frame = CGRect(x: CGFloat(self.textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
+            button.addTarget(self, action: #selector(self.proceedToPassword), for: .touchUpInside)
+            self.textField.rightView = button
+            self.textField.rightViewMode = .always
+        }, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
