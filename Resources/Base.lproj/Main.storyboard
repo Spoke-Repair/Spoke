@@ -949,23 +949,7 @@
                     <view key="view" contentMode="scaleToFill" id="XPZ-vn-h8t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons8-Ios7-Transport-Bicycle.ico" translatesAutoresizingMaskIntoConstraints="NO" id="3f7-hs-ZDn">
-                                <rect key="frame" x="0.0" y="130" width="375" height="348"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="3f7-hs-ZDn" secondAttribute="height" multiplier="125:116" id="VAT-Nv-7Rm"/>
-                                    <constraint firstAttribute="height" constant="348" id="xpD-iT-pPN"/>
-                                    <constraint firstAttribute="width" constant="375" id="yrc-fw-VZi"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="3f7-hs-ZDn" secondAttribute="trailing" id="3FM-so-XAe"/>
-                            <constraint firstItem="3f7-hs-ZDn" firstAttribute="top" secondItem="Tdm-Uf-N51" secondAttribute="bottom" constant="66" id="BkL-Tp-p3c"/>
-                            <constraint firstItem="3f7-hs-ZDn" firstAttribute="leading" secondItem="XPZ-vn-h8t" secondAttribute="leading" id="C7J-LO-Zya"/>
-                            <constraint firstItem="3f7-hs-ZDn" firstAttribute="width" secondItem="3f7-hs-ZDn" secondAttribute="height" multiplier="125:116" id="urG-Dj-gmD"/>
-                        </constraints>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="RPa-B4-6HN">
                         <rightBarButtonItems>
@@ -982,7 +966,6 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="imagePicked" destination="3f7-hs-ZDn" id="HPY-S1-Js6"/>
                         <segue destination="6kD-w0-4i8" kind="show" id="RCk-bc-rtJ"/>
                     </connections>
                 </viewController>
