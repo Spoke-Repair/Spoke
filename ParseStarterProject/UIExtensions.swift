@@ -8,8 +8,7 @@
 import UIKit
 
 extension UITextField {
-
-    func underline(){
+    func underline() {
         let border = CALayer()
         let width = CGFloat(1.0)
         border.borderColor = UIColor.lightGray.cgColor
@@ -18,5 +17,20 @@ extension UITextField {
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
     }
+}
 
+extension UIViewController {
+    func addDesignShape() {
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0, y: self.view.frame.height - 100))
+        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.width))
+        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.height))
+        path.addLine(to: CGPoint(x: 0, y: self.view.frame.height))
+        path.close()
+        
+        let triangle = CAShapeLayer()
+        triangle.path = path.cgPath
+        triangle.fillColor = UIColor(red:0.79, green:0.93, blue:0.98, alpha:1.0).cgColor
+        self.view.layer.insertSublayer(triangle, at: 0)
+    }
 }

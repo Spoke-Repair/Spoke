@@ -20,7 +20,7 @@ class CommonUtils {
     
     enum ConnectionResult {
         case success()
-        case failue()
+        case failure()
     }
     
     /*

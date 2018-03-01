@@ -18,17 +18,7 @@ class SignUpController: UIViewController, UITextFieldDelegate {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignUpController.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
         
-        let path = UIBezierPath()
-        path.move(to: CGPoint(x: 0, y: self.view.frame.height - 100))
-        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.width))
-        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.height))
-        path.addLine(to: CGPoint(x: 0, y: self.view.frame.height))
-        path.close()
-        
-        let triangle = CAShapeLayer()
-        triangle.path = path.cgPath
-        triangle.fillColor = UIColor(red:0.79, green:0.93, blue:0.98, alpha:1.0).cgColor
-        self.view.layer.addSublayer(triangle)
+        self.addDesignShape()
         
         self.textField.underline()
     }
