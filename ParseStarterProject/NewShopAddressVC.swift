@@ -16,9 +16,9 @@ class NewShopAddressVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addressField.underline()
-
+        self.allowHideKeyboardWithTap()
         self.addDesignShape()
+        addressField.underline()
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

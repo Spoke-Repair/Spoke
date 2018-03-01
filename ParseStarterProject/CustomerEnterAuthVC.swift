@@ -17,17 +17,9 @@ class CustomerEnterAuthVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CustomerEnterAuthVC.dismissKeyboard))
-        self.view.addGestureRecognizer(tap)
-        
+        self.allowHideKeyboardWithTap()
         self.addDesignShape()
-        
         self.textField.underline()
-    }
-    
-    @objc func dismissKeyboard() {
-        self.view.endEditing(true)
     }
     
     @IBAction func login() {

@@ -18,9 +18,9 @@ class NewShopPasswordVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        passwordField.underline()
-        
+        self.allowHideKeyboardWithTap()
         self.addDesignShape()
+        passwordField.underline()
     }
     
     @IBAction func proceed(_ sender: UIButton) {

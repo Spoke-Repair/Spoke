@@ -162,10 +162,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.username.delegate = self
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
-        self.view.addGestureRecognizer(tap)
-        
+        self.allowHideKeyboardWithTap()
         self.addDesignShape()
     }
     
@@ -185,10 +182,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
         else if let errMsgStr = errMsgStr {
             CommonUtils.popUpAlert(message: errMsgStr, sender: self)
         }
-    }
-
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
     }
 }

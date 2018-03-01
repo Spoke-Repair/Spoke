@@ -27,16 +27,10 @@ class AddBikeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddBikeViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        self.allowHideKeyboardWithTap()
         self.makeLabel.underline()
         self.modelLabel.underline()
         self.sizeLabel.underline()
-    }
-    
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

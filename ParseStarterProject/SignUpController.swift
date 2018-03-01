@@ -12,19 +12,10 @@ class SignUpController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         textField.delegate = self
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignUpController.dismissKeyboard))
-        self.view.addGestureRecognizer(tap)
-        
+        self.allowHideKeyboardWithTap()
         self.addDesignShape()
-        
         self.textField.underline()
-    }
-    
-    @objc func dismissKeyboard() {
-        self.view.endEditing(true)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

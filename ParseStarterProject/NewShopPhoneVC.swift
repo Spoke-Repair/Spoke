@@ -15,9 +15,9 @@ class NewShopPhoneVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        phoneField.underline()
-        
+        self.allowHideKeyboardWithTap()
         self.addDesignShape()
+        phoneField.underline()
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
