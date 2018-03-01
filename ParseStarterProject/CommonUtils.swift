@@ -116,6 +116,12 @@ class CommonUtils {
         
     }
     
-    
+    static func strip(from number: String, characters: [String]) -> String {
+        var newNumber = number
+        for char in characters {
+            newNumber = newNumber.replacingOccurrences(of: char, with: "", options: NSString.CompareOptions.literal, range: nil)
+        }
+        return newNumber
+    }
     
 }

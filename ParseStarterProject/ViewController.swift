@@ -61,7 +61,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @objc private func proceedToPassword() {
         guard textField.text!.range(of: "^\\(\\d{3}\\) - \\d{3} - \\d{4}$", options: .regularExpression) != nil else {
-            CommonUtils.popUpAlert(message: "Please enter your phone number", sender: self)
+            CommonUtils.popUpAlert(message: "Please enter your complete phone number", sender: self)
             return
         }
         signUpButton.isHidden = true

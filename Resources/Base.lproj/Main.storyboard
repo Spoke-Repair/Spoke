@@ -727,7 +727,7 @@
                                 <color key="textColor" red="0.50376744920000005" green="0.50376744920000005" blue="0.50376744920000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter shop phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-eO-vv5">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter shop phone number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-eO-vv5">
                                 <rect key="frame" x="87" y="310" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="KAb-rq-saA"/>
@@ -755,7 +755,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Kq8-Uf-BHq" kind="show" identifier="addressSegue" id="NQq-Yd-nRp"/>
+                                    <action selector="submitNumber" destination="N6u-lb-RXE" eventType="touchUpInside" id="iWR-BO-DMT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -773,6 +773,7 @@
                     </view>
                     <connections>
                         <outlet property="phoneField" destination="mz8-eO-vv5" id="2Wg-hV-CLO"/>
+                        <segue destination="Kq8-Uf-BHq" kind="show" id="Ng2-zd-vH8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZnJ-0E-NlQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -860,7 +861,7 @@
         <!--New Shop AddressVC-->
         <scene sceneID="Wpd-B3-fP8">
             <objects>
-                <viewController id="Kq8-Uf-BHq" customClass="NewShopAddressVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewShopAddressVC" id="Kq8-Uf-BHq" customClass="NewShopAddressVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A1x-b0-zlN"/>
                         <viewControllerLayoutGuide type="bottom" id="HNl-XF-XTZ"/>
@@ -945,7 +946,19 @@
                     <view key="view" contentMode="scaleToFill" id="XPZ-vn-h8t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take photo of shop building" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uN-mp-qzf">
+                                <rect key="frame" x="81.5" y="94" width="212" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4uN-mp-qzf" firstAttribute="top" secondItem="Tdm-Uf-N51" secondAttribute="bottom" constant="30" id="2tm-4F-ciz"/>
+                            <constraint firstItem="4uN-mp-qzf" firstAttribute="centerX" secondItem="XPZ-vn-h8t" secondAttribute="centerX" id="zor-Va-3mu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RPa-B4-6HN">
                         <rightBarButtonItems>

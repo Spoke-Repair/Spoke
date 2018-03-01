@@ -33,7 +33,7 @@ class SignUpController: UIViewController, UITextFieldDelegate {
             
             //(210) - 4
             if(newLength == 8){
-                textField.text = strip(from: textField.text!, characters: ["-", " ", ")"])
+                textField.text = CommonUtils.strip(from: textField.text!, characters: ["-", " ", ")"])
             }
             
             //(210) - 432 -
@@ -153,17 +153,9 @@ class SignUpController: UIViewController, UITextFieldDelegate {
             return
         }
         vc.user = PFUser()
-        vc.user?.username = strip(from: self.phoneNumber, characters: ["-", " ", "(", ")"])
+        vc.user?.username = CommonUtils.strip(from: self.phoneNumber, characters: ["-", " ", "(", ")"])
         vc.user?.password = self.password
         vc.user?["type"] = "customer"
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    private func strip(from number: String, characters: [String]) -> String {
-        var newNumber = number
-        for char in characters {
-            newNumber = newNumber.replacingOccurrences(of: char, with: "", options: NSString.CompareOptions.literal, range: nil)
-        }
-        return newNumber
     }
 }

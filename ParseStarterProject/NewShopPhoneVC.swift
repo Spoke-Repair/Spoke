@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class NewShopPhoneVC: UIViewController {
+class NewShopPhoneVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var phoneField: UITextField!
 
@@ -17,31 +17,24 @@ class NewShopPhoneVC: UIViewController {
         super.viewDidLoad()
         self.allowHideKeyboardWithTap()
         self.addDesignShape()
-        phoneField.underline()
+        self.phoneField.underline()
+        self.phoneField.delegate = self
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return textField.applyPhoneFormatForUITextFieldDelegate(replacementString: string, currentlyEnteringPhone: true)
     }
 
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        switch identifier {
-        case "addressSegue":
-            if let numberStr = phoneField.text, numberStr.count == 10 && CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: numberStr)) {
-                return true
-            }
-            else {
-                CommonUtils.popUpAlert(message: "Please enter a valid phone number", sender: self)
-                return false
-            }
-        default:
-            break
+    @IBAction func submitNumber() {
+        guard self.phoneField.text!.range(of: "^\\(\\d{3}\\) - \\d{3} - \\d{4}$", options: .regularExpression) != nil else {
+            CommonUtils.popUpAlert(message: "Please enter a valid phone number", sender: self)
+            return
         }
-        return true
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addressSegue", let addressVC = segue.destination as? NewShopAddressVC {
-            let user = PFUser()
-            user.username = phoneField.text
-            user["type"] = "employee"
-            addressVC.user = user
-        }
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "NewShopAddressVC") as! NewShopAddressVC
+        let user = PFUser()
+        user.username = CommonUtils.strip(from: self.phoneField.text!, characters: ["(", "-", ")", " "])
+        user["type"] = "employee"
+        vc.user = user
+        self.navigationController!.pushViewController(vc, animated: true)
     }
 }
