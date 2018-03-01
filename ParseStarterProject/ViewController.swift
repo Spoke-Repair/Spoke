@@ -13,7 +13,7 @@ import Parse
 class ViewController: UIViewController, UITextFieldDelegate {
 
     var signupMode = true
-    var phoneNumberEntered = false
+    var currentlyEnteringPhone = true
     var phoneNumber = ""
     //Used to store error messages to display when account creation fails
     var errMsgStr: String?
@@ -25,32 +25,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var signUpButton: UIButton!
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        //Not currently entering a phone number, so proceed normally
-        if phoneNumberEntered {
-            return true
-        }
-        
-        //Deleting character, and any preceeding non-numeric characters
-        if string.isEmpty {
-            textField.text = textField.text!.replacingOccurrences(of: "\\D*\\d$", with: "", options: .regularExpression)
-            return false
-        }
-
-        //Prevent pasting into the text field and non-numerics and attempting too many characters
-        if string.count > 1 || string.range(of: "\\D", options: .regularExpression) != nil || textField.text!.range(of: "^\\(\\d{3}\\) - \\d{3} - \\d{4}$", options: .regularExpression) != nil {
-            return false
-        }
-        
-        //Potentially obtain phone formatting characters to suffix the current string
-        let regexToFormat: [String: String] = ["^$": "(", "^\\(\\d{3}$": ") - ", "^\\(\\d{3}\\) - \\d{3}$": " - "]
-        for (key, val) in regexToFormat {
-            if textField.text!.range(of: key, options: .regularExpression) != nil {
-                textField.text! += val
-                break
-            }
-        }
-        
-        return true
+        return textField.applyPhoneFormatForUITextFieldDelegate(replacementString: string, currentlyEnteringPhone: currentlyEnteringPhone)
     }
     
     @objc func login(_ sender: Any) {
@@ -92,7 +67,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         signUpButton.isHidden = true
         noAccountLabel.isHidden = true
         self.phoneNumber = textField.text!
-        self.phoneNumberEntered = true
+        self.currentlyEnteringPhone = false
         textField.placeholder = "Enter a password"
         textField.text = ""
         UIView.animate(withDuration: 1, animations: {
