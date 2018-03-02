@@ -6,7 +6,7 @@ class SignUpController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
-    var phoneNumberEntered = false
+    var currentlyEnteringPhone = true
     var phoneNumber = ""
     var password:String? = nil
     
@@ -16,100 +16,43 @@ class SignUpController: UIViewController, UITextFieldDelegate {
         self.allowHideKeyboardWithTap()
         self.addDesignShape()
         self.textField.underline()
+        
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 10)
+        button.frame = CGRect(x: CGFloat(self.textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
+        button.addTarget(self, action: #selector(self.enteredPhone), for: .touchUpInside)
+        self.textField.rightView = button
+        self.textField.rightViewMode = .always
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let newLength = (textField.text?.count)! + string.count - range.length
-        var newString = ""
-        
-        //alternative route if char was deleted from password field
-        if(newLength < (textField.text?.count)! && phoneNumberEntered) {
-            textField.text!.removeLast()
-            return false
+        return textField.applyPhoneFormatForUITextFieldDelegate(replacementString: string, currentlyEnteringPhone: currentlyEnteringPhone)
+    }
+    
+    @objc func enteredPhone() {
+        guard textField.text!.range(of: "^\\(\\d{3}\\) - \\d{3} - \\d{4}$", options: .regularExpression) != nil else {
+            CommonUtils.popUpAlert(message: "Please enter your complete phone number", sender: self)
+            return
         }
-        
-        //alternative logic to see if character was deleted
-        if(newLength < (textField.text?.count)! && !phoneNumberEntered) {
+        UIView.animate(withDuration: 1, animations: {
+            let button = UIButton(type: .custom)
+            button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
+            button.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 10)
+            button.frame = CGRect(x: CGFloat(self.textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
+            button.addTarget(self, action: #selector(self.enteredFirstPassword), for: .touchUpInside)
+            self.textField.rightView = button
+            self.textField.rightViewMode = .always
             
-            //(210) - 4
-            if(newLength == 8){
-                textField.text = CommonUtils.strip(from: textField.text!, characters: ["-", " ", ")"])
-            }
-            
-            //(210) - 432 -
-            //length 14
-            if(newLength == 14) {
-                newString = textField.text!
-                newString.removeLast()
-                newString.removeLast()
-                newString.removeLast()
-                textField.text = newString
-            }
-            if(newLength == 13) {
-                newString = textField.text!
-                newString.removeLast()
-                newString.removeLast()
-                textField.text = newString
-            }
-            return true
-        }
-        if(phoneNumberEntered == false){
-            if(newLength == 1){
-                textField.text! += "("
-            }
-            if(newLength == 4) {
-                newString = textField.text! + string + ") - "
-                textField.text = newString
-                return false
-            }
-            if(newLength == 5){
-                newString = textField.text! + ") - " + string
-                textField.text = newString
-                return false
-            }
-            if(newLength == 11) {
-                
-                newString = textField.text! + string + " - "
-                textField.text = newString
-                return false
-            }
-            if(newLength == 12) {
-                newString = textField.text! + " - " + string
-                textField.text = newString
-                return false
-            }
-            if(newLength == 18) {
-                textField.text = textField.text! + string
-                UIView.animate(withDuration: 1, animations: {
-                    
-                    self.phoneNumber = textField.text!
-                    self.phoneNumberEntered = true
-                    textField.placeholder = "Enter a password"
-                    textField.text = ""
-                    
-                    //create button for end of text input
-                    let button = UIButton(type: .custom)
-                    button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
-                    button.imageEdgeInsets = UIEdgeInsetsMake(2, -16, 2, 10)
-                    button.frame = CGRect(x: CGFloat(textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
-                    button.addTarget(self, action: #selector(self.enteredFirstPassword), for: .touchUpInside)
-                    self.instructionLabel.text = "Enter your password"
-                    textField.rightView = button
-                    textField.keyboardType = UIKeyboardType.default
-                    textField.isSecureTextEntry = true
-                    textField.rightViewMode = .always
-                    
-                    textField.center.x += self.view.bounds.width
-                }, completion: nil)
-                
-                return false
-            }
-        } else {
-            textField.text = textField.text! + string
-            return false
-        }
-        
-        return true
+            self.phoneNumber = self.textField.text!
+            self.currentlyEnteringPhone = false
+            self.textField.placeholder = "Enter a password"
+            self.textField.text = ""
+            self.instructionLabel.text = "Enter your password"
+            self.textField.keyboardType = UIKeyboardType.default
+            self.textField.isSecureTextEntry = true
+            self.textField.center.x += self.view.bounds.width
+        }, completion: nil)
     }
     
     @objc func enteredFirstPassword() {
@@ -124,7 +67,7 @@ class SignUpController: UIViewController, UITextFieldDelegate {
             
             let button = UIButton(type: .custom)
             button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
-            button.imageEdgeInsets = UIEdgeInsetsMake(2, -16, 2, 10)
+            button.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 10)
             button.frame = CGRect(x: CGFloat(self.textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
             button.addTarget(self, action: #selector(self.enteredSecondPassword), for: .touchUpInside)
             self.instructionLabel.text = "Now re-enter your password"
@@ -144,7 +87,7 @@ class SignUpController: UIViewController, UITextFieldDelegate {
         }
         guard self.textField.text == self.password else {
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            vc.errMsgStr = "Passwords must match!"
+            vc.errMsgStr = "Unable to create account - passwords must match!"
             self.present(vc, animated: true, completion: nil)
             return
         }

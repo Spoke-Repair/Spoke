@@ -33,28 +33,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
             CommonUtils.popUpAlert(message: "Please enter your password", sender: self)
             return
         }
-        self.phoneNumber = self.phoneNumber.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)
-        self.phoneNumber = self.phoneNumber.replacingOccurrences(of: " ", with: "", options: NSString.CompareOptions.literal, range: nil)
-        self.phoneNumber = self.phoneNumber.replacingOccurrences(of: "(", with: "", options: NSString.CompareOptions.literal, range: nil)
-        self.phoneNumber = self.phoneNumber.replacingOccurrences(of: ")", with: "", options: NSString.CompareOptions.literal, range: nil)
-        
-        print("Phone number: \(self.phoneNumber)")
-        print("Password: \(textField.text!)")
-        
-        PFUser.logInWithUsername(inBackground: self.phoneNumber, password: textField.text!, block: {(user, error) in
-            if error != nil {
+        let strippedNumber = CommonUtils.strip(from: self.phoneNumber, characters: ["(", ")", " ", "-"])
+        PFUser.logInWithUsername(inBackground: strippedNumber, password: textField.text!, block: {(user, error) in
+            guard error == nil else {
                 CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
-            } else {
-                print("Login success")
-                let type = user!["type"] as! String
-                if type == "employee"{
-                    print("logging in as employee")
-                    self.performSegue(withIdentifier: "loginEmployee", sender: self)
-                } else {
-                    //segue to customer storyboard
-                    print("logging in as customer")
-                    self.performSegue(withIdentifier: "login", sender: self)
-                }
+                return
+            }
+            let type = user!["type"] as! String
+            if type == "employee" {
+                self.performSegue(withIdentifier: "loginEmployee", sender: self)
+            }
+            else {
+                self.performSegue(withIdentifier: "login", sender: self)
             }
         })
     }
