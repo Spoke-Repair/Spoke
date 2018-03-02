@@ -2029,7 +2029,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aX-V6-NbQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aX-V6-NbQ">
                                 <rect key="frame" x="87.5" y="156" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="vsS-Y1-zEw"/>
@@ -2042,7 +2042,7 @@
                                 <rect key="frame" x="163" y="318" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
-                                    <segue destination="N9A-Ly-vo9" kind="show" identifier="addBikeSegue" id="ErK-OJ-bC3"/>
+                                    <action selector="submit" destination="Y2N-Oe-Djl" eventType="touchUpInside" id="F6O-Ld-cgT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2065,6 +2065,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="phoneField" destination="6aX-V6-NbQ" id="ddT-ym-jkd"/>
+                        <segue destination="N9A-Ly-vo9" kind="show" id="OCB-AS-SOg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHU-xH-czZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2075,7 +2076,7 @@
         <!--Add Bike-->
         <scene sceneID="uk5-zo-1fI">
             <objects>
-                <viewController storyboardIdentifier="addBikeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N9A-Ly-vo9" customClass="AddBikeViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddBikeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N9A-Ly-vo9" customClass="AddBikeViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l67-0Z-eZv"/>
                         <viewControllerLayoutGuide type="bottom" id="RSd-Hb-E2m"/>

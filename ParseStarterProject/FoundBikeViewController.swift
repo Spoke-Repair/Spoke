@@ -12,6 +12,11 @@ class FoundBikeViewController: UIViewController {
 
     var userId: String? = nil
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.addDesignShape()
+    }
+    
     @IBAction func backToScanner(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "homeTabBarController")

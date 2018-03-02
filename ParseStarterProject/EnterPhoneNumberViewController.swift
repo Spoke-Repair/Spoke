@@ -8,30 +8,27 @@
 
 import UIKit
 
-class EnterPhoneNumberViewController: UIViewController {
+class EnterPhoneNumberViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var phoneField: UITextField!
-
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        switch identifier {
-        case "addBikeSegue":
-            if let numberStr = phoneField.text, numberStr.count == 10 && CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: numberStr)) {
-                return true
-            }
-            else {
-                CommonUtils.popUpAlert(message: "Please enter a valid phone number", sender: self)
-                return false
-            }
-        default:
-            break
-        }
-        return true
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.addDesignShape()
+        self.phoneField.delegate = self
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addBikeSegue", let addBikeVC = segue.destination as? AddBikeViewController {
-            addBikeVC.phoneNumber = phoneField.text
+    @IBAction func submit() {
+        guard self.phoneField.text!.range(of: "^\\(\\d{3}\\) - \\d{3} - \\d{4}$", options: .regularExpression) != nil else {
+            CommonUtils.popUpAlert(message: "Please enter a valid phone number", sender: self)
+            return
         }
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "AddBikeViewController") as! AddBikeViewController
+        vc.phoneNumber = CommonUtils.strip(from: phoneField.text!, characters: ["(", ")", " ", "-"])
+        self.navigationController!.pushViewController(vc, animated: true)
     }
-
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return textField.applyPhoneFormatForUITextFieldDelegate(replacementString: string, currentlyEnteringPhone: true)
+    }
 }
