@@ -71,7 +71,6 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CommonUtils.addFCMTokenToParse()
         activityIndicator()
         visitBlogButton.layer.cornerRadius = 7
         visitBlogButton.clipsToBounds = true

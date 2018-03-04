@@ -41,7 +41,6 @@ class BikeListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        //associate user to this device for notification usage
-        CommonUtils.addFCMTokenToParse()
         activityIndicator()
 
         

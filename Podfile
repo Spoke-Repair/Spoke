@@ -6,9 +6,6 @@ target 'ParseStarterProject-Swift' do
   use_frameworks!
 
   # Pods for ParseStarterProject-Swift
-   pod 'Firebase/Core'
-   pod 'FirebaseMessaging', '=2.0.0'
-   pod 'FirebaseInstanceID', '=2.0.0'
    pod 'Alamofire', '~> 4.5'
 
 end

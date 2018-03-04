@@ -25,7 +25,6 @@
 		6832ABBB1F451D9F00D8D49A /* CreateWorkOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABBA1F451D9F00D8D49A /* CreateWorkOrderViewController.swift */; };
 		6832ABBD1F45259F00D8D49A /* AddBikeScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABBC1F45259F00D8D49A /* AddBikeScannerVC.swift */; };
 		6832ABBF1F4526D300D8D49A /* ConfirmBikeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */; };
-		687F93161F96D95E00253E00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 687F93151F96D7B000253E00 /* GoogleService-Info.plist */; };
 		687F93181F96DCDB00253E00 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F93171F96DCDB00253E00 /* CommonUtils.swift */; };
 		6892573B1FB133530039B40F /* BikeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6892573A1FB133530039B40F /* BikeObject.swift */; };
 		689B8AB11FAF988200EE395D /* PhotoOfBikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */; };
@@ -96,7 +95,6 @@
 		6832ABBA1F451D9F00D8D49A /* CreateWorkOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWorkOrderViewController.swift; sourceTree = "<group>"; };
 		6832ABBC1F45259F00D8D49A /* AddBikeScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBikeScannerVC.swift; sourceTree = "<group>"; };
 		6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmBikeVC.swift; sourceTree = "<group>"; };
-		687F93151F96D7B000253E00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		687F93171F96DCDB00253E00 /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
 		6892573A1FB133530039B40F /* BikeObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeObject.swift; sourceTree = "<group>"; };
 		689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfBikeController.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				68F173FB1F8C4BEB000CC893 /* ParseStarterProject-Swift.entitlements */,
-				687F93151F96D7B000253E00 /* GoogleService-Info.plist */,
 				81BA81471A49DA1800E65899 /* ParseStarterProject */,
 				814C3AC51B69877600E307BB /* Resources */,
 				81BA816A1A49DB5600E65899 /* Frameworks */,
@@ -381,7 +378,6 @@
 				68A4F607202BD2B90090487D /* arrow-right-gray.png in Resources */,
 				C2046EE720466693000236CD /* spokelogo_nobackground.png in Resources */,
 				C2DB56491FB8C30B00F6224D /* square.png in Resources */,
-				687F93161F96D95E00253E00 /* GoogleService-Info.plist in Resources */,
 				68E8B0C92031021200D5C1B7 /* Image uploaded from iOS.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,16 +393,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ParseStarterProject-Swift/Pods-ParseStarterProject-Swift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

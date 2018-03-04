@@ -81,12 +81,7 @@ class OpenOrdersViewController: UIViewController, UITableViewDataSource, UITable
         
 
     }
-    override func viewDidAppear(_ animated: Bool) {
-        
-        CommonUtils.addFCMTokenToParse()
     
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
