@@ -9,6 +9,8 @@
 
 import UIKit
 import Parse
+import Firebase
+import FirebaseAuth
 
 class ViewController: UIViewController, UITextFieldDelegate {
 

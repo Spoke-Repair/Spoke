@@ -112,6 +112,9 @@ class OpenOrderCollectionView: UIViewController, UICollectionViewDataSource, UIC
 
     override func viewDidAppear(_ animated: Bool) {
         self.bikesDueLabel.text = "You have \(bikesDue) orders due today"
+        
+        //TODO This line occasionally throws an error if launching the app when logged in as shop
+        //Thread 1: Fatal error: Index out of range
         self.nextBikeLabel.text = "Next bike for repair: \(BikeList[0].make)"
         // CommonUtils.addFCMTokenToParse()
         
