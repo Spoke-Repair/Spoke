@@ -1014,7 +1014,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ago-4O-uYL">
-                                <rect key="frame" x="-2" y="177" width="377" height="376"/>
+                                <rect key="frame" x="-2" y="128" width="377" height="376"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="376" id="x2G-jC-a80"/>
@@ -1105,7 +1105,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAw-Er-59W">
-                                <rect key="frame" x="0.0" y="611" width="377" height="56"/>
+                                <rect key="frame" x="0.0" y="562" width="377" height="56"/>
                                 <color key="backgroundColor" red="0.93408334260000003" green="0.41672497990000001" blue="0.55791944270000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <state key="normal" title="Close Order!">
@@ -1141,7 +1141,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hc9-C3-hpY">
-                                <rect key="frame" x="1" y="561" width="375" height="51"/>
+                                <rect key="frame" x="1" y="512" width="375" height="51"/>
                                 <color key="backgroundColor" red="0.92811131477355957" green="0.97323185205459595" blue="0.95902198553085327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="ouO-68-enh"/>
@@ -1210,7 +1210,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uf-AF-cQf">
-                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="562" width="375" height="56"/>
                                 <color key="backgroundColor" red="0.92816370725631714" green="0.97299498319625854" blue="0.96068292856216431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="fpV-yx-Vuv"/>
@@ -1552,7 +1552,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1p3-1o-ieQ">
-                                <rect key="frame" x="0.0" y="313" width="375" height="128"/>
+                                <rect key="frame" x="0.0" y="313" width="375" height="79"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="guZ-mn-R22"/>
@@ -1565,7 +1565,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BikeOrderCollection" id="TyQ-eg-H44" customClass="BikeOrderCell" customModule="ParseStarterProject_Swift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="2" width="111" height="124"/>
+                                        <rect key="frame" x="0.0" y="-22.5" width="111" height="124"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="111" height="124"/>
@@ -1635,7 +1635,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd3-Gm-g5l">
-                                <rect key="frame" x="78" y="547" width="218" height="100"/>
+                                <rect key="frame" x="78" y="498" width="218" height="100"/>
                                 <color key="backgroundColor" red="0.92816370725631714" green="0.97299498319625854" blue="0.96068292856216431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="218" id="6Ji-82-rw5"/>
@@ -1647,7 +1647,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Having trouble with the app? Tap to talk to an expert" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-bY-jzG">
-                                <rect key="frame" x="16" y="488" width="323" height="55"/>
+                                <rect key="frame" x="16" y="439" width="323" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="GdW-Me-Vda"/>
                                     <constraint firstAttribute="width" constant="323" id="mJv-ze-lOu"/>
@@ -1765,7 +1765,6 @@
                     <connections>
                         <segue destination="ILy-3t-mTi" kind="show" identifier="viewBikeInfo" id="BB0-mE-Jek"/>
                         <segue destination="Lq9-fG-ROF" kind="show" identifier="createWorkOrderSegue" id="Pz2-3Y-OHu"/>
-                        <segue destination="DqS-aS-yYF" kind="show" identifier="homeTabBarController" id="AFd-cV-I9L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQa-AN-i1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2104,7 +2103,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wY-mG-xOn">
-                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="562" width="375" height="56"/>
                                 <color key="backgroundColor" red="0.92811131477355957" green="0.97323185205459595" blue="0.95902198553085327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="3GB-7W-Z7C"/>
@@ -2125,7 +2124,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Please press the below button to scan a QR code, and then place it on your bike." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrY-xI-ZcX">
-                                <rect key="frame" x="67" y="369" width="240" height="177"/>
+                                <rect key="frame" x="67" y="369" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="wGa-PT-2sc"/>
@@ -2241,7 +2240,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjf-UH-g1Y">
-                                <rect key="frame" x="0.0" y="606" width="375" height="61"/>
+                                <rect key="frame" x="0.0" y="557" width="375" height="61"/>
                                 <color key="backgroundColor" red="0.92816370725631714" green="0.97299498319625854" blue="0.96068292856216431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="4xC-AA-Mvd"/>
@@ -2511,7 +2510,4 @@
         <image name="spokelogo_nobackground.png" width="2450" height="2918"/>
         <image name="square.png" width="276" height="276"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="AFd-cV-I9L"/>
-    </inferredMetricsTieBreakers>
 </document>

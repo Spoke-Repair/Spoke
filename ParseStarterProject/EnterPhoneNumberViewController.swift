@@ -15,6 +15,7 @@ class EnterPhoneNumberViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addDesignShape()
+        self.allowHideKeyboardWithTap()
         self.phoneField.delegate = self
     }
 

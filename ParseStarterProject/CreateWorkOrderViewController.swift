@@ -31,7 +31,7 @@ class CreateWorkOrderViewController: UIViewController, UITableViewDelegate, UITa
                 print("Saved new object")
                 //self.performSegue(withIdentifier: "backToOrders", sender: self)
                 let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "homeTabBarController") as! UITabBarController
+                let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "shopTabBarController") as! UITabBarController
                 self.present(vc, animated: true, completion: nil)
             
             

@@ -19,7 +19,7 @@ class FoundBikeViewController: UIViewController {
     
     @IBAction func backToScanner(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "homeTabBarController")
+        let vc = storyboard.instantiateViewController(withIdentifier: "shopTabBarController")
         self.present(vc, animated: true, completion: nil)
     }
     
