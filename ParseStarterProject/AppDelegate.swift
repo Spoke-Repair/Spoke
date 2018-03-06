@@ -8,8 +8,8 @@
 */
 
 import UIKit
-
 import Parse
+import Firebase
 
 // If you want to use any of the UI components, uncomment this line
 // import ParseUI
@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        //Instruction from firebase console
+        FirebaseApp.configure()
+        
         // Enable storing and querying data from Local Datastore.
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
         Parse.enableLocalDatastore()
