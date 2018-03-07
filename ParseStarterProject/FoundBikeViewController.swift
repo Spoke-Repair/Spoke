@@ -12,9 +12,14 @@ class FoundBikeViewController: UIViewController {
 
     var userId: String? = nil
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.addDesignShape()
+    }
+    
     @IBAction func backToScanner(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "homeTabBarController")
+        let vc = storyboard.instantiateViewController(withIdentifier: "shopTabBarController")
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -23,19 +28,8 @@ class FoundBikeViewController: UIViewController {
 
     }
     
-    
     @IBAction func goToOpenWorkOrder(_ sender: Any) {
         self.performSegue(withIdentifier: "createWorkOrderSegue", sender: self)
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,29 +41,17 @@ class FoundBikeViewController: UIViewController {
                 print("display bike vc")
             }
 
-        }else if segue.identifier == "backToScanner" {
+        }
+        else if segue.identifier == "backToScanner" {
                 //see if back button works from found FoundBikeViewController
                 print("hit the back button from FoundBikeViewController")
                 //self.performSegue(withIdentifier: "backToScanner", sender: self)
             
-        }else if segue.identifier == "createWorkOrderSegue" {
+        }
+        else if segue.identifier == "createWorkOrderSegue" {
             if let workVC = segue.destination as? CreateWorkOrderViewController {
                 workVC.bikeID = self.userId
             }
-        
         }
-        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

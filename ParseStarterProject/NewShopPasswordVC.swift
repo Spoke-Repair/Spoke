@@ -18,19 +18,9 @@ class NewShopPasswordVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.allowHideKeyboardWithTap()
+        self.addDesignShape()
         passwordField.underline()
-        
-        let path = UIBezierPath()
-        path.move(to: CGPoint(x: 0, y: self.view.frame.height - 100))
-        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.width))
-        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.height))
-        path.addLine(to: CGPoint(x: 0, y: self.view.frame.height))
-        path.close()
-        
-        let triangle = CAShapeLayer()
-        triangle.path = path.cgPath
-        triangle.fillColor = UIColor(red:0.79, green:0.93, blue:0.98, alpha:1.0).cgColor
-        self.view.layer.addSublayer(triangle)
     }
     
     @IBAction func proceed(_ sender: UIButton) {
@@ -72,33 +62,15 @@ class NewShopPasswordVC: UIViewController {
     }
     
     private func signup() {
-        self.user.signUpInBackground() { (success1, error1) in
-            guard error1 == nil else {
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
-                    CommonUtils.popUpAlert(message: "Can't transiton to View", sender: self)
-                    return
-                }
-                vc.errMsgStr = error1?.localizedDescription
+        self.user.signUpInBackground() { (success, error) in
+            guard error == nil else {
+                let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                vc.errMsgStr = error?.localizedDescription
                 self.present(vc, animated: true, completion: nil)
                 return
             }
-            print("Saved account for \(self.user.username!)")
-            self.user.saveInBackground(block: { (success2: Bool, error2: Error?) in
-                guard error2 == nil else {
-                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
-                        CommonUtils.popUpAlert(message: "Can't transiton to View", sender: self)
-                        return
-                    }
-                    vc.errMsgStr = error2?.localizedDescription
-                    self.present(vc, animated: true, completion: nil)
-                    return
-                }
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "customerTabBar") else {
-                    CommonUtils.popUpAlert(message: "Can't transiton to view", sender: self)
-                    return
-                }
-                self.present(vc, animated: true, completion: nil)
-            })
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "shopTabBarController")
+            self.present(vc, animated: true, completion: nil)
         }
     }
 }

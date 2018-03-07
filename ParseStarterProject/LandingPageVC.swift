@@ -9,9 +9,9 @@
 import UIKit
 
 class LandingPageVC: UIViewController {
-
+    
     var loginError: Error?
-
+    
     override func viewDidAppear(_ animated: Bool) {
         guard loginError?.localizedDescription == nil else {
             CommonUtils.popUpAlert(message: loginError!.localizedDescription, sender: self)
@@ -21,19 +21,9 @@ class LandingPageVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let path = UIBezierPath()
-        path.move(to: CGPoint(x: 0, y: self.view.frame.height - 100))
-        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.width))
-        path.addLine(to: CGPoint(x: self.view.frame.width, y: self.view.frame.height))
-        path.addLine(to: CGPoint(x: 0, y: self.view.frame.height))
-        path.close()
-        
-        let triangle = CAShapeLayer()
-        triangle.path = path.cgPath
-        triangle.fillColor = UIColor(red:0.79, green:0.93, blue:0.98, alpha:1.0).cgColor
-        self.view.layer.addSublayer(triangle)
+        self.addDesignShape()
     }
+    
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
             CommonUtils.popUpAlert(message: "Can't transiton to view", sender: self)

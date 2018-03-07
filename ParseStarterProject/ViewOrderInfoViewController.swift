@@ -10,14 +10,14 @@ import UIKit
 import Parse
 
 class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet var makeLabel: UILabel!
     
     @IBOutlet var modelLabel: UILabel!
     var messages = [String]()
     var messageDates = [String]()
     var messageType = [String]()
-    var currentUser = PFUser.current()?.objectId as! String
+    var currentUser = (PFUser.current()?.objectId)!
     
     @IBOutlet var theTableView: UITableView!
     
@@ -37,20 +37,20 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         self.makeLabel.text = BikeList[myIndex].make
         self.modelLabel.text = BikeList[myIndex].model
         
-       // theLabel.text = BikeList[myIndex].userId
+        // theLabel.text = BikeList[myIndex].userId
         //objectLabel.text = BikeList[myIndex].bikeId
         //currentUser.text = storeOwnerID
         //bikeOwner.text = BikeList[myIndex].userId
         //bikeID.text = BikeList[myIndex].userId
-
+        
         
         
         
         // Do any additional setup after loading the view.
-       self.theTableView.reloadData()
+        self.theTableView.reloadData()
         
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -84,7 +84,7 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
                 }
             }
         })
-       
+        
         self.theTableView.reloadData()
     }
     
@@ -116,27 +116,20 @@ class ViewOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     
-
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "addMessageSegue" {
-                let addMessageController = segue.destination as! AddMessageFromStoreVC
-                //force unwrap because we have already validated with validateFieldFunction
-                addMessageController.bikeID = BikeList[myIndex].bikeId
-                addMessageController.bikeOwnerID = BikeList[myIndex].userId
-                addMessageController.storeID = self.currentUser
-                
-           
-            
+            let addMessageController = segue.destination as! AddMessageFromStoreVC
+            //force unwrap because we have already validated with validateFieldFunction
+            addMessageController.bikeID = BikeList[myIndex].bikeId
+            addMessageController.bikeOwnerID = BikeList[myIndex].userId
+            addMessageController.storeID = self.currentUser
         }
-        
-        
     }
-    
-
 }

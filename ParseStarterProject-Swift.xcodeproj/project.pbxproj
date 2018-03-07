@@ -56,6 +56,8 @@
 		81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81781A49E0DB00E65899 /* AudioToolbox.framework */; };
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
+		C2046EE720466693000236CD /* spokelogo_nobackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C2046EE620466693000236CD /* spokelogo_nobackground.png */; };
+		C2046EE9204693DF000236CD /* CustomerEnterAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2046EE8204693DF000236CD /* CustomerEnterAuthVC.swift */; };
 		C20B6F5E202AB683008656E9 /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B6F5D202AB683008656E9 /* LandingPageVC.swift */; };
 		C20B6F60202ACEAB008656E9 /* NewShopPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B6F5F202ACEAB008656E9 /* NewShopPhoneVC.swift */; };
 		C20B6F62202ADD1B008656E9 /* NewShopAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B6F61202ADD1B008656E9 /* NewShopAddressVC.swift */; };
@@ -130,6 +132,8 @@
 		81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		C2046EE620466693000236CD /* spokelogo_nobackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spokelogo_nobackground.png; sourceTree = "<group>"; };
+		C2046EE8204693DF000236CD /* CustomerEnterAuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerEnterAuthVC.swift; sourceTree = "<group>"; };
 		C20B6F5D202AB683008656E9 /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
 		C20B6F5F202ACEAB008656E9 /* NewShopPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopPhoneVC.swift; sourceTree = "<group>"; };
 		C20B6F61202ADD1B008656E9 /* NewShopAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopAddressVC.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C2046EE620466693000236CD /* spokelogo_nobackground.png */,
 				68E8B0C82031021100D5C1B7 /* Image uploaded from iOS.png */,
 				68A4F606202BD2B80090487D /* arrow-right-gray.png */,
 				68BBC78A20293AB100374289 /* Rectangle-2.png */,
@@ -265,6 +270,7 @@
 				C20B6F5F202ACEAB008656E9 /* NewShopPhoneVC.swift */,
 				C20B6F61202ADD1B008656E9 /* NewShopAddressVC.swift */,
 				C20B6F63202AE8FF008656E9 /* NewShopPasswordVC.swift */,
+				C2046EE8204693DF000236CD /* CustomerEnterAuthVC.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
 				68BBC78B20293AB100374289 /* Rectangle-2.png in Resources */,
 				68A4F607202BD2B90090487D /* arrow-right-gray.png in Resources */,
+				C2046EE720466693000236CD /* spokelogo_nobackground.png in Resources */,
 				C2DB56491FB8C30B00F6224D /* square.png in Resources */,
 				687F93161F96D95E00253E00 /* GoogleService-Info.plist in Resources */,
 				68E8B0C92031021200D5C1B7 /* Image uploaded from iOS.png in Resources */,
@@ -479,6 +486,7 @@
 				6832ABA51F3A703300D8D49A /* QRCodeReaderViewController.swift in Sources */,
 				68A13A851F8A8F590015A6D1 /* MessageCell.swift in Sources */,
 				6832ABB51F4116C100D8D49A /* OpenOrdersViewController.swift in Sources */,
+				C2046EE9204693DF000236CD /* CustomerEnterAuthVC.swift in Sources */,
 				68E5D32C1F4B6BA300EFC857 /* WorkListValues.swift in Sources */,
 				6832ABA91F3BCABA00D8D49A /* SettingsViewController.swift in Sources */,
 				6832ABA31F3A664E00D8D49A /* QRCodeGeneratorViewController.swift in Sources */,

@@ -1,110 +1,104 @@
-//
-//  SignUpController.swift
-//  ParseStarterProject-Swift
-//
-//  Created by Garrett Huff on 8/21/17.
-//  Copyright © 2017 Parse. All rights reserved.
-//
-
 import UIKit
 import Parse
 
-class SignUpController: UIViewController {
-
-    @IBOutlet weak var prompt: UILabel!
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var input: UITextField!
-
-    private var loginErrorMsg: String?
-    private var currentPage = 0
-    private let prompts = ["What's your email address?", "What's your first name?", "What's your last name?", "What's your password?", "Re-enter your password"]
-    private var userInfo: [String?] = [nil, nil, nil, nil, nil]
+class SignUpController: UIViewController, UITextFieldDelegate {
     
-    @IBAction func proceed(_ sender: UIButton) {
-        guard let userInput = input.text?.trimmingCharacters(in: .whitespacesAndNewlines), userInput.count > 0 && currentPage < prompts.count else {
-            errorLabel.isHidden = false
-            return
-        }
-        errorLabel.isHidden = true
-        userInfo[currentPage] = userInput
-        input.text = ""
-        currentPage += 1
-        if currentPage == prompts.count {
-
-            //Ensure that user typed password correctly
-            guard userInfo[3] == userInfo[4] else {
-                self.loginErrorMsg = "Failed - passwords must match for user"
-                self.performSegue(withIdentifier: "backToLoginScreen", sender: self)
-                return
-            }
-
-            signUp(userInfo[0]!, userInfo[1]!, userInfo[2]!, userInfo[3]!)
-            return
-        }
-        else if currentPage == prompts.count - 1 {
-            sender.setTitle("Submit", for: .normal)
-        }
-
-        sender.isEnabled = false
-        UIView.animate(withDuration: 0.25, animations: {
-            self.prompt.alpha = 0.0
-        }, completion: {(true) in
-            self.prompt.center.x -= self.view.bounds.width
-            self.prompt.alpha = 1.0
-            self.prompt.text = self.prompts[self.currentPage]
-            UIView.animate(withDuration: 0.25, animations: {
-                self.view.layoutIfNeeded()
-                sender.isEnabled = true
-            })
-        })
-    }
-
-    private func signUp(_ email: String, _ first: String, _ last: String, _ pass: String) {
-        let user = PFUser()
-        user.username = email
-        user.password = pass
-        user["firstname"] = first
-        user["lastname"] = last
-        user["type"] = "customer"
-        user.signUpInBackground() { (success, error) in
-            if error != nil {
-                print("Failed to create account \(email)")
-                self.loginErrorMsg = error?.localizedDescription
-                self.performSegue(withIdentifier: "backToLoginScreen", sender: self)
-                return
-            }
-            print("Created account \(email)")
-            user.saveInBackground(block: { (success: Bool, error: Error?) in
-                if(success){
-                    self.performSegue(withIdentifier: "signUpActivated", sender: self)
-                }
-            })
-        }
-    }
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var instructionLabel: UILabel!
+    var currentlyEnteringPhone = true
+    var phoneNumber = ""
+    var password:String? = nil
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let loginVC = segue.destination as? ViewController, let errMsg = self.loginErrorMsg else { return }
-        loginVC.errMsgStr = errMsg + ": " + (userInfo[0] ?? "")
-    }
-
-    @IBAction func cancelSignUpButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "backToLoginScreen", sender: self)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.prompt.text = self.prompts[self.currentPage]
-        self.input.underline()
+        textField.delegate = self
+        self.allowHideKeyboardWithTap()
+        self.addDesignShape()
+        self.textField.underline()
+        
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 10)
+        button.frame = CGRect(x: CGFloat(self.textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
+        button.addTarget(self, action: #selector(self.enteredPhone), for: .touchUpInside)
+        self.textField.rightView = button
+        self.textField.rightViewMode = .always
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return textField.applyPhoneFormatForUITextFieldDelegate(replacementString: string, currentlyEnteringPhone: currentlyEnteringPhone)
     }
-
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
+    
+    @objc func enteredPhone() {
+        guard textField.text!.range(of: "^\\(\\d{3}\\) - \\d{3} - \\d{4}$", options: .regularExpression) != nil else {
+            CommonUtils.popUpAlert(message: "Please enter your complete phone number", sender: self)
+            return
+        }
+        UIView.animate(withDuration: 1, animations: {
+            let button = UIButton(type: .custom)
+            button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
+            button.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 10)
+            button.frame = CGRect(x: CGFloat(self.textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
+            button.addTarget(self, action: #selector(self.enteredFirstPassword), for: .touchUpInside)
+            self.textField.rightView = button
+            self.textField.rightViewMode = .always
+            
+            self.phoneNumber = self.textField.text!
+            self.currentlyEnteringPhone = false
+            self.textField.placeholder = "Enter a password"
+            self.textField.text = ""
+            self.instructionLabel.text = "Enter your password"
+            self.textField.keyboardType = UIKeyboardType.default
+            self.textField.isSecureTextEntry = true
+            self.textField.center.x += self.view.bounds.width
+        }, completion: nil)
     }
-
+    
+    @objc func enteredFirstPassword() {
+        guard !(self.textField.text ?? "").isEmpty else {
+            CommonUtils.popUpAlert(message: "Please enter a password", sender: self)
+            return
+        }
+        UIView.animate(withDuration: 1, animations: {
+            self.password = self.textField.text!
+            self.textField.text = ""
+            self.textField.placeholder = "Re-enter password"
+            
+            let button = UIButton(type: .custom)
+            button.setImage(UIImage(named: "arrow-right-gray.png"), for: .normal)
+            button.imageEdgeInsets = UIEdgeInsetsMake(0, -16, 0, 10)
+            button.frame = CGRect(x: CGFloat(self.textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(10), height: CGFloat(14))
+            button.addTarget(self, action: #selector(self.enteredSecondPassword), for: .touchUpInside)
+            self.instructionLabel.text = "Now re-enter your password"
+            self.textField.rightView = button
+            self.textField.keyboardType = UIKeyboardType.default
+            self.textField.isSecureTextEntry = true
+            self.textField.rightViewMode = .always
+            
+            self.textField.center.x += self.view.bounds.width
+        }, completion: nil)
+    }
+    
+    @objc func enteredSecondPassword() {
+        guard !(self.textField.text ?? "").isEmpty else {
+            CommonUtils.popUpAlert(message: "Please enter a password", sender: self)
+            return
+        }
+        guard self.textField.text == self.password else {
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            vc.errMsgStr = "Unable to create account - passwords must match!"
+            self.present(vc, animated: true, completion: nil)
+            return
+        }
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CustomerEnterAuthVC") as? CustomerEnterAuthVC else {
+            CommonUtils.popUpAlert(message: "Can't transition to view", sender: self)
+            return
+        }
+        vc.user = PFUser()
+        vc.user?.username = CommonUtils.strip(from: self.phoneNumber, characters: ["-", " ", "(", ")"])
+        vc.user?.password = self.password
+        vc.user?["type"] = "customer"
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

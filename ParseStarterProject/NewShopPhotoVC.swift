@@ -12,66 +12,44 @@ import Parse
 class NewShopPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var user: PFUser!
-    var buttonToggle = false
     @IBOutlet var imagePicked: UIImageView!
-    @IBOutlet var continueButton: UIButton!
     
-    private func openCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera;
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction func continueButton(_ sender: Any) {
-        //save in parse and segue
-        if (buttonToggle == false){
-            openCamera()
-        }
-        else {
-            self.performSegue(withIdentifier: "newShopPasswordSegue", sender: self)
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        camera()
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        imagePicked.image = image
-        dismiss(animated:true, completion: nil)
-        buttonToggle = true
-        continueButton.contentHorizontalAlignment = .center
-        continueButton.titleLabel?.text = "Continue"
+        self.dismiss(animated: true, completion: nil)
+        self.user["profile_pic"] = PFFile(data: UIImageJPEGRepresentation(image, 0.1)!)
+        proceed()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "newShopPasswordSegue", let nextVC = segue.destination as? NewShopPasswordVC {
-            let imageData = UIImageJPEGRepresentation(self.imagePicked.image!, 0.1)
-            let pimageFile = PFFile(data: imageData!)
-            user["profile_pic"] = pimageFile
-            nextVC.user = self.user
+    @IBAction func takePhoto(_ sender: UIBarButtonItem) {
+        camera()
+    }
+    
+    @IBAction func skipPhoto(_ sender: UIBarButtonItem) {
+        self.user.remove(forKey: "profile_pic")
+        proceed()
+    }
+    
+    private func camera() {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            CommonUtils.popUpAlert(message: "Camera is unavailable", sender: self)
+            return
         }
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera;
+        imagePicker.allowsEditing = false
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "confirmBike", let confirmBikeVC = segue.destination as? ConfirmBikeVC {
-//            let imageData = UIImageJPEGRepresentation(self.imagePicked.image!, 0.1)
-//            let pimageFile = PFFile(data: imageData!)
-//            newBike["picture"] = pimageFile
-//            confirmBikeVC.newBike = newBike
-//            confirmBikeVC.bikePicture = self.imagePicked.image!
-//        }
-//    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func proceed() {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "NewShopPasswordVC") as! NewShopPasswordVC
+        vc.user = self.user
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    */
-
 }

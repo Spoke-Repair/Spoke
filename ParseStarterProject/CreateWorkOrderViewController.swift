@@ -31,7 +31,7 @@ class CreateWorkOrderViewController: UIViewController, UITableViewDelegate, UITa
                 print("Saved new object")
                 //self.performSegue(withIdentifier: "backToOrders", sender: self)
                 let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "homeTabBarController") as! UITabBarController
+                let vc : UITabBarController = storyboard.instantiateViewController(withIdentifier: "shopTabBarController") as! UITabBarController
                 self.present(vc, animated: true, completion: nil)
             
             
@@ -46,15 +46,7 @@ class CreateWorkOrderViewController: UIViewController, UITableViewDelegate, UITa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateWorkOrderViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
+        self.allowHideKeyboardWithTap()
     }
 
     override func didReceiveMemoryWarning() {

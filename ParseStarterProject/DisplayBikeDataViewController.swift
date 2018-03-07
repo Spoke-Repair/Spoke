@@ -19,26 +19,6 @@ class DisplayBikeDataViewController: UIViewController {
     @IBOutlet var lastname: UILabel!
     @IBOutlet var bikePicture: UIImageView!
     
-    @IBAction func backButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "backToBikeInfo", sender: self)
-    }
-    
-    @IBAction func textCustomer(_ sender: Any) {
-       
-        
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-       
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         
         let query = PFQuery(className: "Bike")
@@ -49,13 +29,13 @@ class DisplayBikeDataViewController: UIViewController {
                 if error == nil {
                     if let objects = objects {
                         //for object in objects {
-                            print("printing items from parse query")
-                            print(objects[0]["userID"])
-                            print(objects[0]["model"])
-                            self.theModelLabel.text = objects[0]["model"] as? String
-                            self.theMakeLabel.text = objects[0]["make"] as? String
+                        print("printing items from parse query")
+                        print(objects[0]["userID"])
+                        print(objects[0]["model"])
+                        self.theModelLabel.text = objects[0]["model"] as? String
+                        self.theMakeLabel.text = objects[0]["make"] as? String
                         
-                            //new code
+                        //new code
                         let make = objects[0]["make"] as! String
                         let model = objects[0]["model"] as! String
                         let isOwned = objects[0]["userID"] != nil
@@ -71,30 +51,23 @@ class DisplayBikeDataViewController: UIViewController {
                                     bikeToAdd.picture = imageToSet
                                     self.bikePicture.image = bikeToAdd.picture
                                 }
-                                
                             })
-                            
                         }
                         
-                   
-                            //end new code
+                        //end new code
+                        
+                        let userQuery = PFUser.query()
                         
                         
-                        
-                        
-                        
-                            let userQuery = PFUser.query()
-
-                        
-                            userQuery?.whereKey("objectId", equalTo: objects[0]["userID"])
-                            userQuery?.findObjectsInBackground(block: { (users: [PFObject]?, error: Error?) in
-                                self.firstname.text = users?[0]["firstname"] as? String
-                                self.lastname.text = users?[0]["lastname"] as? String
-                            })
+                        userQuery?.whereKey("objectId", equalTo: objects[0]["userID"])
+                        userQuery?.findObjectsInBackground(block: { (users: [PFObject]?, error: Error?) in
+                            self.firstname.text = users?[0]["firstname"] as? String
+                            self.lastname.text = users?[0]["lastname"] as? String
+                        })
                         //}
-                        
                     }
-                }else {
+                }
+                else {
                     //there was an error
                     print("There was an error...")
                 }
@@ -110,20 +83,4 @@ class DisplayBikeDataViewController: UIViewController {
             }
         }
     }
- 
-    
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
