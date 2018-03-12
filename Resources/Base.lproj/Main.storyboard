@@ -462,9 +462,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVj-o0-cHC">
+                                <rect key="frame" x="121" y="196" width="132" height="30"/>
+                                <state key="normal" title="Firebase Messages"/>
+                                <connections>
+                                    <action selector="openChat" destination="we8-6d-fyy" eventType="touchUpInside" id="5af-hX-gKI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rVj-o0-cHC" firstAttribute="top" secondItem="8m8-av-Lvg" secondAttribute="bottom" constant="45" id="32Q-LE-cdV"/>
                             <constraint firstItem="AyZ-zM-QpP" firstAttribute="top" secondItem="BUM-Jb-udQ" secondAttribute="bottom" constant="20.5" id="36K-Lr-8qz"/>
                             <constraint firstItem="8m8-av-Lvg" firstAttribute="top" secondItem="e8U-Am-RcO" secondAttribute="bottom" constant="8" id="4So-2C-BiP"/>
                             <constraint firstItem="AyZ-zM-QpP" firstAttribute="leading" secondItem="peU-5Q-kOE" secondAttribute="leading" id="63B-Yz-H1d"/>
@@ -475,6 +483,7 @@
                             <constraint firstItem="UCg-yi-zMy" firstAttribute="top" secondItem="jR1-Gv-ma5" secondAttribute="bottom" constant="8" id="HIC-5v-AO0"/>
                             <constraint firstAttribute="trailing" secondItem="e8U-Am-RcO" secondAttribute="trailing" constant="216" id="Kmf-AZ-rGa"/>
                             <constraint firstItem="e8U-Am-RcO" firstAttribute="top" secondItem="peU-5Q-kOE" secondAttribute="top" constant="87" id="NDV-1d-Xeh"/>
+                            <constraint firstItem="rVj-o0-cHC" firstAttribute="centerX" secondItem="peU-5Q-kOE" secondAttribute="centerX" id="PJP-mx-KdL"/>
                             <constraint firstItem="fp9-Xc-wLx" firstAttribute="top" secondItem="AyZ-zM-QpP" secondAttribute="bottom" constant="57" id="QmZ-qi-l3l"/>
                             <constraint firstItem="AyZ-zM-QpP" firstAttribute="top" secondItem="BUM-Jb-udQ" secondAttribute="bottom" constant="20.5" id="YEd-h1-jCL"/>
                             <constraint firstItem="BUM-Jb-udQ" firstAttribute="top" secondItem="8m8-av-Lvg" secondAttribute="bottom" constant="109" id="ak7-lf-T9v"/>

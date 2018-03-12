@@ -18,6 +18,12 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
     @IBOutlet var bikeCollectionView: UICollectionView!
     @IBOutlet var visitBlogButton: UIButton!
 
+    @IBAction func openChat() {
+        let vc = CustomerChatVC(collectionViewLayout: UICollectionViewLayout())
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func visitBlogButton(_ sender: Any) {
         //send the user to the blog
     }
