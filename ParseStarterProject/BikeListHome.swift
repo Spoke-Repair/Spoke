@@ -19,11 +19,7 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
     @IBOutlet var visitBlogButton: UIButton!
 
     @IBAction func visitBlogButton(_ sender: Any) {
-        //send the user to the blog
-    }
-
-    @IBAction func addBike(_ sender: Any) {
-        self.performSegue(withIdentifier: "addBike", sender: self)
+        UIApplication.shared.open(URL(string: "http://www.spokerepair.com")!)
     }
 
     private func activityIndicator() {

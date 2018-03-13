@@ -483,28 +483,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jR1-Gv-ma5">
-                                <rect key="frame" x="89" y="535" width="180" height="75"/>
+                                <rect key="frame" x="107.5" y="535" width="160" height="75"/>
                                 <color key="backgroundColor" red="0.92816370729999997" green="0.9729949832" blue="0.96068292860000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="Lc0-7f-xfh"/>
                                     <constraint firstAttribute="height" constant="75" id="SLG-bm-e4M"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
-                                <state key="normal" title="Visit Our Blog ">
+                                <state key="normal" title="Visit Our Website">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="visitBlogButton:" destination="we8-6d-fyy" eventType="touchUpInside" id="n7G-BN-qvy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn about bike safety tips and more" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fp9-Xc-wLx">
-                                <rect key="frame" x="16" y="495" width="288" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="BJj-5D-1wI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information about your bikes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8m8-av-Lvg">
                                 <rect key="frame" x="16" y="130" width="219" height="21"/>
                                 <constraints>
@@ -532,22 +524,16 @@
                             <constraint firstItem="8m8-av-Lvg" firstAttribute="top" secondItem="e8U-Am-RcO" secondAttribute="bottom" constant="8" id="4So-2C-BiP"/>
                             <constraint firstItem="AyZ-zM-QpP" firstAttribute="leading" secondItem="peU-5Q-kOE" secondAttribute="leading" id="63B-Yz-H1d"/>
                             <constraint firstItem="8m8-av-Lvg" firstAttribute="top" secondItem="e8U-Am-RcO" secondAttribute="bottom" constant="8" id="6H0-E0-e6A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fp9-Xc-wLx" secondAttribute="trailing" constant="55" id="Fo6-Jk-XgI"/>
                             <constraint firstItem="e8U-Am-RcO" firstAttribute="leading" secondItem="peU-5Q-kOE" secondAttribute="leading" constant="16" id="Gp1-Nx-0wg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jR1-Gv-ma5" secondAttribute="trailing" constant="90" id="Gsz-qs-rj4"/>
                             <constraint firstItem="UCg-yi-zMy" firstAttribute="top" secondItem="jR1-Gv-ma5" secondAttribute="bottom" constant="8" id="HIC-5v-AO0"/>
                             <constraint firstAttribute="trailing" secondItem="e8U-Am-RcO" secondAttribute="trailing" constant="216" id="Kmf-AZ-rGa"/>
                             <constraint firstItem="e8U-Am-RcO" firstAttribute="top" secondItem="peU-5Q-kOE" secondAttribute="top" constant="87" id="NDV-1d-Xeh"/>
-                            <constraint firstItem="fp9-Xc-wLx" firstAttribute="top" secondItem="AyZ-zM-QpP" secondAttribute="bottom" constant="57" id="QmZ-qi-l3l"/>
                             <constraint firstItem="AyZ-zM-QpP" firstAttribute="top" secondItem="BUM-Jb-udQ" secondAttribute="bottom" constant="20.5" id="YEd-h1-jCL"/>
                             <constraint firstItem="BUM-Jb-udQ" firstAttribute="top" secondItem="8m8-av-Lvg" secondAttribute="bottom" constant="109" id="ak7-lf-T9v"/>
-                            <constraint firstItem="jR1-Gv-ma5" firstAttribute="leading" secondItem="peU-5Q-kOE" secondAttribute="leadingMargin" constant="73" id="bGd-FN-J58"/>
-                            <constraint firstItem="fp9-Xc-wLx" firstAttribute="leading" secondItem="peU-5Q-kOE" secondAttribute="leadingMargin" id="cxt-EF-cnf"/>
-                            <constraint firstItem="jR1-Gv-ma5" firstAttribute="top" secondItem="fp9-Xc-wLx" secondAttribute="bottom" constant="19" id="psA-PW-A9x"/>
+                            <constraint firstItem="jR1-Gv-ma5" firstAttribute="centerX" secondItem="peU-5Q-kOE" secondAttribute="centerX" id="qPa-kP-2qJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8m8-av-Lvg" secondAttribute="trailing" constant="124" id="qQ6-bf-scL"/>
                             <constraint firstItem="8m8-av-Lvg" firstAttribute="leading" secondItem="peU-5Q-kOE" secondAttribute="leadingMargin" id="wM3-fk-OSG"/>
                             <constraint firstItem="BUM-Jb-udQ" firstAttribute="leading" secondItem="peU-5Q-kOE" secondAttribute="leadingMargin" id="wlx-49-9wl"/>
-                            <constraint firstItem="jR1-Gv-ma5" firstAttribute="top" secondItem="fp9-Xc-wLx" secondAttribute="bottom" constant="19" id="wwk-gK-3sv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BUM-Jb-udQ" secondAttribute="trailing" constant="172" id="xJg-wQ-ch7"/>
                             <constraint firstAttribute="trailing" secondItem="AyZ-zM-QpP" secondAttribute="trailing" id="zY6-rp-XKV"/>
                         </constraints>
@@ -587,7 +573,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xv4-km-O3y">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Activation Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xv4-km-O3y">
                                 <rect key="frame" x="87" y="155" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="HTs-lu-J75"/>
