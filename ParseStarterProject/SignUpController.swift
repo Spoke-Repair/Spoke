@@ -101,4 +101,12 @@ class SignUpController: UIViewController, UITextFieldDelegate {
         vc.user?["type"] = "customer"
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
+            CommonUtils.popUpAlert(message: "Can't transiton to view", sender: self)
+            return
+        }
+        self.present(vc, animated: true, completion: nil)
+    }
 }

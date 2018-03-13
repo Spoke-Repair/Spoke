@@ -40,6 +40,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
                 return
             }
+
+            //Delete this guard when employee signup is complete
+            guard user!["type"] as! String != "employee" else {
+                CommonUtils.popUpAlert(message: "Employee login is not yet available", sender: self)
+                return
+            }
+
             PFCloud.callFunction(inBackground: "generateFirebaseToken", withParameters: ["uid": PFUser.current()!.objectId!]) { (response: Any?, error: Error?) in
                 guard error == nil else {
                     CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
