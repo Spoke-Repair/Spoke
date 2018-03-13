@@ -17,6 +17,7 @@ class ActivateBikeViewController: UIViewController {
         super.viewDidLoad()
         self.allowHideKeyboardWithTap()
         self.addDesignShape()
+        self.activationCodeField.underline()
     }
     
     @IBAction func activateCode() {

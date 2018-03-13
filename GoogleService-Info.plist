@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>211405399927-br4tceg8rc57ea46vlgemh98d26ofk6o.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.211405399927-br4tceg8rc57ea46vlgemh98d26ofk6o</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCWX3e8iTUD2A_6NaFj8AOvXo7CvwtXKsU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>211405399927</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.garrett.qrscan</string>
+	<key>PROJECT_ID</key>
+	<string>urabo-acb7a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>urabo-acb7a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:211405399927:ios:3b73d8514844cab6</string>
+	<key>DATABASE_URL</key>
+	<string>https://urabo-acb7a.firebaseio.com</string>
+</dict>
+</plist>
