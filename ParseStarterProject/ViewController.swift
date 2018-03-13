@@ -29,15 +29,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return textField.applyPhoneFormatForUITextFieldDelegate(replacementString: string, currentlyEnteringPhone: currentlyEnteringPhone)
     }
     
-    @objc func login(_ sender: Any) {
+    @objc func login(_ sender: UIButton) {
+        sender.isEnabled = false
         guard !(textField.text ?? "").isEmpty else {
             CommonUtils.popUpAlert(message: "Please enter your password", sender: self)
+            sender.isEnabled = true
             return
         }
         let strippedNumber = CommonUtils.strip(from: self.phoneNumber, characters: ["(", ")", " ", "-"])
         PFUser.logInWithUsername(inBackground: strippedNumber, password: textField.text!, block: { (user, error) in
             guard error == nil else {
                 CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
+                sender.isEnabled = true
                 return
             }
 
@@ -50,11 +53,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             PFCloud.callFunction(inBackground: "generateFirebaseToken", withParameters: ["uid": PFUser.current()!.objectId!]) { (response: Any?, error: Error?) in
                 guard error == nil else {
                     CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
+                    sender.isEnabled = true
                     return
                 }
                 Auth.auth().signIn(withCustomToken: response as! String) { (user1, error) in
                     guard error == nil else {
                         CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
+                        sender.isEnabled = true
                         return
                     }
                     let type = user!["type"] as! String
@@ -67,37 +72,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         })
-//        PFUser.logInWithUsername(inBackground: self.phoneNumber, password: self.password, block: {(user0, error0) in
-//            guard error0 == nil else {
-//                CommonUtils.popUpAlert(message: error0!.localizedDescription, sender: self)
-//                return
-//            }
-//            print("Login success")
-//            PFCloud.callFunction(inBackground: "generateFirebaseToken", withParameters: ["uid": PFUser.current()!.objectId!], block: {
-//                (response: Any?, error1: Error?) -> Void in
-//                guard error1 == nil else {
-//                    CommonUtils.popUpAlert(message: error1!.localizedDescription, sender: self)
-//                    return
-//                }
-//                print(response as! String)
-//                Auth.auth().signIn(withCustomToken: response as! String) { (user1, error2) in
-//                    guard error2 == nil else {
-//                        CommonUtils.popUpAlert(message: error2!.localizedDescription, sender: self)
-//                        return
-//                    }
-//                    let type = user0!["type"] as! String
-//                    if type == "employee"{
-//                        print("logging in as employee")
-//                        self.performSegue(withIdentifier: "loginEmployee", sender: self)
-//                    } else {
-//                        //segue to customer storyboard
-//                        print("logging in as customer")
-//                        self.performSegue(withIdentifier: "login", sender: self)
-//                    }
-//                    
-//                }
-//            })
-//        })
     }
     
     @objc private func proceedToPassword() {
