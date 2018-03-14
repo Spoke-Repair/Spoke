@@ -25,6 +25,18 @@ class NewDeliveryRequestVC: UIViewController, UITextFieldDelegate {
         return textField.applyPhoneFormatForUITextFieldDelegate(replacementString: string, currentlyEnteringPhone: true)
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.frame = CGRect(x:self.view.frame.origin.x, y:self.view.frame.origin.y - 200, width:self.view.frame.size.width, height:self.view.frame.size.height);
+        })
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.frame = CGRect(x:self.view.frame.origin.x, y:self.view.frame.origin.y + 200, width:self.view.frame.size.width, height:self.view.frame.size.height);
+        })
+    }
+    
     @IBAction func proceed() {
         guard let issueText = issueTextField.text, !issueText.isEmpty else {
             CommonUtils.popUpAlert(message: "Please enter your issue", sender: self)
