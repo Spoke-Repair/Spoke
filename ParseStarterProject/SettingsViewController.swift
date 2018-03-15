@@ -12,7 +12,7 @@ import Parse
 class SettingsViewController: UIViewController {
     @IBAction func logoutButton(_ sender: Any) {
         PFUser.logOut()
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        self.present(vc, animated: true, completion: nil)
+        let nav = self.storyboard!.instantiateViewController(withIdentifier: "option_nav") as! UINavigationController
+        self.present(nav, animated: true, completion: nil)
     }
 }

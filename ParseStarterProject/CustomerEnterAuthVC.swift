@@ -36,33 +36,37 @@ class CustomerEnterAuthVC: UIViewController {
             
             //Ensure query was successful
             guard let bike = bike, error == nil else {
-                let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-                vc.errMsgStr = error?.localizedDescription
-                self.present(vc, animated: true, completion: nil)
+                let nav = self.storyboard!.instantiateViewController(withIdentifier: "option_nav") as! UINavigationController
+                let vc = nav.viewControllers.first as! LandingOptionsVC
+                vc.errorMessage = error?.localizedDescription
+                self.present(nav, animated: true, completion: nil)
                 return
             }
             
             guard bike["userID"] == nil else {
-                let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-                vc.errMsgStr = "That item already has an owner!"
-                self.present(vc, animated: true, completion: nil)
+                let nav = self.storyboard!.instantiateViewController(withIdentifier: "option_nav") as! UINavigationController
+                let vc = nav.viewControllers.first as! LandingOptionsVC
+                vc.errorMessage = "That item already has an owner!"
+                self.present(nav, animated: true, completion: nil)
                 return
             }
             
             //Verify the phone number for the bike matches the user's number
             guard bike["phone"] as? String == user.username else {
-                let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-                vc.errMsgStr = "Your phone number doesn't match the number for that item!"
-                self.present(vc, animated: true, completion: nil)
+                let nav = self.storyboard!.instantiateViewController(withIdentifier: "option_nav") as! UINavigationController
+                let vc = nav.viewControllers.first as! LandingOptionsVC
+                vc.errorMessage = "Your phone number doesn't match the number for that item!"
+                self.present(nav, animated: true, completion: nil)
                 return
             }
             
             //Sign up user
             user.signUpInBackground() {(success: Bool, error: Error?) in
                 guard error == nil else {
-                    let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-                    vc.errMsgStr = error?.localizedDescription
-                    self.present(vc, animated: true, completion: nil)
+                    let nav = self.storyboard!.instantiateViewController(withIdentifier: "option_nav") as! UINavigationController
+                    let vc = nav.viewControllers.first as! LandingOptionsVC
+                    vc.errorMessage = error?.localizedDescription
+                    self.present(nav, animated: true, completion: nil)
                     return
                 }
                 
@@ -70,9 +74,10 @@ class CustomerEnterAuthVC: UIViewController {
                 bike["userID"] = user.objectId
                 bike.saveInBackground() { (success, error) in
                     guard success && error == nil else {
-                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-                        vc.errMsgStr = error?.localizedDescription
-                        self.present(vc, animated: true, completion: nil)
+                        let nav = self.storyboard!.instantiateViewController(withIdentifier: "option_nav") as! UINavigationController
+                        let vc = nav.viewControllers.first as! LandingOptionsVC
+                        vc.errorMessage = error?.localizedDescription
+                        self.present(nav, animated: true, completion: nil)
                         return
                     }
                     let vc = self.storyboard!.instantiateViewController(withIdentifier: "customerTabBar")

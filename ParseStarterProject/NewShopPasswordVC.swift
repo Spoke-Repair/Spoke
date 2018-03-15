@@ -64,9 +64,10 @@ class NewShopPasswordVC: UIViewController {
     private func signup() {
         self.user.signUpInBackground() { (success, error) in
             guard error == nil else {
-                let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-                vc.errMsgStr = error?.localizedDescription
-                self.present(vc, animated: true, completion: nil)
+                let nav = self.storyboard!.instantiateViewController(withIdentifier: "option_nav") as! UINavigationController
+                let vc = nav.viewControllers.first as! LandingOptionsVC
+                vc.errorMessage = error?.localizedDescription
+                self.present(nav, animated: true, completion: nil)
                 return
             }
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "shopTabBarController")

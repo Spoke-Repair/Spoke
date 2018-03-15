@@ -51,5 +51,11 @@ class NewDeliveryRequestVC: UIViewController, UITextFieldDelegate {
         vc.phoneNumber = phone
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        let nav = self.storyboard!.instantiateViewController(withIdentifier: "option_nav")
+        self.present(nav, animated: true, completion: nil)
+    }
+    
 }
 

@@ -16,14 +16,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var currentlyEnteringPhone = true
     var phoneNumber = ""
     
-    //Used to store error messages to display when account creation fails
-    var errMsgStr: String?
-
     @IBOutlet var otherLabel: UILabel!
     @IBOutlet var instructionLabel: UILabel!
-    @IBOutlet var noAccountLabel: UILabel!
     @IBOutlet var textField: UITextField!
-    @IBOutlet var signUpButton: UIButton!
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return textField.applyPhoneFormatForUITextFieldDelegate(replacementString: string, currentlyEnteringPhone: currentlyEnteringPhone)
@@ -64,10 +59,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                     let type = user!["type"] as! String
                     if type == "employee" {
-                        self.performSegue(withIdentifier: "loginEmployee", sender: self)
+                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "shopTabBarController")
+                        self.present(vc, animated: true, completion: nil)
                     }
                     else {
-                        self.performSegue(withIdentifier: "login", sender: self)
+                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "customerTabBar")
+                        self.present(vc, animated: true, completion: nil)
                     }
                 }
             }
@@ -79,8 +76,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             CommonUtils.popUpAlert(message: "Please enter your complete phone number", sender: self)
             return
         }
-        signUpButton.isHidden = true
-        noAccountLabel.isHidden = true
         self.phoneNumber = textField.text!
         self.currentlyEnteringPhone = false
         textField.placeholder = "Enter a password"
@@ -120,8 +115,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.phoneNumber = ""
             self.instructionLabel.text = "LOGIN TO ACCOUNT"
             self.otherLabel.text = "Enter the phone number that identifies your account"
-            self.signUpButton.isHidden = false
-            self.noAccountLabel.isHidden = false
             
             //Remove left button
             self.textField.text = ""
@@ -161,24 +154,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.textField.rightView = button
             self.textField.rightViewMode = .always
         }, completion: nil)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if (PFUser.current() != nil) {
-            print(PFUser.current()?["type"]! as! String)
-            if let userType = PFUser.current()?["type"] as? String! {
-                if userType == "employee" {
-                    self.performSegue(withIdentifier: "loginEmployee", sender: self)
-                }else{
-                    self.performSegue(withIdentifier: "login", sender: self)
-                }
-            }
-        }
-        else if let errMsgStr = errMsgStr {
-            CommonUtils.popUpAlert(message: errMsgStr, sender: self)
-        }
     }
 }
 

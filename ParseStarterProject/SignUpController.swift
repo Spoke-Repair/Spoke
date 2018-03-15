@@ -86,9 +86,10 @@ class SignUpController: UIViewController, UITextFieldDelegate {
             return
         }
         guard self.textField.text == self.password else {
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            vc.errMsgStr = "Unable to create account - passwords must match!"
-            self.present(vc, animated: true, completion: nil)
+            let nav = self.storyboard!.instantiateViewController(withIdentifier: "option_nav") as! UINavigationController
+            let vc = nav.viewControllers.first! as! LandingOptionsVC
+            vc.errorMessage = "Unable to create account - passwords must match!"
+            self.present(nav, animated: true, completion: nil)
             return
         }
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CustomerEnterAuthVC") as? CustomerEnterAuthVC else {
@@ -103,10 +104,7 @@ class SignUpController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
-            CommonUtils.popUpAlert(message: "Can't transiton to view", sender: self)
-            return
-        }
-        self.present(vc, animated: true, completion: nil)
+        let nav = self.storyboard!.instantiateViewController(withIdentifier: "option_nav") as! UINavigationController
+        self.present(nav, animated: true, completion: nil)
     }
 }
