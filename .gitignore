@@ -10,3 +10,11 @@
 #Personal settings used by Xcode
 xcuserdata/
 
+#Apple developer files (for push notifications?)
+AuthKey_*.p[[:digit:]]
+*.p8
+*.p12
+
+#Configuration from Firebase
+GoogleService-Info.plist
+
