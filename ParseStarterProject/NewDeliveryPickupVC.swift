@@ -26,6 +26,7 @@ class NewDeliveryPickupVC: UIViewController {
             CommonUtils.popUpAlert(message: "Please enter your address", sender: self)
             return
         }
-        //TODO Submit pickup to database
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CustomerCheckoutVC") as! CustomerCheckoutVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -503,7 +503,7 @@
                                     <constraint firstAttribute="width" constant="80" id="C56-vo-bPG"/>
                                     <constraint firstAttribute="height" constant="50" id="uIm-ZG-S4W"/>
                                 </constraints>
-                                <state key="normal" title="SUBMIT">
+                                <state key="normal" title="NEXT">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -552,9 +552,41 @@
                     </view>
                     <connections>
                         <outlet property="addressField" destination="6pu-Uz-EIh" id="AyG-Ki-tRo"/>
+                        <segue destination="hfB-oM-3gS" kind="show" id="II3-Og-6ZQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ma0-fN-e43" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4666" y="-1818"/>
+        </scene>
+        <!--Customer CheckoutVC-->
+        <scene sceneID="pen-XF-tIb">
+            <objects>
+                <viewController storyboardIdentifier="CustomerCheckoutVC" id="hfB-oM-3gS" customClass="CustomerCheckoutVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5fu-Xr-6ri"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mqd-Gk-bU7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2rH-6U-GFe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yc8-Xt-ImO">
+                                <rect key="frame" x="172" y="318.5" width="30" height="30"/>
+                                <state key="normal" title="PAY"/>
+                                <connections>
+                                    <action selector="continueToPayment:" destination="hfB-oM-3gS" eventType="touchUpInside" id="3zH-xX-x5T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yc8-Xt-ImO" firstAttribute="centerX" secondItem="2rH-6U-GFe" secondAttribute="centerX" id="95O-ab-Jse"/>
+                            <constraint firstItem="yc8-Xt-ImO" firstAttribute="centerY" secondItem="2rH-6U-GFe" secondAttribute="centerY" id="yeH-2Z-blE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pt-WP-uQj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3618" y="-1818"/>
         </scene>
