@@ -41,25 +41,19 @@ class ViewBikeViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillAppear(_ animated: Bool) {
         //testLabel.text = customerBikeIDList[customerIndex]
         print("PRINTING CUSTOMER INDEX: \(customerIndex)")
-        self.makeLabel.text = bikeObjectList[customerIndex].make
-        self.modelLabel.text = bikeObjectList[customerIndex].model
+        self.makeLabel.text = bikeObjectList[customerIndex]["make"] as? String
+        self.modelLabel.text = bikeObjectList[customerIndex]["model"] as? String
         
-        if bikeObjectList[customerIndex].doesPictureExist() {
-            if let picture = bikeObjectList[customerIndex].picture {
-                self.bikePicture.image = picture
+        if bikeObjectList[customerIndex]["picture"] != nil {
+            if let picture = bikeObjectList[customerIndex]["picture"] {
+                self.bikePicture.image = picture as? UIImage
             }
-                
-            
-            
         }
-        
-        
         
         messages.removeAll()
         messagesType.removeAll()
         let query = PFQuery(className: "OrderMessages")
-        
-        query.whereKey("bikeID", equalTo: bikeObjectList[customerIndex].bikeId)
+        query.whereKey("bikeID", equalTo: bikeObjectList[customerIndex].objectId as Any)
         query.findObjectsInBackground(block: { (messageObjects: [PFObject]?, error: Error?) in
             if error == nil {
                 if let messageObjects = messageObjects {

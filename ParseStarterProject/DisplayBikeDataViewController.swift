@@ -23,33 +23,23 @@ class DisplayBikeDataViewController: UIViewController {
         
         let query = PFQuery(className: "Bike")
         if let userID = userId{
-            print("user ID: "+userID)
+            print("user ID: " + userID)
             query.whereKey("objectId", equalTo: userID)
             query.findObjectsInBackground(block: { (objects: [PFObject]?, error: Error?) in
                 if error == nil {
                     if let objects = objects {
                         //for object in objects {
-                        print("printing items from parse query")
-                        print(objects[0]["userID"])
-                        print(objects[0]["model"])
                         self.theModelLabel.text = objects[0]["model"] as? String
                         self.theMakeLabel.text = objects[0]["make"] as? String
                         
-                        //new code
-                        let make = objects[0]["make"] as! String
-                        let model = objects[0]["model"] as! String
-                        let isOwned = objects[0]["userID"] != nil
-                        let size = objects[0]["size"] as! String
-                        let userId = objects[0]["userID"] as! String
-                        let bikeId = objects[0].objectId!
-                        let bikeToAdd: BikeObject = BikeObject(make: make, model: model, size: size, isOwned: isOwned, userId: userId, bikeId: bikeId)
+                        let bikeToAdd = objects[0]
                         
                         if let picture = objects[0]["picture"] {
                             let pImage = picture as! PFFile
                             pImage.getDataInBackground(block: { (data: Data?, error: Error?) in
                                 if let imageToSet = UIImage(data: data!) {
-                                    bikeToAdd.picture = imageToSet
-                                    self.bikePicture.image = bikeToAdd.picture
+                                    bikeToAdd["picture"] = imageToSet
+                                    self.bikePicture.image = bikeToAdd["picture"] as? UIImage
                                 }
                             })
                         }

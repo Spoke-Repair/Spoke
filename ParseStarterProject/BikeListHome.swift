@@ -10,7 +10,7 @@ import Parse
 var bikeList = [String]()
 var customerBikeIDList = [String]()
 var customerIndex: Int = 0;
-var bikeObjectList = [BikeObject]()
+var bikeObjectList = [PFObject]()
 
 class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -35,7 +35,7 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BikeCollectionCell", for: indexPath) as! BikeCollectionCell
-        cell.textLabel.text = bikeObjectList[indexPath.row].make
+        cell.textLabel.text = bikeObjectList[indexPath.row]["make"] as? String
         //set the color
         switch((indexPath.row) % 4) {
         
@@ -90,19 +90,13 @@ class BikeListHome: UIViewController, UICollectionViewDataSource, UICollectionVi
                 if error == nil {
                     if let objects = objects {
                         for object in objects {
-                            let make = object["make"] as! String
-                            let model = object["model"] as! String
-                            let isOwned = object["userID"] != nil
-                            let size = object["size"] as! String
-                            let userId = object["userID"] as! String
-                            let bikeId = object.objectId!
-                            let bikeToAdd: BikeObject = BikeObject(make: make, model: model, size: size, isOwned: isOwned, userId: userId, bikeId: bikeId)
+                            let bikeToAdd = object
 
                             if let picture = object["picture"] {
                                 let pImage = picture as! PFFile
                                 pImage.getDataInBackground(block: { (data: Data?, error: Error?) in
                                     if let imageToSet = UIImage(data: data!) {
-                                        bikeToAdd.picture = imageToSet
+                                        bikeToAdd["picture"] = imageToSet
                                         print("Got image")
                                        // self.tableView.reloadData()
                                         self.bikeCollectionView.reloadData()

@@ -21,15 +21,12 @@
 		6832ABB31F3F781200D8D49A /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABB21F3F781200D8D49A /* MessageComposer.swift */; };
 		6832ABB51F4116C100D8D49A /* OpenOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABB41F4116C100D8D49A /* OpenOrdersViewController.swift */; };
 		6832ABB71F4119CE00D8D49A /* FoundBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABB61F4119CE00D8D49A /* FoundBikeViewController.swift */; };
-		6832ABB91F45159A00D8D49A /* ViewOrderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABB81F45159A00D8D49A /* ViewOrderInfoViewController.swift */; };
 		6832ABBB1F451D9F00D8D49A /* CreateWorkOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABBA1F451D9F00D8D49A /* CreateWorkOrderViewController.swift */; };
 		6832ABBD1F45259F00D8D49A /* AddBikeScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABBC1F45259F00D8D49A /* AddBikeScannerVC.swift */; };
 		6832ABBF1F4526D300D8D49A /* ConfirmBikeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */; };
 		687F93161F96D95E00253E00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 687F93151F96D7B000253E00 /* GoogleService-Info.plist */; };
 		687F93181F96DCDB00253E00 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F93171F96DCDB00253E00 /* CommonUtils.swift */; };
-		6892573B1FB133530039B40F /* BikeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6892573A1FB133530039B40F /* BikeObject.swift */; };
 		689B8AB11FAF988200EE395D /* PhotoOfBikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */; };
-		689EF6521F85AD73008066C6 /* AddMessageFromStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689EF6511F85AD73008066C6 /* AddMessageFromStoreVC.swift */; };
 		68A13A811F86FFD90015A6D1 /* ViewBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */; };
 		68A13A831F870A640015A6D1 /* CustomerAddMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */; };
 		68A13A851F8A8F590015A6D1 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A13A841F8A8F590015A6D1 /* MessageCell.swift */; };
@@ -63,7 +60,6 @@
 		C20B6F60202ACEAB008656E9 /* NewShopPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B6F5F202ACEAB008656E9 /* NewShopPhoneVC.swift */; };
 		C20B6F62202ADD1B008656E9 /* NewShopAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B6F61202ADD1B008656E9 /* NewShopAddressVC.swift */; };
 		C20B6F64202AE8FF008656E9 /* NewShopPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B6F63202AE8FF008656E9 /* NewShopPasswordVC.swift */; };
-		C212487B1FD618BF00F50C8C /* OpenOrderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */; };
 		C212487D1FD6198900F50C8C /* BikeOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C212487C1FD6198900F50C8C /* BikeOrderCell.swift */; };
 		C24E2030201C24B300485E7A /* ActivateBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24E202F201C24B200485E7A /* ActivateBikeViewController.swift */; };
 		C270A7522058B5A0005F759A /* NewDeliveryPickupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C270A7512058B5A0005F759A /* NewDeliveryPickupVC.swift */; };
@@ -96,15 +92,12 @@
 		6832ABB21F3F781200D8D49A /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
 		6832ABB41F4116C100D8D49A /* OpenOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenOrdersViewController.swift; sourceTree = "<group>"; };
 		6832ABB61F4119CE00D8D49A /* FoundBikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundBikeViewController.swift; sourceTree = "<group>"; };
-		6832ABB81F45159A00D8D49A /* ViewOrderInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOrderInfoViewController.swift; sourceTree = "<group>"; };
 		6832ABBA1F451D9F00D8D49A /* CreateWorkOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWorkOrderViewController.swift; sourceTree = "<group>"; };
 		6832ABBC1F45259F00D8D49A /* AddBikeScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBikeScannerVC.swift; sourceTree = "<group>"; };
 		6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmBikeVC.swift; sourceTree = "<group>"; };
 		687F93151F96D7B000253E00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		687F93171F96DCDB00253E00 /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
-		6892573A1FB133530039B40F /* BikeObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeObject.swift; sourceTree = "<group>"; };
 		689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfBikeController.swift; sourceTree = "<group>"; };
-		689EF6511F85AD73008066C6 /* AddMessageFromStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageFromStoreVC.swift; sourceTree = "<group>"; };
 		68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBikeViewController.swift; sourceTree = "<group>"; };
 		68A13A821F870A640015A6D1 /* CustomerAddMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerAddMessageVC.swift; sourceTree = "<group>"; };
 		68A13A841F8A8F590015A6D1 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -143,7 +136,6 @@
 		C20B6F5F202ACEAB008656E9 /* NewShopPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopPhoneVC.swift; sourceTree = "<group>"; };
 		C20B6F61202ADD1B008656E9 /* NewShopAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopAddressVC.swift; sourceTree = "<group>"; };
 		C20B6F63202AE8FF008656E9 /* NewShopPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopPasswordVC.swift; sourceTree = "<group>"; };
-		C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrderCollectionView.swift; sourceTree = "<group>"; };
 		C212487C1FD6198900F50C8C /* BikeOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeOrderCell.swift; sourceTree = "<group>"; };
 		C24E202F201C24B200485E7A /* ActivateBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateBikeViewController.swift; sourceTree = "<group>"; };
 		C270A7512058B5A0005F759A /* NewDeliveryPickupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeliveryPickupVC.swift; sourceTree = "<group>"; };
@@ -258,10 +250,8 @@
 				6832ABAE1F3BDAA000D8D49A /* AddBikeViewController.swift */,
 				6832ABB01F3BEA5F00D8D49A /* DisplayBikeDataViewController.swift */,
 				6832ABB21F3F781200D8D49A /* MessageComposer.swift */,
-				689EF6511F85AD73008066C6 /* AddMessageFromStoreVC.swift */,
 				6832ABB41F4116C100D8D49A /* OpenOrdersViewController.swift */,
 				6832ABB61F4119CE00D8D49A /* FoundBikeViewController.swift */,
-				6832ABB81F45159A00D8D49A /* ViewOrderInfoViewController.swift */,
 				6832ABBA1F451D9F00D8D49A /* CreateWorkOrderViewController.swift */,
 				6832ABBC1F45259F00D8D49A /* AddBikeScannerVC.swift */,
 				6832ABBE1F4526D300D8D49A /* ConfirmBikeVC.swift */,
@@ -272,8 +262,6 @@
 				68A13A801F86FFD90015A6D1 /* ViewBikeViewController.swift */,
 				687F93171F96DCDB00253E00 /* CommonUtils.swift */,
 				689B8AB01FAF988200EE395D /* PhotoOfBikeController.swift */,
-				6892573A1FB133530039B40F /* BikeObject.swift */,
-				C212487A1FD618BF00F50C8C /* OpenOrderCollectionView.swift */,
 				C212487C1FD6198900F50C8C /* BikeOrderCell.swift */,
 				C20B6F5D202AB683008656E9 /* LandingPageVC.swift */,
 				C20B6F5F202ACEAB008656E9 /* NewShopPhoneVC.swift */,
@@ -470,19 +458,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				68A13A811F86FFD90015A6D1 /* ViewBikeViewController.swift in Sources */,
-				C212487B1FD618BF00F50C8C /* OpenOrderCollectionView.swift in Sources */,
 				C20B6F5E202AB683008656E9 /* LandingPageVC.swift in Sources */,
 				C2CF56A62059E0E70061213B /* LandingOptionsVC.swift in Sources */,
 				6832ABBF1F4526D300D8D49A /* ConfirmBikeVC.swift in Sources */,
 				C2ABB955201926E400A003C1 /* EnterPhoneNumberViewController.swift in Sources */,
 				C28E5A531FD89DBA00D3473B /* UIExtensions.swift in Sources */,
 				6832ABAD1F3BCFA400D8D49A /* BikeListCell.swift in Sources */,
-				6832ABB91F45159A00D8D49A /* ViewOrderInfoViewController.swift in Sources */,
 				6832ABBB1F451D9F00D8D49A /* CreateWorkOrderViewController.swift in Sources */,
 				68D4A83D1FC2359C004EF5CA /* BikeCollectionCell.swift in Sources */,
 				6832ABBD1F45259F00D8D49A /* AddBikeScannerVC.swift in Sources */,
 				C2FEF1A82058AD9A00D3B3C5 /* NewDeliveryRequestVC.swift in Sources */,
-				689EF6521F85AD73008066C6 /* AddMessageFromStoreVC.swift in Sources */,
 				6832ABAF1F3BDAA000D8D49A /* AddBikeViewController.swift in Sources */,
 				68A13A831F870A640015A6D1 /* CustomerAddMessageVC.swift in Sources */,
 				68E5D3301F4B6C1E00EFC857 /* WorkListObject.swift in Sources */,
@@ -495,7 +480,6 @@
 				68F173F81F8AB081000CC893 /* CustomerViewCusMessageCell.swift in Sources */,
 				68E5D32A1F4B557500EFC857 /* SignUpController.swift in Sources */,
 				C2CA1E481FCE774A0064FAB6 /* BikeListHome.swift in Sources */,
-				6892573B1FB133530039B40F /* BikeObject.swift in Sources */,
 				C24E2030201C24B300485E7A /* ActivateBikeViewController.swift in Sources */,
 				6832ABB11F3BEA5F00D8D49A /* DisplayBikeDataViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,

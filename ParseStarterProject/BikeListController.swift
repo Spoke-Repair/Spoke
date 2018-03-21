@@ -70,23 +70,12 @@ class BikeListController: UITableViewController {
                 if error == nil {
                     if let objects = objects {
                         for object in objects {
-                            //print("printing items from parse query")
-                            //print(object["userID"])
-                            //print(object["model"])
-                            let make = object["make"] as! String
-                            let model = object["model"] as! String
-                            let isOwned = object["userID"] != nil
-                            let size = object["size"] as! String
-                            let userId = object["userID"] as! String
-                            let bikeId = object.objectId!
-                            let bikeToAdd: BikeObject = BikeObject(make: make, model: model, size: size, isOwned: isOwned, userId: userId, bikeId: bikeId)
-                            
-
+                            let bikeToAdd = object
                             if let picture = object["picture"] {
                                 let pImage = picture as! PFFile
                                 pImage.getDataInBackground(block: { (data: Data?, error: Error?) in
                                     if let imageToSet = UIImage(data: data!) {
-                                        bikeToAdd.picture = imageToSet
+                                        bikeToAdd["picture"] = imageToSet
                                         print("Got image")
                                         self.tableView.reloadData()
                                     }
@@ -145,10 +134,10 @@ class BikeListController: UITableViewController {
         let cell = Bundle.main.loadNibNamed("BikeCellX", owner: self, options: nil)?.first as! BikeCellX
         
         //cell.bikeText.text = bikeList[indexPath.row]
-        cell.bikeText.text = bikeObjectList[indexPath.row].make
+        cell.bikeText.text = bikeObjectList[indexPath.row]["make"] as? String
         // Configure the cell...
-       if(bikeObjectList[indexPath.row].doesPictureExist()){
-            cell.bikeImage.image = bikeObjectList[indexPath.row].picture
+       if bikeObjectList[indexPath.row]["picture"] != nil {
+            cell.bikeImage.image = bikeObjectList[indexPath.row]["picture"] as? UIImage
         }
         return cell
     }
