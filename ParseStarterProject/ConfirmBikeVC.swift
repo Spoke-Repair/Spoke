@@ -27,25 +27,35 @@ class ConfirmBikeVC: UIViewController {
     }
     
     @IBAction func confirmBike(_ sender: Any) {
-        newBike.saveInBackground(block: {(success:Bool, error: Error?) in
+        self.newBike.saveInBackground(block: {(success:Bool, error: Error?) in
             guard error == nil else {
                 CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
                 return
             }
-            let phoneNumber = "+1" + (self.newBike["phone"] as! String)
-            PFCloud.callFunction(inBackground: "smsMessage", withParameters: ["number": phoneNumber, "bikecode": self.newBike.objectId!], block: { (object: Any?, error: Error?) in
+            let workOrder = PFObject(className: "WorkOrder")
+            workOrder["bike"] = self.newBike
+            workOrder["shop"] = PFUser.current()
+            workOrder["isOpen"] = true
+            workOrder.saveInBackground() { (success: Bool, error: Error?) in
                 guard error == nil else {
-                    //Accessing error!.localizedDescription stops the code in its tracks, yet does not throw an error? The debugger
-                    //simply displays the following:
-                    //2018-03-04 22:41:43.509115-0600 ParseStarterProject-Swift[2011:1313659] -[__NSDictionaryI length]: unrecognized selector sent to instance 0x1c42e1d00
-                    //CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
-                    CommonUtils.popUpAlert(message: "Unable to send text message to customer at " + phoneNumber, sender: self)
+                    CommonUtils.popUpAlert(message: "Error saving work order", sender: self)
                     return
                 }
-                print("ConfirmBikeVC: sending sms message \(self.newBike.objectId!)")
-                let vc : UITabBarController = self.storyboard!.instantiateViewController(withIdentifier: "shopTabBarController") as! UITabBarController
-                self.present(vc, animated: true, completion: nil)
-            })
+                let phoneNumber = "+1" + (self.newBike["phone"] as! String)
+                PFCloud.callFunction(inBackground: "smsMessage", withParameters: ["number": phoneNumber, "bikecode": self.newBike.objectId!], block: { (object: Any?, error: Error?) in
+                    guard error == nil else {
+                        //Accessing error!.localizedDescription stops the code in its tracks, yet does not throw an error? The debugger
+                        //simply displays the following:
+                        //2018-03-04 22:41:43.509115-0600 ParseStarterProject-Swift[2011:1313659] -[__NSDictionaryI length]: unrecognized selector sent to instance 0x1c42e1d00
+                        //CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
+                        CommonUtils.popUpAlert(message: "Unable to send text message to customer at " + phoneNumber, sender: self)
+                        return
+                    }
+                    print("ConfirmBikeVC: sending sms message \(self.newBike.objectId!)")
+                    let vc : UITabBarController = self.storyboard!.instantiateViewController(withIdentifier: "shopTabBarController") as! UITabBarController
+                    self.present(vc, animated: true, completion: nil)
+                })
+            }
         })
     }
 }
