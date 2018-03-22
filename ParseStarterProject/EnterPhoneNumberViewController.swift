@@ -29,6 +29,11 @@ class EnterPhoneNumberViewController: UIViewController, UITextFieldDelegate {
         self.navigationController!.pushViewController(vc, animated: true)
     }
     
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "shopTabBarController")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return textField.applyPhoneFormatForUITextFieldDelegate(replacementString: string, currentlyEnteringPhone: true)
     }

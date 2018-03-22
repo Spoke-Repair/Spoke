@@ -1982,9 +1982,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JpE-Ja-mg4">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kDs-cT-8ec">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aPU-mb-fX9">
                             <connections>
-                                <segue destination="XOA-Fb-ASl" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="6lA-Kc-nFd"/>
+                                <action selector="cancel:" destination="Y2N-Oe-Djl" id="zIC-6P-GsZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1994,7 +1994,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHU-xH-czZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="XOA-Fb-ASl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1049" y="752"/>
         </scene>
