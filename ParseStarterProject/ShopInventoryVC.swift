@@ -27,10 +27,11 @@ class ShopInventoryVC: UIViewController, UICollectionViewDelegate, UICollectionV
             CommonUtils.popUpAlert(message: "Error: No user logged in", sender: self)
             return
         }
-        
+        self.workOrders.removeAll()
         let query = PFQuery(className: "WorkOrder")
         query.whereKey("shop", equalTo: currentUser)
         query.whereKey("isOpen", equalTo: true)
+        query.includeKey("bike")
         query.findObjectsInBackground() { (orders: [PFObject]?, error: Error?) in
             guard error == nil, let orders = orders else {
                 CommonUtils.popUpAlert(message: error!.localizedDescription, sender: self)
@@ -39,9 +40,8 @@ class ShopInventoryVC: UIViewController, UICollectionViewDelegate, UICollectionV
             for workOrder in orders {
                 self.workOrders.append(workOrder)
             }
+            self.collectionView.reloadData()
         }
-        
-        self.collectionView.reloadData()
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection numberOfItemsInSelection: Int) -> Int {
@@ -50,6 +50,14 @@ class ShopInventoryVC: UIViewController, UICollectionViewDelegate, UICollectionV
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopInventoryCell", for: indexPath) as! ShopInventoryCell
+        if let photo = (self.workOrders[indexPath.row]["bike"] as! PFObject)["picture"] as? PFFile {
+            photo.getDataInBackground() { (data: Data?, error: Error?) in
+                if error != nil {
+                    print("Unable to load photo")
+                }
+                cell.img.image = UIImage(data: data!)
+            }
+        }
         return cell
     }
 }
