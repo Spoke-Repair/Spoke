@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import Parse
 
 class ShopInventoryCell: UICollectionViewCell {
     @IBOutlet weak var img: UIImageView!
+    var bike: PFObject!
+    var workOrders: Set<PFObject>!
 }

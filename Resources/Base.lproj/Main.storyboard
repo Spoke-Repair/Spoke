@@ -341,7 +341,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN TO ACCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQk-Xk-d6w">
-                                <rect key="frame" x="125" y="205" width="126.5" height="16"/>
+                                <rect key="frame" x="124.5" y="205" width="126.5" height="16"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -2463,11 +2463,46 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="qiq-gy-lxt" id="deK-gS-DyN"/>
+                        <segue destination="6j5-ic-9Tq" kind="show" id="lMa-ej-4Jl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDt-0I-7gS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="184.80000000000001" y="-85.007496251874073"/>
+        </scene>
+        <!--Shop Individual BikeVC-->
+        <scene sceneID="kMK-WK-wHv">
+            <objects>
+                <viewController storyboardIdentifier="ShopIndividualBikeVC" id="6j5-ic-9Tq" customClass="ShopIndividualBikeVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XHl-iG-vVR"/>
+                        <viewControllerLayoutGuide type="bottom" id="VDl-Z0-bIu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r4c-sR-sEG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons8-Ios7-Transport-Bicycle.ico" translatesAutoresizingMaskIntoConstraints="NO" id="qOQ-pv-r9z">
+                                <rect key="frame" x="59" y="108" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="HVx-66-aTE"/>
+                                    <constraint firstAttribute="height" constant="256" id="ejq-eS-LSc"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qOQ-pv-r9z" firstAttribute="centerX" secondItem="r4c-sR-sEG" secondAttribute="centerX" id="PPp-sM-Qqd"/>
+                            <constraint firstItem="qOQ-pv-r9z" firstAttribute="top" secondItem="XHl-iG-vVR" secondAttribute="bottom" id="mdD-Yw-Kjz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bikeImage" destination="qOQ-pv-r9z" id="fHk-U4-FeB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l4P-ft-KRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="-85"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zRa-aO-Y2Q">

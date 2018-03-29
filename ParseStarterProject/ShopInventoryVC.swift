@@ -87,10 +87,18 @@ class ShopInventoryVC: UIViewController, UICollectionViewDelegate, UICollectionV
                 cell.img.image = UIImage(data: data!)
             }
         }
+        cell.bike = self.bikeToWorkOrdersTuples[indexPath.row].0
+        cell.workOrders = self.bikeToWorkOrdersTuples[indexPath.row].1
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopInventoryCell", for: indexPath) as! ShopInventoryCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopInventoryCell", for: indexPath) as! ShopInventoryCell
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "ShopIndividualBikeVC") as! ShopIndividualBikeVC
+        vc.bike = cell.bike
+        vc.workOrders = cell.workOrders
+        vc.tempImage = cell.img.image
+        self.navigationController!.pushViewController(vc, animated: true)
     }
 }
+
