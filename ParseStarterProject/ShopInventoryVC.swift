@@ -94,11 +94,21 @@ class ShopInventoryVC: UIViewController, UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopInventoryCell", for: indexPath) as! ShopInventoryCell
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "ShopIndividualBikeVC") as! ShopIndividualBikeVC
-        vc.bike = cell.bike
-        vc.workOrders = cell.workOrders
-        vc.tempImage = cell.img.image
-        self.navigationController!.pushViewController(vc, animated: true)
+        if let photo = self.bikeToWorkOrdersTuples[indexPath.row].0["picture"] as? PFFile {
+            photo.getDataInBackground() { (data: Data?, error: Error?) in
+                if error != nil {
+                    print("Unable to load photo")
+                }
+                DispatchQueue.main.async {
+                    let vc = self.storyboard!.instantiateViewController(withIdentifier: "ShopIndividualBikeVC") as! ShopIndividualBikeVC
+                    vc.bike = cell.bike
+                    vc.workOrders = cell.workOrders
+                    vc.tempImage = UIImage(data: data!)
+                    self.navigationController!.pushViewController(vc, animated: true)
+                }
+            }
+        }
+        
     }
 }
 
